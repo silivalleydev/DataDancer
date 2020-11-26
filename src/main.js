@@ -13,6 +13,15 @@ export default class DataRandomDancer {
     /**
      * methods
      */
+    /**
+     * 자리수를 지정하여 랜덤한 난수를 얻는 메서드
+     *
+     * 기본 반환타입은 Integer이며
+     *
+     * 타입을 string으로 지정하면 String 형태의 숫자를 얻을 수 있다
+     *
+     * (digit: 자릿수, type?:"string" or undefined)
+     */
     getRanDigitNum(digit, type) {
         let number;
         while (true) {
@@ -31,6 +40,12 @@ export default class DataRandomDancer {
         if (!type)
             return parseInt(number);
     }
-    getRanRangeNum(start, end, fixZeroDigit) {
+    /**
+     * 숫자의 범위를 지정하여 난수를 얻는 메서드.
+     *
+     * (min:최소값, max:최대값)
+     */
+    getRanRangeNum(min, max) {
+        return Math.floor((Math.random() * (max - min + 1)) + min);
     }
 }
