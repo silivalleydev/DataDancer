@@ -29,7 +29,7 @@ export default class DataRandomDancer {
      * 
      * zeroFixBackDigit은 digit보다 작아야한다.
      * 
-     * (digit: 자릿수, type?:"string" or undefined)
+     * (digit: 자릿수, type?:"string" or "", zeroFixBackDigit: 0으로 고정할 뒷 자리수)
      */
     getRanDigitNum(digit:number, type:string = "", zeroFixBackDigit?:number) {
         let number:any;
