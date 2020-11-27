@@ -26,18 +26,46 @@ export default class DataRandomDancer {
      *
      * (digit: 자릿수, type?:"string" or undefined)
      */
-    getRanDigitNum(digit, type, zeroFixBackDigit) {
+    getRanDigitNum(digit, type = "", zeroFixBackDigit) {
         let number;
+        function changeBackDigitZero(digit, zeroFixBackDigit) {
+            if (zeroFixBackDigit < digit) {
+                const arr = number.split('');
+                const endPoint = arr.length - zeroFixBackDigit - 1;
+                for (let i = arr.length - 1; endPoint < i; i--) {
+                    arr[i] = 0;
+                }
+                number = arr.join('');
+                return number;
+            }
+            else
+                return false;
+        }
         while (true) {
             number = "";
             for (let i = 0; i < digit; i++) {
                 let num = Math.floor(Math.random() * 10);
                 number += String(num);
             }
-            if (type === "string")
+            if (type === "string" && zeroFixBackDigit) {
+                if (changeBackDigitZero(digit, zeroFixBackDigit))
+                    return changeBackDigitZero(digit, zeroFixBackDigit);
+                else
+                    alert("zeroFixBackDigit값을 digit보다 작게 설정하세요");
+                return false;
+            }
+            else if (type === "string" && !zeroFixBackDigit)
                 return number;
             number = parseInt(number);
-            if (String(number).length === digit)
+            number = String(number);
+            if (number.length === digit && zeroFixBackDigit) {
+                if (changeBackDigitZero(digit, zeroFixBackDigit))
+                    return parseInt(changeBackDigitZero(digit, zeroFixBackDigit));
+                else
+                    alert("zeroFixBackDigit값을 digit보다 작게 설정하세요");
+                return false;
+            }
+            else if (String(number).length === digit && !zeroFixBackDigit)
                 break;
         }
         if (!type)

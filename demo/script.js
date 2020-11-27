@@ -26,11 +26,27 @@ function playDRD(method) {
     switch (method) {
         case "getRanDigitNum-default":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수(리턴 타입 number) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3); }
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3) + " " +typeof drd.getRanDigitNum(3); }
+            break;
+        case "getRanDigitNum-default-zeroFix":
+            detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 2개 0 고정(리턴 타입 number) =>"
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "",2) + " " + typeof drd.getRanDigitNum(3, "",2); }
+            break;
+        case "getRanDigitNum-default-overZeroFix":
+            detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 3개 0 고정(리턴 타입 number) =>"
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "",3); }
             break;
         case "getRanDigitNum-string":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수(리턴 타입 string) =>"
             btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "string"); }
+            break;
+        case "getRanDigitNum-zeroFix":
+            detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 2개 0 고정(리턴 타입 string) =>"
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "string", 2); }
+            break;
+        case "getRanDigitNum-overZeroFix":
+            detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 3개 0 고정(리턴 타입 string) =>"
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "string", 3); }
             break;
         case "getRanRangeNum":
             detail.innerHTML = "범위 내 랜덤 숫자 1 ~ 10 =>"
@@ -45,7 +61,11 @@ function playDRD(method) {
 }
 
     playDRD("getRanDigitNum-default");
+    playDRD("getRanDigitNum-default-zeroFix");
+    playDRD("getRanDigitNum-default-overZeroFix");
     playDRD("getRanDigitNum-string");
+    playDRD("getRanDigitNum-zeroFix");
+    playDRD("getRanDigitNum-overZeroFix");
     playDRD("getRanRangeNum");
 
 
