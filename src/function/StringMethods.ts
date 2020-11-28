@@ -60,6 +60,10 @@ export default class StringMethods {
      */
 
     /**
+     * MAC 주소 생성 메서드
+     */
+
+    /**
      * 임시 비밀번호 생성 메서드
      */
 }

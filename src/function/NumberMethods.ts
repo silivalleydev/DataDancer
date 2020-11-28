@@ -19,7 +19,7 @@ export default class NumberMethods {
      */
 
     /**
-     * 자리수를 지정하여 랜덤한 난수를 얻는 메서드
+     * 자리수를 지정하여 랜덤한 정수형 난수를 얻는 메서드
      * 
      * 기본 반환타입은 Integer이며
      * 
@@ -76,9 +76,11 @@ export default class NumberMethods {
     }
 
     /**
-     * 숫자의 범위를 지정하여 난수를 얻는 메서드.
+     * 숫자의 범위를 지정하여 정수형 난수를 얻는 메서드.
      * 
-     * (min:최소값, max:최대값)
+     * 홀수, 짝수를 지정할 수 있다.
+     * 
+     * (min:최소값, max:최대값, )
      */
     getRanRangeNum(min:number, max:number) {
         return Math.floor((Math.random() * (max - min + 1)) + min)
