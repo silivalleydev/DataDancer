@@ -33,7 +33,7 @@ export default class NumberMethods {
      */
     getRanDigitNum(digit:number, isString:boolean = false, zeroFixBackDigit?:number) {
         let number:any;
-        function changeBackDigitZero(digit:number, zeroFixBackDigit:number) {
+        const changeBackDigitZero = (digit:number, zeroFixBackDigit:number) => {
             if (zeroFixBackDigit < digit) {
                 const arr = number.split('');
                 const endPoint = arr.length - zeroFixBackDigit - 1;
@@ -69,8 +69,11 @@ export default class NumberMethods {
     }
 
     /**
-     * 중복없는 난수를 얻는 메서드
+     * 중복없는 난수 배열을 얻는 메서드
      */
+    getPrimaryRanNumArr(min:number, max:number, length:number) {
+
+    }
 
     /**
      * 숫자의 범위를 지정하여 난수를 얻는 메서드.

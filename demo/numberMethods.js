@@ -62,8 +62,8 @@ function playDRD(method) {
             btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, true, 3); }
             break;
         case "getRanRangeNum":
-            detail.innerHTML = "범위 내 랜덤 숫자 1 ~ 10 =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanRangeNum(1,10); }
+            detail.innerHTML = "범위 내 랜덤 숫자 0 ~ 10 =>"
+            btn.onclick = function(){ result.innerHTML = drd.getRanRangeNum(0,10); }
             break;
     }
 

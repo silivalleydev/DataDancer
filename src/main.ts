@@ -1,4 +1,5 @@
-import NumberMethods from './functions/NumberMethods';
+import NumberMethods from './function/NumberMethods';
+import StringMethods from './function/StringMethods';
 
 export default class DataRandomDancer {
 
@@ -16,6 +17,7 @@ export default class DataRandomDancer {
     }
 
     static NumberMethods = NumberMethods;
+    static StringMethods = StringMethods;
 
     /**
      * 랜덤 색상 생성 메서드
@@ -29,14 +31,6 @@ export default class DataRandomDancer {
 
     /**
      * 랜덤 날짜 생성 메서드
-     */
-
-    /**
-     * 임시 비밀번호 생성 메서드
-     */
-
-    /**
-     * UUID 생성 메서드
      */
 
     /**
