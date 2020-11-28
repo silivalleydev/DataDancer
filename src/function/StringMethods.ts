@@ -39,7 +39,7 @@ export default class StringMethods {
             let idx3 = ranIndex(0, k_first_name.length) - 1;
 
             while(true) {
-                if (idx2 === idx3) idx3 = ranIndex(0, k_first_name.length);
+                if (idx2 === idx3) idx3 = ranIndex(0, k_first_name.length) - 1;
                 else break;
             }
 
