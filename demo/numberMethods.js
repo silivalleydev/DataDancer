@@ -1,7 +1,8 @@
-import DataRandomDancer from '../src/main.js';
+import DataRandomDancer from '../build/dataRandomDancer.js';
 
-const drd = new DataRandomDancer();
+console.log(DataRandomDancer);
 
+const drd = new DataRandomDancer.NumberMethods();
 
 const root = document.getElementById("root");
 
@@ -26,27 +27,39 @@ function playDRD(method) {
     switch (method) {
         case "getRanDigitNum-default":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수(리턴 타입 number) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3) + " " +typeof drd.getRanDigitNum(3); }
+            btn.onclick = function(){
+                const output = drd.getRanDigitNum(3); 
+                result.innerHTML = output + " " +typeof output; 
+            }
             break;
         case "getRanDigitNum-default-zeroFix":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 2개 0 고정(리턴 타입 number) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "",2) + " " + typeof drd.getRanDigitNum(3, "",2); }
+            btn.onclick = function(){ 
+                const output = drd.getRanDigitNum(3, false,2)
+                result.innerHTML = output + " " + typeof output; 
+            }
             break;
         case "getRanDigitNum-default-overZeroFix":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 3개 0 고정(리턴 타입 number) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "",3); }
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, false,3); }
             break;
         case "getRanDigitNum-string":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수(리턴 타입 string) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "string"); }
+            btn.onclick = function(){ 
+                const output = drd.getRanDigitNum(3, true);
+                result.innerHTML = output + " " + typeof output; 
+            }
             break;
         case "getRanDigitNum-zeroFix":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 2개 0 고정(리턴 타입 string) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "string", 2); }
+            btn.onclick = function(){
+                const output = drd.getRanDigitNum(3, true, 2);
+                result.innerHTML = output + " " + typeof output; 
+            }
             break;
         case "getRanDigitNum-overZeroFix":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 3개 0 고정(리턴 타입 string) =>"
-            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, "string", 3); }
+            btn.onclick = function(){ result.innerHTML = drd.getRanDigitNum(3, true, 3); }
             break;
         case "getRanRangeNum":
             detail.innerHTML = "범위 내 랜덤 숫자 1 ~ 10 =>"
