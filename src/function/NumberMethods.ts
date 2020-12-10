@@ -1,17 +1,19 @@
-export default class NumberMethods {
+import Base from '../common/Base';
+export default class NumberMethods extends Base {
 
     /** 
      * fields
      */
 
     /**
-     * properties getter setter
+     * properties
      */
 
     /**
      *  constructor
      */
     constructor() {
+        super();
     }
 
     /**
@@ -72,7 +74,7 @@ export default class NumberMethods {
      * 중복없는 난수 배열을 얻는 메서드
      */
     getPrimaryRanNumArr(min:number, max:number, length:number) {
-
+        
     }
 
     /**
@@ -83,6 +85,6 @@ export default class NumberMethods {
      * (min:최소값, max:최대값, )
      */
     getRanRangeNum(min:number, max:number) {
-        return Math.floor((Math.random() * (max - min + 1)) + min)
+        return this.RanRangeNum(min, max)
     }
 }

@@ -46,6 +46,13 @@ function playDRD(method) {
                 result.innerHTML = "female Name: " + output; 
             }
             break;
+        case "getRanPassword-default":
+            detail.innerHTML = "비밀번호 생성 기본 =>"
+            btn.onclick = function(){ 
+                const output = drd.getRanPassword();
+                result.innerHTML = "random password: " + output; 
+            }
+            break;
     }
 
     div.appendChild(btn);
@@ -57,6 +64,7 @@ function playDRD(method) {
     playDRD("getRanName-kor");
     playDRD("getRanName-us-male");
     playDRD("getRanName-us-female");
+    playDRD("getRanPassword-default");
 
 
 

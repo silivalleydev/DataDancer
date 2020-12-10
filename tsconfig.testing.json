@@ -1,0 +1,18 @@
+// mocha는 "commonjs"에서만 동작한다.
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "inlineSourceMap": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./api.spec.ts"]
+}
