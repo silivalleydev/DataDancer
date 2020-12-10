@@ -21,7 +21,7 @@ export default abstract class Base {
         return Math.floor((Math.random() * (max - min + 1)) + min);
     }
 
-    forLoop (start:number, end:number, customFunc:(index:number)=>void, isReverse:boolean = false):void {
+    forLoop (start:number, end:number, customFunc:(index?:number)=>void, isReverse:boolean = false):void {
         if (isReverse) {
             for (let i = end - 1; start - 1 < i; i--) {
                 customFunc(i);
