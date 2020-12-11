@@ -15,19 +15,19 @@ describe('StringMethods Test', () => {
         
         const numFunc = () => {
             const rs = s.getRanPassword(10, "number");
-            assert.exists(rs)
+            assert.equal(rs && rs.length, 10);
         }
         s.forLoop(0,10000,numFunc);
        
         const symbolFunc = () => {
             const rs = s.getRanPassword(10, "symbol");
-            assert.exists(rs)
+            assert.equal(rs && rs.length, 10);
         }
         s.forLoop(0,10000,symbolFunc);
 
         const allFunc = () => {
             const rs = s.getRanPassword(10, "all");
-            assert.exists(rs)
+            assert.equal(rs && rs.length, 10);
         }
         s.forLoop(0,10000,allFunc);
     });

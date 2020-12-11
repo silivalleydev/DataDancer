@@ -1,5 +1,5 @@
 import Base from '../common/Base';
-import { k_first_name, k_last_name, e_female_name, e_male_name  } from '../data/nameData';
+import { k_first_name, k_last_name, e_female_name, e_male_name, engData, symbolData, numData } from '../data/data';
 
 export default class StringMethods extends Base {
 
@@ -69,24 +69,7 @@ export default class StringMethods extends Base {
     getRanPassword(digit: number, include: string = null) {
         if(digit < 4) return false;
 
-        const engArr: string[] = [
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-            'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
-            'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
-            'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-            'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z'
-        ];
-        const numArr: number[] = [
-            0, 1, 2, 3, 4,
-            5, 6, 7, 8, 9
-        ];
-        const symbolArr: string[] = [
-            '!', '*', '#',
-            '$', '%', '&',
-            '?', '@', '^'
-        ];
+
         let result = "";
         let howManyIncludeNum = this.ranRangeNum(1, Math.floor(digit/3));
         let howManyIncludeSymbol = this.ranRangeNum(1, Math.floor(digit/3));
@@ -116,9 +99,9 @@ export default class StringMethods extends Base {
 
         const createRanPw: ()=>void = () => {    
             typeArr.forEach((item)=>{
-                if (item.type === "number") result += numArr[this.ranRangeNum(0,numArr.length-1)];
-                else if (item.type === "symbol") result += symbolArr[this.ranRangeNum(0,symbolArr.length-1)];
-                else result += engArr[this.ranRangeNum(0,engArr.length-1)]
+                if (item.type === "number") result += numData[this.ranRangeNum(0,numData.length-1)];
+                else if (item.type === "symbol") result += symbolData[this.ranRangeNum(0,symbolData.length-1)];
+                else result += engData[this.ranRangeNum(0,engData.length-1)]
             })
         }
         
