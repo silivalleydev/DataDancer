@@ -70,9 +70,9 @@ export default class StringMethods extends Base {
         if(digit < 4) return false;
 
 
-        let result = "";
-        let howManyIncludeNum = this.$_ranRangeNum(1, Math.floor(digit/3));
-        let howManyIncludeSymbol = this.$_ranRangeNum(1, Math.floor(digit/3));
+        let result: string = "";
+        let howManyIncludeNum: number = this.$_ranRangeNum(1, Math.floor(digit/3));
+        let howManyIncludeSymbol: number = this.$_ranRangeNum(1, Math.floor(digit/3));
 
         const typeArr = [];
 
