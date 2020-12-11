@@ -31,21 +31,21 @@ export default class StringMethods extends Base {
      */
     getRanName(country:string, sex:string = "male") {
         if (country === "kor") {
-            const idx1 = this.ranRangeNum(0, k_last_name.length) - 1;
-            const idx2 = this.ranRangeNum(0, k_first_name.length) - 1;
-            let idx3 = this.ranRangeNum(0, k_first_name.length) - 1;
+            const idx1 = this.$_ranRangeNum(0, k_last_name.length) - 1;
+            const idx2 = this.$_ranRangeNum(0, k_first_name.length) - 1;
+            let idx3 = this.$_ranRangeNum(0, k_first_name.length) - 1;
 
             while(true) {
-                if (idx2 === idx3) idx3 = this.ranRangeNum(0, k_first_name.length) - 1;
+                if (idx2 === idx3) idx3 = this.$_ranRangeNum(0, k_first_name.length) - 1;
                 else break;
             }
             return k_last_name[idx1] + k_first_name[idx2] + k_first_name[idx3];
         } else if (country === "us") {
             if ( sex === "male" ) {
-                const idx = this.ranRangeNum(0, e_male_name.length) - 1;
+                const idx = this.$_ranRangeNum(0, e_male_name.length) - 1;
                 return e_male_name[idx];
             } else {
-                const idx = this.ranRangeNum(0, e_female_name.length) - 1;
+                const idx = this.$_ranRangeNum(0, e_female_name.length) - 1;
                 return e_female_name[idx]
             }
         }
@@ -71,8 +71,8 @@ export default class StringMethods extends Base {
 
 
         let result = "";
-        let howManyIncludeNum = this.ranRangeNum(1, Math.floor(digit/3));
-        let howManyIncludeSymbol = this.ranRangeNum(1, Math.floor(digit/3));
+        let howManyIncludeNum = this.$_ranRangeNum(1, Math.floor(digit/3));
+        let howManyIncludeSymbol = this.$_ranRangeNum(1, Math.floor(digit/3));
 
         const typeArr = [];
 
@@ -81,7 +81,7 @@ export default class StringMethods extends Base {
             while (true) {
                 if (!include) break;
 
-                let index = this.ranRangeNum(0, digit - 1);
+                let index = this.$_ranRangeNum(0, digit - 1);
                 
                 if ((include === "all" || include === "symbol") && (typeArr[index].type === null && howManyIncludeSymbol !== 0)) {
                     typeArr[index].type = "symbol";
@@ -99,9 +99,9 @@ export default class StringMethods extends Base {
 
         const createRanPw: ()=>void = () => {    
             typeArr.forEach((item)=>{
-                if (item.type === "number") result += numData[this.ranRangeNum(0,numData.length-1)];
-                else if (item.type === "symbol") result += symbolData[this.ranRangeNum(0,symbolData.length-1)];
-                else result += engData[this.ranRangeNum(0,engData.length-1)]
+                if (item.type === "number") result += numData[this.$_ranRangeNum(0,numData.length-1)];
+                else if (item.type === "symbol") result += symbolData[this.$_ranRangeNum(0,symbolData.length-1)];
+                else result += engData[this.$_ranRangeNum(0,engData.length-1)]
             })
         }
         
