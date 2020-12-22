@@ -35,7 +35,7 @@ function playDRD(method) {
         case "getRanDigitNum-default-zeroFix":
             detail.innerHTML = "자리수 지정 랜덤 숫자 3자리수 뒷자리 2개 0 고정(리턴 타입 number) =>"
             btn.onclick = function(){ 
-                const output = drd.getRanDigitNum(3, false,2)
+                const output = drd.getRanDigitNum(3, false, 2);
                 result.innerHTML = output + " " + typeof output; 
             }
             break;

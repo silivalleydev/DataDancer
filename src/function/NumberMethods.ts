@@ -49,10 +49,10 @@ export default class NumberMethods extends Base {
         }
         while(true){
             rs = "";
-            for (let i = 0; i < digit; i++) {
+            this.$_forLoop(0, digit, ()=>{
                 let num = Math.floor(Math.random() * 10);
                 rs += String(num);
-            }
+            })
 
             if (isString === true && zeroFixBackDigit){
                 if(changeBackDigitZero(digit, zeroFixBackDigit)) return changeBackDigitZero(digit, zeroFixBackDigit);
@@ -71,13 +71,6 @@ export default class NumberMethods extends Base {
     }
 
     /**
-     * 중복없는 난수 배열을 얻는 메서드
-     */
-    getPrimaryRanNumArr(min: number, max: number, length: number) {
-        
-    }
-
-    /**
      * 숫자의 범위를 지정하여 정수형 난수를 얻는 메서드.
      * 
      * 홀수, 짝수를 지정할 수 있다.
@@ -85,6 +78,6 @@ export default class NumberMethods extends Base {
      * (min:최소값, max:최대값, )
      */
     getRanRangeNum(min: number, max: number): number {
-        return this.ranRangeNum(min, max)
+        return this.$_ranRangeNum(min, max)
     }
 }

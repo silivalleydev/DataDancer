@@ -17,7 +17,10 @@ export default abstract class Base {
     /**
      * methods
      */
-    forLoop (start:number, end:number, customFunc:(index?:number)=>void, isReverse:boolean = false):void {
+    /**
+     * protected Methods
+     */
+    protected $_forLoop (start:number, end:number, customFunc:(index?:number)=>void, isReverse:boolean = false):void {
         if (isReverse) {
             for (let i = end - 1; start - 1 < i; i--) {
                 customFunc(i);
@@ -28,10 +31,6 @@ export default abstract class Base {
             }
         }
     }
-
-    /**
-     * internal Methods
-     */
     protected $_ranRangeNum (min:number, max:number){
         return Math.floor((Math.random() * (max - min + 1)) + min);
     }

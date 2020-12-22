@@ -76,7 +76,7 @@ export default class StringMethods extends Base {
 
         const typeArr = [];
 
-        this.forLoop(0, digit, (i: number)=> typeArr.push({type: null}));
+        this.$_forLoop(0, digit, (i: number)=> typeArr.push({type: null}));
 
             while (true) {
                 if (!include) break;
