@@ -25,28 +25,23 @@ export default class ArrayMethods extends Base {
      * 이진 탐색 알고리즘
      */
     binarySearch(arr: any[], search: any) {
-        console.log(arr)
-        try {
+        let firstIdx = 0;
+        let lastIdx = arr.length - 1;
+        
+        while (firstIdx < lastIdx) {
+            let midIdx = (firstIdx + lastIdx) / 2;
+            let midVal = arr[midIdx];
             
-            if (arr.length === 1 && search === arr[0]) return true;
-            if (arr.length === 1 && search !== arr[0]) return false;
-            if (arr.length === 0) return false;
-            
-            let medium = arr.length;
-            if (search === arr[medium]) return {isExist: true, idx: medium};
-            else {
-                let rs: any[] = [];
-                if (search > arr[medium]) {
-                    this.$_forLoop(medium + 1, arr.length, (i: number)=> rs.push(arr[i]));
-                    return this.binarySearch(rs, search);
-                } else {
-                    this.$_forLoop(0, medium, (i: number)=> rs.push(arr[i]));
-                    return this.binarySearch(rs, search);
-                }
+            if (search == midVal) {
+                return midIdx;
+            } else if (search < midVal) {
+                lastIdx = midIdx - 1;
+            } else {
+                firstIdx = midIdx + 1;
             }
-        } catch (error) {
-            console.error(error)
         }
+        
+        return -1;
     }
 
     /**
