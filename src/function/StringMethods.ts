@@ -1,5 +1,13 @@
 import Base from '../common/Base';
-import { k_first_name, k_last_name, e_female_name, e_male_name, engData, symbolData, numData } from '../data/data';
+import { 
+    k_first_name, 
+    k_last_name, 
+    e_female_name, 
+    e_male_name, 
+    engData, 
+    symbolData, 
+    numData 
+} from '../data/data';
 
 export default class StringMethods extends Base {
 
@@ -27,10 +35,10 @@ export default class StringMethods extends Base {
      * 영어 이름과 한국 이름을 생성할 수 있다.
      * 영어 이름의 경우 성별을 지정할 수 있다.
      * 
-     * (country: "us" or "kor", sex: "male" or "female")
+     * (locale: "us" or "kor", sex: "male" or "female")
      */
-    getRanName(country:string, sex:string = "male") {
-        if (country === "kor") {
+    nameGenerator(locale:string, sex:string = "male") {
+        if (locale === "kor") {
             const idx1 = this.$_ranRangeNum(0, k_last_name.length) - 1;
             const idx2 = this.$_ranRangeNum(0, k_first_name.length) - 1;
             let idx3 = this.$_ranRangeNum(0, k_first_name.length) - 1;
@@ -40,7 +48,7 @@ export default class StringMethods extends Base {
                 else break;
             }
             return k_last_name[idx1] + k_first_name[idx2] + k_first_name[idx3];
-        } else if (country === "us") {
+        } else if (locale === "us") {
             if ( sex === "male" ) {
                 const idx = this.$_ranRangeNum(0, e_male_name.length) - 1;
                 return e_male_name[idx];
@@ -66,7 +74,7 @@ export default class StringMethods extends Base {
      * 
      * (digit:자리수 <- integer, include: all, number, symbol <-string)
      */
-    getRanPassword(digit: number, include: string = null) {
+    passwordGenerator(digit: number, include: string = null) {
         if(digit < 4) return false;
 
 

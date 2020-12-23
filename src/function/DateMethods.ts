@@ -1,3 +1,5 @@
+import { engDayOfWeek, korDayOfWeek } from '../data/data';
+
 export default class DateMethods {
 
     /** 
@@ -5,7 +7,7 @@ export default class DateMethods {
      */
 
     /**
-     * properties getter setter
+     * properties
      */
 
     /**
@@ -57,9 +59,8 @@ export default class DateMethods {
     /**
      * 년을 더하는 메서드 
      */
-    addYear(date: Date, months: number): Date {
-
-        return new Date;
+    addYear(date: Date, years: number): Date {
+        return new Date(date.setFullYear(date.getFullYear() + years));      
     }
 
     /**
@@ -69,7 +70,7 @@ export default class DateMethods {
         const d = date.getDate();
         date.setMonth(date.getMonth() + +months);
         if (date.getDate() != d) {
-          date.setDate(0);
+            date.setDate(0);
         }
         return date;
     }
@@ -85,7 +86,21 @@ export default class DateMethods {
     }
 
     /**
-     * 해당 날짜의 요일을 구하는 메서드 
+     * 해당 날짜의 요일을 구하는 메서드 locale로 언어별로 요일을 얻을 수 있다
+     * (date: Date, locale: eng, kor)
      */
+    getDayOfWeek(date: Date, lang: string): string {
+        const dayIdx = date.getDay();
+        let rs: string;
+        switch(lang) {
+            case "eng":
+                rs = engDayOfWeek[dayIdx];
+                break;
+            case "kor":
+                rs = korDayOfWeek[dayIdx];
+                break;
+        }
+        return rs;
+    }
 
 }

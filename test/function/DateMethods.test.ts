@@ -1,4 +1,5 @@
 import DateMethods from '../../src/function/DateMethods';
+import { engDayOfWeek, korDayOfWeek } from '../../src/data/data';
 import { assert } from 'chai';
 
 describe('DateMethods Test', () => {
@@ -26,5 +27,23 @@ describe('DateMethods Test', () => {
 
         const addMonth = d.addMonths(date3, 1);
         assert.equal(d.getFormDate(addMonth, "-"), "2021-02-28");
+
+        const dayOfweek = [
+            new Date(2021, 1 - 1, 2 + 1),
+            new Date(2021, 1 - 1, 3 + 1), 
+            new Date(2021, 1 - 1, 4 + 1), 
+            new Date(2021, 1 - 1, 5 + 1), 
+            new Date(2021, 1 - 1, 6 + 1), 
+            new Date(2021, 1 - 1, 7 + 1), 
+            new Date(2021, 1 - 1, 8 + 1),
+        ]
+
+        dayOfweek.forEach((day: Date, idx: number) => {
+            assert.equal(d.getDayOfWeek(day, "eng"), engDayOfWeek[idx]);
+            assert.equal(d.getDayOfWeek(day, "kor"), korDayOfWeek[idx]);
+        })
+        
+        const addY = d.addYear(date1, 1);
+        assert.equal(addY.getFullYear(), 2021);
     });
 });

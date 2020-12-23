@@ -1,17 +1,20 @@
-export default class VisualMethods {
+import Base from '../common/Base';
+
+export default class VisualMethods extends Base {
 
     /** 
      * fields
      */
 
     /**
-     * properties getter setter
+     * properties
      */
 
     /**
      *  constructor
      */
     constructor() {
+        super();
     }
 
     /**
@@ -28,6 +31,31 @@ export default class VisualMethods {
     /**
      * 랜덤 색상 생성 메서드
      */
+    colorGenerator(type?: string) {           
+        let rs = "#"  +  Math.floor(Math.random() * 16777215).toString(16);
+        if (type === "rgb") {
+            const color1=Math.floor(Math.random() * 255) + 1;
+            const color2=Math.floor(Math.random() * 255) + 1;
+            const color3=Math.floor(Math.random() * 255) + 1;
+            rs = 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')';
+        }
+        return rs  
+    }
+    /**
+     * (direction: to right, to left, to top, to bottom)
+     */
+    gradientGenerator(direction?: string): string {
+        let direcArr = ["to right", "to left", "to top", "to bottom"]
+        let rs: string;
+        let direc: string;
+
+        if (direction) direc = direction;
+        else direc = direcArr[this.$_ranRangeNum(0, direcArr.length)];
+        
+        rs = `linear-gradient(${direc}, ${this.colorGenerator()}, ${this.colorGenerator()} )`;
+        
+        return rs;
+    }
 
     /**
      * 지정한 아이디 태그에 스크롤 태그를 걸어주는 메서드

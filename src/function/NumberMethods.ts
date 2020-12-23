@@ -55,15 +55,22 @@ export default class NumberMethods extends Base {
             })
 
             if (isString === true && zeroFixBackDigit){
-                if(changeBackDigitZero(digit, zeroFixBackDigit)) return changeBackDigitZero(digit, zeroFixBackDigit);
-                else alert("zeroFixBackDigit값을 digit보다 작게 설정하세요"); return false; 
+                if(changeBackDigitZero(digit, zeroFixBackDigit)) {
+                    return changeBackDigitZero(digit, zeroFixBackDigit);
+                } else {
+                    alert("zeroFixBackDigit값을 digit보다 작게 설정하세요"); return false
+                } 
             } else if (isString === true && !zeroFixBackDigit) return rs;
     
             rs = parseInt(rs);
             rs = String(rs);
             if (rs.length === digit && zeroFixBackDigit){
-                if(changeBackDigitZero(digit, zeroFixBackDigit)) return parseInt(changeBackDigitZero(digit, zeroFixBackDigit));
-                else alert("zeroFixBackDigit값을 digit보다 작게 설정하세요"); return false;
+                if(changeBackDigitZero(digit, zeroFixBackDigit)) {
+                    return parseInt(changeBackDigitZero(digit, zeroFixBackDigit));
+                }
+                else {
+                    alert("zeroFixBackDigit값을 digit보다 작게 설정하세요"); return false;
+                }
             } else if (String(rs).length === digit && !zeroFixBackDigit) break;
         }
 

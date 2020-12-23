@@ -25,31 +25,31 @@ function playDRD(method) {
     const result = document.createElement("span");
     
     switch (method) {
-        case "getRanName-kor":
+        case "nameGenerator-kor":
             detail.innerHTML = "한국이름 랜덤 생성 =>"
             btn.onclick = function(){
-                const output = drd.getRanName("kor"); 
+                const output = drd.nameGenerator("kor"); 
                 result.innerHTML = output; 
             }
             break;
-        case "getRanName-us-male":
+        case "nameGenerator-us-male":
             detail.innerHTML = "영문 남성 이름 생성 =>"
             btn.onclick = function(){ 
-                const output = drd.getRanName("us", "male");
+                const output = drd.nameGenerator("us", "male");
                 result.innerHTML = "male Name: " + output; 
             }
             break;
-        case "getRanName-us-female":
+        case "nameGenerator-us-female":
             detail.innerHTML = "영문 여성 이름 생성 =>"
             btn.onclick = function(){ 
-                const output = drd.getRanName("us", "female");
+                const output = drd.nameGenerator("us", "female");
                 result.innerHTML = "female Name: " + output; 
             }
             break;
-        case "getRanPassword-default":
+        case "passwordGenerator-default":
             detail.innerHTML = "비밀번호 생성 기본 =>"
             btn.onclick = function(){ 
-                const output = drd.getRanPassword();
+                const output = drd.passwordGenerator();
                 result.innerHTML = "random password: " + output; 
             }
             break;
@@ -61,10 +61,10 @@ function playDRD(method) {
     root.appendChild(div);
 }
 
-    playDRD("getRanName-kor");
-    playDRD("getRanName-us-male");
-    playDRD("getRanName-us-female");
-    playDRD("getRanPassword-default");
+    playDRD("nameGenerator-kor");
+    playDRD("nameGenerator-us-male");
+    playDRD("nameGenerator-us-female");
+    playDRD("passwordGenerator-default");
 
 
 

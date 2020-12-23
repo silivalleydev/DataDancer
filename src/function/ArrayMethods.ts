@@ -1,17 +1,20 @@
-export default class ArrayMethods {
+import Base from '../common/Base';
+
+export default class ArrayMethods extends Base {
 
     /** 
      * fields
      */
 
     /**
-     * properties getter setter
+     * properties
      */
 
     /**
      *  constructor
      */
     constructor() {
+        super();
     }
 
     /**
@@ -19,18 +22,34 @@ export default class ArrayMethods {
      */
 
     /**
-     * 입력된 배열의 요소를 랜덤하게 뽑는다.(짝수 또는 홀수 요소 뽑기 가능)
+     * 이진 탐색 알고리즘
      */
+    binarySearch(arr: any[], search: any) {
+        console.log(arr)
+        try {
+            
+            if (arr.length === 1 && search === arr[0]) return true;
+            if (arr.length === 1 && search !== arr[0]) return false;
+            if (arr.length === 0) return false;
+            
+            let medium = arr.length;
+            if (search === arr[medium]) return {isExist: true, idx: medium};
+            else {
+                let rs: any[] = [];
+                if (search > arr[medium]) {
+                    this.$_forLoop(medium + 1, arr.length, (i: number)=> rs.push(arr[i]));
+                    return this.binarySearch(rs, search);
+                } else {
+                    this.$_forLoop(0, medium, (i: number)=> rs.push(arr[i]));
+                    return this.binarySearch(rs, search);
+                }
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     /**
-     * 랜덤 색상 생성 메서드
-     */
-
-    /**
-     * 랜덤 날짜 생성 메서드
-     */
-
-    /**
-     * 랜덤 json Data 생성 메서드
+     * 배열 중간 요소 제거 메서드
      */
 }
