@@ -50,7 +50,7 @@ export default class VisualMethods extends Base {
         let direc: string;
 
         if (direction) direc = direction;
-        else direc = direcArr[this.$_ranRangeNum(0, direcArr.length)];
+        else direc = direcArr[this.$_ranRangeNum(0, direcArr.length - 1)];
         
         rs = `linear-gradient(${direc}, ${this.colorGenerator()}, ${this.colorGenerator()} )`;
         

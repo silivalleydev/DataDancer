@@ -49,7 +49,17 @@ function playDRD(method) {
                 st.display = "inline-block"; 
             }
             break;
-
+        case "gradient-default":
+            detail.innerHTML = "그라디언트 결과 rgb =>"
+            btn.onclick = function(){ 
+                const output = drd.gradientGenerator(); 
+                result.innerHTML = output;
+                const st = result.style;
+                st.width = "100%"; 
+                st.height = "200px"; 
+                st.background = output; 
+                st.display = "inline-block"; 
+            }
             break;
     }
 
@@ -61,7 +71,7 @@ function playDRD(method) {
 
     playDRD("colorGen-default");
     playDRD("colorGen-rgb");
-    playDRD("getRanName-us-female");
+    playDRD("gradient-default");
     playDRD("getRanPassword-default");
 
 

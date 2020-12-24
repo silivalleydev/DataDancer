@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc && yarn rollup -c",
+    "bundle": "tsc && yarn rollup -c",
     "t": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha --require ts-node/register 'test/**/**.test.ts'"
   },
   "author": "",
