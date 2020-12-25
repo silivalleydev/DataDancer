@@ -42,7 +42,7 @@ export default class VisualMethods extends Base {
         return rs  
     }
     /**
-     * (direction: to right, to left, to top, to bottom)
+     * (direction?: to right, to left, to top, to bottom)
      */
     gradientGenerator(direction?: string): string {
         let direcArr = ["to right", "to left", "to top", "to bottom"]
