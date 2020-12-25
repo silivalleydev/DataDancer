@@ -21,7 +21,9 @@ export default class DateMethods {
      */
     /**
      * 날짜를 비교하는 메서드
+     * 
      * (fastDate: 제일 빠른날짜인 Date 객체, latestDate: 제일 늦은 날짜인 Date 객체)
+     * 
      * latestDate가 fastDate보다 더 늦은 날짜라면 true를 반환한다.
      */
     dateCompare(fastDate: Date, latestDate: Date): boolean {
@@ -31,9 +33,12 @@ export default class DateMethods {
 
     /**
      * Form을 가진 String 날짜를 반환하는 메서드
+     * 
      * (date: 날짜객체, form: 연, 월, 일 사이에 넣을 텍스트)
      * 
+     * 
      * 예를 들어 2020년 10월 11일인 Date객체를 넣고 form을 "-"로 넣어주면
+     * 
      * 2020-10-11 이 String으로 반환된다. 
      */
     getFormDate(date: Date, form: string): string {
@@ -87,6 +92,7 @@ export default class DateMethods {
 
     /**
      * 해당 날짜의 요일을 구하는 메서드 locale로 언어별로 요일을 얻을 수 있다
+     * 
      * (date: Date, locale: eng, kor)
      */
     getDayOfWeek(date: Date, lang: string): string {

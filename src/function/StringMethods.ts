@@ -1,13 +1,15 @@
 import Base from '../common/Base';
 import { 
+    engData, 
+    symbolData, 
+    numData 
+} from '../data/passwordData';
+import {
     k_first_name, 
     k_last_name, 
     e_female_name, 
     e_male_name, 
-    engData, 
-    symbolData, 
-    numData 
-} from '../data/data';
+} from '../data/nameData';
 
 export default class StringMethods extends Base {
 
@@ -39,21 +41,21 @@ export default class StringMethods extends Base {
      */
     nameGenerator(locale:string, sex:string = "male") {
         if (locale === "kor") {
-            const idx1 = this.$_ranRangeNum(0, k_last_name.length) - 1;
-            const idx2 = this.$_ranRangeNum(0, k_first_name.length) - 1;
-            let idx3 = this.$_ranRangeNum(0, k_first_name.length) - 1;
+            const idx1 = this.$_ranRangeNum(0, k_last_name.length - 1);
+            const idx2 = this.$_ranRangeNum(0, k_first_name.length - 1);
+            let idx3 = this.$_ranRangeNum(0, k_first_name.length - 1);
 
             while(true) {
-                if (idx2 === idx3) idx3 = this.$_ranRangeNum(0, k_first_name.length) - 1;
+                if (idx2 === idx3) idx3 = this.$_ranRangeNum(0, k_first_name.length - 1);
                 else break;
             }
             return k_last_name[idx1] + k_first_name[idx2] + k_first_name[idx3];
         } else if (locale === "us") {
             if ( sex === "male" ) {
-                const idx = this.$_ranRangeNum(0, e_male_name.length) - 1;
+                const idx = this.$_ranRangeNum(0, e_male_name.length - 1);
                 return e_male_name[idx];
             } else {
-                const idx = this.$_ranRangeNum(0, e_female_name.length) - 1;
+                const idx = this.$_ranRangeNum(0, e_female_name.length - 1);
                 return e_female_name[idx]
             }
         }

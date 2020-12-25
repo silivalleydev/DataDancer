@@ -22,19 +22,47 @@ export default class ArrayMethods extends Base {
      */
 
     /**
-     * quick sort
+     * 기수 정렬
      */
-    quickSort(arr: any[]) {
-        if (arr.length <= 1) { 
+    radixSort(nums) {
+        let maxDigits = this.$_mostDigits(nums);
+        for (let k = 0; k < maxDigits; k++) {
+            let buckets = Array.from({length: 10}, () => []);
+            for (let num of nums) {
+                let digit = this.$_getDigit(num, k);
+                buckets[digit].push(num);
+            }
+            nums = [].concat(...buckets);
+        }
+        return nums;
+    }
+
+    /**
+     * quick sort
+     * 
+     * 
+     */
+    quickSort(arr: any[], key?: string) {
+        if (arr.length <= 1) {
             return arr;
         } else {
-    
             let left = [];
             let right = [];
             let newArray = [];
             let pivot = arr.pop();
             let length = arr.length;
     
+
+        if (key) {
+            for (let i = 0; i < length; i++) {
+                if (arr[i][key] <= pivot[key]) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+            return newArray.concat(this.quickSort(left, key), pivot, this.quickSort(right, key));
+        } else {
             for (let i = 0; i < length; i++) {
                 if (arr[i] <= pivot) {
                     left.push(arr[i]);
@@ -42,21 +70,30 @@ export default class ArrayMethods extends Base {
                     right.push(arr[i]);
                 }
             }
-    
             return newArray.concat(this.quickSort(left), pivot, this.quickSort(right));
+        }
+    
         }
     }
 
     /**
      * mergeSort
      */
-    mergeSort(arr: any[]) {
-        if (arr.length <= 1) return arr;
-        let mid = Math.floor(arr.length / 2),
-            left = this.mergeSort(arr.slice(0, mid)),
-            right = this.mergeSort(arr.slice(mid));
-    
-        return this.$_merge(left, right);
+    mergeSort(array: any[]) {
+        if (array.length === 1) {
+            return array
+        }
+          // Split Array in into right and left
+        const length = array.length;
+        const middle = Math.floor(length / 2)
+        const left = array.slice(0, middle) 
+        const right = array.slice(middle)
+        
+        
+        return this.$_merge(
+            this.mergeSort(left),
+            this.mergeSort(right)
+        )
     };
 
     
@@ -66,9 +103,9 @@ export default class ArrayMethods extends Base {
      * 
      * (arr: 배열, search: 찾을요소)
      */
-    binarySearch(arr: any[], search: any) {
-        const sortArr = this.quickSort(arr);
-        return this.$_binarySearchAl(sortArr, search);
+    binarySearch(arr: any[], search: any, key?: string) {
+        const sortArr = this.quickSort(arr, key);
+        return this.$_binarySearchAl(sortArr, search, key);
     }
 
 
@@ -113,7 +150,7 @@ export default class ArrayMethods extends Base {
         return sorted.concat(arr1.slice().concat(arr2.slice()));
     };
 
-    private $_binarySearchAl(arr: any[], search: any) {
+    private $_binarySearchAl(arr: any[], search: any, key?: string) {
         let firstIdx = 0;
         let lastIdx = arr.length - 1;
         
@@ -131,5 +168,24 @@ export default class ArrayMethods extends Base {
         }
         
         return false;
+    }
+
+    private $_getDigit(num, place) {
+        return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
+    }
+
+    private $_digitCount(num) {
+        if (num === 0) {
+            return 1;
+        }
+        return Math.floor(Math.log10(Math.abs(num))) + 1;
+    }
+
+    private $_mostDigits(nums) {
+        let max = 0;
+        for (let num of nums) {
+            max = Math.max(max, this.$_digitCount(num));
+        }
+        return max;
     }
 }
