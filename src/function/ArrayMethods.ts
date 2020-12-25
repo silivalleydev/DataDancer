@@ -116,9 +116,10 @@ export default class ArrayMethods extends Base {
         const arr1 = arr;
         let arr2: any[];
         if (typeof target === "number") {
-            arr2 = arr1.splice(0, target);
-            arr1.shift();
-            return arr2.concat(arr1);
+            arr1.splice(target, 1);
+            console.log('splice',arr1)
+            return arr1;
+
         } else if (target.length === 2) {
             let arr3 = [].concat(arr);
             let st = target[0];

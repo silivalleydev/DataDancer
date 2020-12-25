@@ -9,6 +9,9 @@ import {
     k_last_name, 
     e_female_name, 
     e_male_name, 
+    jp_female_name,
+    jp_male_name,
+    jp_last_name
 } from '../data/nameData';
 
 export default class StringMethods extends Base {
@@ -37,7 +40,7 @@ export default class StringMethods extends Base {
      * 영어 이름과 한국 이름을 생성할 수 있다.
      * 영어 이름의 경우 성별을 지정할 수 있다.
      * 
-     * (locale: "us" or "kor", sex: "male" or "female")
+     * (locale: "us" or "kor" or jp, sex: "male" or "female")
      */
     nameGenerator(locale:string, sex:string = "male") {
         if (locale === "kor") {
@@ -57,6 +60,18 @@ export default class StringMethods extends Base {
             } else {
                 const idx = this.$_ranRangeNum(0, e_female_name.length - 1);
                 return e_female_name[idx]
+            }
+        } else if (locale === "jp") {
+            const laIdx = this.$_ranRangeNum(0, jp_last_name.length - 1); 
+            const lastName = jp_last_name[laIdx].split(', ');
+            if ( sex === "male" ) {
+                const idx = this.$_ranRangeNum(0, jp_male_name.length - 1);
+                const name = jp_male_name[idx].split(', ');
+                return `${name[0]} ${lastName[0]}(${name[1]} ${lastName[1]})`;
+            } else {
+                const idx = this.$_ranRangeNum(0, jp_female_name.length - 1);
+                const name = jp_female_name[idx].split(', ');
+                return `${name[0]} ${lastName[0]}(${name[1]} ${lastName[1]})`;
             }
         }
     }

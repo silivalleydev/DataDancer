@@ -1,4 +1,4 @@
-import { engDayOfWeek, korDayOfWeek } from '../data/data';
+import { engDayOfWeek, korDayOfWeek } from '../data/dateData';
 
 export default class DateMethods {
 

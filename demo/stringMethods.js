@@ -46,10 +46,24 @@ function playDRD(method) {
                 result.innerHTML = "female Name: " + output; 
             }
             break;
+        case "nameGenerator-jp-male":
+            detail.innerHTML = "일본 남성 이름 생성 =>"
+            btn.onclick = function(){ 
+                const output = drd.nameGenerator("jp", "male");
+                result.innerHTML = "japanese male Name: " + output; 
+            }
+            break;
+        case "nameGenerator-jp-female":
+            detail.innerHTML = "일본 여성 이름 생성 =>"
+            btn.onclick = function(){ 
+                const output = drd.nameGenerator("jp", "female");
+                result.innerHTML = "japanese female Name: " + output; 
+            }
+            break;
         case "passwordGenerator-default":
             detail.innerHTML = "비밀번호 생성 기본 =>"
             btn.onclick = function(){ 
-                const output = drd.passwordGenerator();
+                const output = drd.passwordGenerator(8);
                 result.innerHTML = "random password: " + output; 
             }
             break;
@@ -64,6 +78,8 @@ function playDRD(method) {
     playDRD("nameGenerator-kor");
     playDRD("nameGenerator-us-male");
     playDRD("nameGenerator-us-female");
+    playDRD("nameGenerator-jp-male");
+    playDRD("nameGenerator-jp-female");
     playDRD("passwordGenerator-default");
 
 

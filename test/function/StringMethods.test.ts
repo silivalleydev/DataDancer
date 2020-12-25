@@ -27,4 +27,4 @@ describe('StringMethods Test', () => {
             assert.equal(rs && rs.length, 10);
         }
     });
-  });
+});

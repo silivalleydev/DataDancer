@@ -1,5 +1,5 @@
 import DateMethods from '../../src/function/DateMethods';
-import { engDayOfWeek, korDayOfWeek } from '../../src/data/data';
+import { engDayOfWeek, korDayOfWeek } from '../../src/data/dateData';
 import { assert } from 'chai';
 
 describe('DateMethods Test', () => {
