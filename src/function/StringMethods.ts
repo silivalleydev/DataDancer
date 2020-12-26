@@ -36,13 +36,18 @@ export default class StringMethods extends Base {
      */
 
     /**
-     * 랜덤 이름 생성 메서드 
-     * 영어 이름과 한국 이름을 생성할 수 있다.
-     * 영어 이름의 경우 성별을 지정할 수 있다.
+     * nameGenerator
      * 
-     * (locale: "us" or "kor" or jp, sex: "male" or "female")
+     * support us, japan, korea name
+     * 
+     * if you generate us or japanese Name, you can choose gender
+     * 
+     * 외국(영어권, 일어권) 이름과 한국 이름을 생성할 수 있다.
+     * 외국 이름의 경우 성별을 지정할 수 있다.
+     * 
+     * (locale: "us" or "kor" or "jp", gender: "male" or "female")
      */
-    nameGenerator(locale:string, sex:string = "male") {
+    nameGenerator(locale:string, gender:string = "male") {
         if (locale === "kor") {
             const idx1 = this.$_ranRangeNum(0, k_last_name.length - 1);
             const idx2 = this.$_ranRangeNum(0, k_first_name.length - 1);
@@ -54,7 +59,7 @@ export default class StringMethods extends Base {
             }
             return k_last_name[idx1] + k_first_name[idx2] + k_first_name[idx3];
         } else if (locale === "us") {
-            if ( sex === "male" ) {
+            if ( gender === "male" ) {
                 const idx = this.$_ranRangeNum(0, e_male_name.length - 1);
                 return e_male_name[idx];
             } else {
@@ -64,7 +69,7 @@ export default class StringMethods extends Base {
         } else if (locale === "jp") {
             const laIdx = this.$_ranRangeNum(0, jp_last_name.length - 1); 
             const lastName = jp_last_name[laIdx].split(', ');
-            if ( sex === "male" ) {
+            if ( gender === "male" ) {
                 const idx = this.$_ranRangeNum(0, jp_male_name.length - 1);
                 const name = jp_male_name[idx].split(', ');
                 return `${name[0]} ${lastName[0]}(${name[1]} ${lastName[1]})`;
