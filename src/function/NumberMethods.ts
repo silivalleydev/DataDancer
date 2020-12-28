@@ -1,9 +1,9 @@
 import Base from '../common/Base';
 
-type Division = {
+type Deviation = {
     origin: number[],
     avarage: number,
-    division: number[]
+    deviation: number[]
 }
 export default class NumberMethods extends Base {
 
@@ -108,28 +108,29 @@ export default class NumberMethods extends Base {
         return rs / arr.length; 
     }
 
-    division(arr: number[]): Division {
+    deviation(arr: number[]): Deviation {
         const avarage = this.avarage(arr);
-        const division = [];
+        const deviation = [];
 
         arr.forEach(num => {
-            division.push(num - avarage);
+            deviation.push(num - avarage);
         })
 
         return {
             origin: arr,
             avarage,
-            division,
+            deviation,
         }
     }
-    
+
     variance(arr: number[]) {
-        const division = this.division(arr).division;
+        const deviation = this.deviation(arr).deviation;
         let rs = 0;
-        division.forEach(d => {
+        deviation.forEach(d => {
             rs += d*d;
         });
-        rs = rs / division.length;
+        rs = rs / deviation.length;
         return rs;
     }
+
 }

@@ -38,9 +38,9 @@ describe('NumberMethods Test', () => {
             assert.equal(n.avarage(numArr), 3);
         })
 
-        it('division', ()=>{
+        it('deviation', ()=>{
             const numArr = [175, 177, 179, 181, 183];
-            console.log(n.division(numArr));
+            console.log(n.deviation(numArr));
         })
         
         it('variance', ()=>{
