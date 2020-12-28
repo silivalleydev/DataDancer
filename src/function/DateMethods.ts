@@ -93,7 +93,7 @@ export default class DateMethods {
     /**
      * 해당 날짜의 요일을 구하는 메서드 locale로 언어별로 요일을 얻을 수 있다
      * 
-     * (date: Date, locale: eng, kor)
+     * (date: Date, locale: eng, kor, jp)
      */
     getDayOfWeek(date: Date, lang: string): string {
         const dayIdx = date.getDay();
