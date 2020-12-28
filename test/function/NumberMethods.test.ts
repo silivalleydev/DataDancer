@@ -43,5 +43,9 @@ describe('NumberMethods Test', () => {
             console.log(n.division(numArr));
         })
         
+        it('variance', ()=>{
+            const numArr = [175, 177, 179, 181, 183];
+            console.log(n.variance(numArr));
+        })
 
 });

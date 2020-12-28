@@ -122,5 +122,14 @@ export default class NumberMethods extends Base {
             division,
         }
     }
-
+    
+    variance(arr: number[]) {
+        const division = this.division(arr).division;
+        let rs = 0;
+        division.forEach(d => {
+            rs += d*d;
+        });
+        rs = rs / division.length;
+        return rs;
+    }
 }
