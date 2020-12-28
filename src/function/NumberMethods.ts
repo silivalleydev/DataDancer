@@ -1,4 +1,5 @@
 import Base from '../common/Base';
+import ArrayMethods from '../../src/function/ArrayMethods';
 
 type Deviation = {
     origin: number[],
@@ -10,11 +11,17 @@ type StandardDeviation = {
     variance: number,
     standardDeviation: number
 }
+
+type MinMax = {
+    min: number,
+    max: number
+}
 export default class NumberMethods extends Base {
 
     /** 
      * fields
      */
+    private a: ArrayMethods;
 
     /**
      * properties
@@ -25,6 +32,7 @@ export default class NumberMethods extends Base {
      */
     constructor() {
         super();
+        this.a = new ArrayMethods();
     }
 
     /**
@@ -160,6 +168,14 @@ export default class NumberMethods extends Base {
             variance,
             standardDeviation: Math.sqrt(variance)
         };
+    }
+
+    getMinMax(arr: number[]): MinMax {
+        const sorted = this.a.quickSort(arr);
+        return {
+            min: sorted[0],
+            max: sorted[sorted.length - 1]
+        }
     }
 
 }

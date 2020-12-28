@@ -53,4 +53,12 @@ describe('NumberMethods Test', () => {
             console.log(n.standardDeviation(numArr));
         })
 
+        it('standardDeviation', ()=>{
+            const numArr = [];
+            for (let i = 0; i < 100; i++) {
+                numArr.push(n.getRanRangeNum(0, 10000));
+            }
+            console.log(numArr, n.getMinMax(numArr));
+        })
+
 });
