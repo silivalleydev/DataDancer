@@ -1,4 +1,10 @@
 import Base from '../common/Base';
+
+type StandardDivision = {
+    origin: number[],
+    avarage: number,
+    division: number[]
+}
 export default class NumberMethods extends Base {
 
     /** 
@@ -100,5 +106,20 @@ export default class NumberMethods extends Base {
         let rs = 0;
         rs += this.sum(arr);
         return rs / arr.length; 
+    }
+
+    standardDivision(arr: number[]): StandardDivision {
+        const avarage = this.avarage(arr);
+        const division = [];
+
+        arr.forEach(num => {
+            division.push(num - avarage);
+        })
+
+        return {
+            origin: arr,
+            avarage,
+            division,
+        }
     }
 }

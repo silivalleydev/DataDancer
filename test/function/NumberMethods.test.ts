@@ -38,4 +38,9 @@ describe('NumberMethods Test', () => {
             assert.equal(n.avarage(numArr), 3);
         })
 
+        it('standardDivision', ()=>{
+            const numArr = [175, 177, 179, 181, 183];
+            console.log(n.standardDivision(numArr));
+        })
+
 });
