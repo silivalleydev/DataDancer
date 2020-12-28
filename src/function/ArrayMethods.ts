@@ -133,6 +133,37 @@ export default class ArrayMethods extends Base {
     }
 
     /**
+     * 배열 랜덤 요소 추출
+     * 
+     * 배열을 넣으면 요소중 하나를 랜덤하게 반환한다.
+     * 
+     * howMany에 숫자를 넣으면 숫자를 넣은 만큼 랜덤 요소를 배열로 반환한다.
+     * 
+     * (arr: 배열, howMany?: number)
+     */
+    getRanElement(arr: any[], howMany?: number) {
+        const length = arr.length - 1;
+        if (howMany) {
+            const idx = []
+            const rs = []
+            
+            let num = howMany > arr.length ? arr.length : howMany;
+            while (num) {
+                const ranNum = this.$_ranRangeNum(0, length);
+                if (idx.indexOf(ranNum) === -1) {
+                    idx.push(ranNum);
+                    num -= 1;
+                }
+            }
+            idx.forEach(i=>{
+                rs.push(arr[i]);
+            })
+
+            return rs;
+        } else return arr[this.$_ranRangeNum(0, length)];
+    }
+
+    /**
      * internal member
      */
     private $_merge(arr1, arr2) {
