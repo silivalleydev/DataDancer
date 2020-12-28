@@ -48,4 +48,9 @@ describe('NumberMethods Test', () => {
             console.log(n.variance(numArr));
         })
 
+        it('standardDeviation', ()=>{
+            const numArr = [175, 177, 179, 181, 183];
+            console.log(n.standardDeviation(numArr));
+        })
+
 });

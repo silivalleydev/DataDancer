@@ -5,6 +5,11 @@ type Deviation = {
     avarage: number,
     deviation: number[]
 }
+
+type StandardDeviation = {
+    variance: number,
+    standardDeviation: number
+}
 export default class NumberMethods extends Base {
 
     /** 
@@ -123,7 +128,7 @@ export default class NumberMethods extends Base {
         }
     }
 
-    variance(arr: number[]) {
+    variance(arr: number[]): number {
         const deviation = this.deviation(arr).deviation;
         let rs = 0;
         deviation.forEach(d => {
@@ -131,6 +136,15 @@ export default class NumberMethods extends Base {
         });
         rs = rs / deviation.length;
         return rs;
+    }
+
+    standardDeviation(arr: number[]): StandardDeviation {
+        const variance = this.variance(arr);
+
+        return {
+            variance,
+            standardDeviation: Math.sqrt(variance)
+        };
     }
 
 }
