@@ -1,6 +1,6 @@
 import Base from '../common/Base';
 
-type StandardDivision = {
+type Division = {
     origin: number[],
     avarage: number,
     division: number[]
@@ -108,7 +108,7 @@ export default class NumberMethods extends Base {
         return rs / arr.length; 
     }
 
-    standardDivision(arr: number[]): StandardDivision {
+    division(arr: number[]): Division {
         const avarage = this.avarage(arr);
         const division = [];
 
@@ -122,4 +122,5 @@ export default class NumberMethods extends Base {
             division,
         }
     }
+
 }
