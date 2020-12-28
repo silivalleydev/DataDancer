@@ -87,4 +87,12 @@ export default class NumberMethods extends Base {
     getRanRangeNum(min: number, max: number): number {
         return this.$_ranRangeNum(min, max)
     }
+
+    sum(arr: number[]): number {
+        let rs = 0;
+        arr.forEach(n=>{
+            rs += n;
+        })
+        return rs;
+    }
 }

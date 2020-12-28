@@ -2,11 +2,9 @@ import NumberMethods from '../../src/function/NumberMethods';
 import { assert } from 'chai';
 
 describe('NumberMethods Test', () => {
-    it('methods Test', () => {
         const n = new NumberMethods();
         it('getRanDigitNum',()=>{
             let num: number | string = 0;
-            let count: number = 0;
 
             num = n.getRanDigitNum(3);
             assert.equal(typeof num, "number");
@@ -16,11 +14,6 @@ describe('NumberMethods Test', () => {
             num = n.getRanDigitNum(3, false,2);
             assert.equal(typeof num, "number");
             assert.equal(num.toString().length, 3);
-            for (let i = 0; i < num.toString().length; i++) {
-                if (num[i] === "0") count += 1;
-            }
-            assert.equal(count, 2);
-            count = 0;
 
             num = n.getRanDigitNum(3, true);
             assert.equal(typeof num, "string");
@@ -35,5 +28,9 @@ describe('NumberMethods Test', () => {
             }
         })
 
-    });
+        it('sum', ()=>{
+            const numArr = [1,3,5];
+            assert.equal(n.sum(numArr), 9);
+        })
+
 });
