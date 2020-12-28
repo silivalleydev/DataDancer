@@ -99,6 +99,9 @@ export default class NumberMethods extends Base {
         return this.$_ranRangeNum(min, max)
     }
 
+    /**
+     * 입력된 숫자 배열의 합을 구하는 메서드
+     */
     sum(arr: number[]): number {
         let rs = 0;
         arr.forEach(n=>{
@@ -107,12 +110,18 @@ export default class NumberMethods extends Base {
         return rs;
     }
 
+    /**
+     * 입력된 숫자 배열의 평균을 구하는 메서드
+     */
     avarage(arr: number[]): number {
         let rs = 0;
         rs += this.sum(arr);
         return rs / arr.length; 
     }
 
+    /**
+     * 입력된 숫자배열의 편차 값을 구하는 메서드
+     */
     deviation(arr: number[]): Deviation {
         const avarage = this.avarage(arr);
         const deviation = [];
@@ -128,6 +137,9 @@ export default class NumberMethods extends Base {
         }
     }
 
+    /**
+     * 입력된 숫자배열의 분산 값을 구하는 메서드
+     */
     variance(arr: number[]): number {
         const deviation = this.deviation(arr).deviation;
         let rs = 0;
@@ -138,6 +150,9 @@ export default class NumberMethods extends Base {
         return rs;
     }
 
+    /**
+     * 입력된 숫자배열의 표준 편차 값을 구하는 메서드
+     */
     standardDeviation(arr: number[]): StandardDeviation {
         const variance = this.variance(arr);
 
