@@ -90,6 +90,6 @@ describe('ArrayMethods Test', () => {
         const arr4 = [1,2,3,4,5,6,7];
         console.log('result',a.rmMiddleArrIdx(arr4, 1))
         const arr5 = [1,2,3,4,5,6,7];
-        console.log('result',a.rmMiddleArrIdx(arr5, [3, 5]))
+        console.log('result',a.rmMiddleArrIdx(arr5, [3, 5, 6]))
     });
 });

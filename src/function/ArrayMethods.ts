@@ -111,30 +111,25 @@ export default class ArrayMethods extends Base {
 
     /**
      * 배열 인덱스로 중간 요소 제거 메서드
+     * 
+     * target에 배열로 여러개의 인덱스를 넣어주면 해당 인덱스가 삭제된다.
      */
     rmMiddleArrIdx(arr: any[], target: number | number[]) {
         const arr1 = arr;
-        let arr2: any[];
         if (typeof target === "number") {
             arr1.splice(target, 1);
-            console.log('splice',arr1)
-            return arr1;
-
-        } else if (target.length === 2) {
-            let arr3 = [].concat(arr);
-            let st = target[0];
-            let end = target[1];
-            if (target[1] < target[0]) {
-                st = target[1];
-                end = target[0];
-            }
-            if (end > arr.length - 1) return false
-            arr3.splice(0, end);
-            arr2 = arr1.splice(0, st);
-            arr3.shift();
-            return arr2.concat(arr3);
+        } else if (target.length > 1) {
+            const data = []
+            target.forEach(a=>{
+                data.push(arr1[a])
+            })
+            
+            data.forEach(a=>{
+                const idx = arr1.indexOf(a);
+                if (idx !== -1) arr1.splice(idx, 1);
+            })
         }
-        return false;
+        return arr1;
     }
 
     /**
