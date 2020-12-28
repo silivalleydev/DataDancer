@@ -33,4 +33,9 @@ describe('NumberMethods Test', () => {
             assert.equal(n.sum(numArr), 9);
         })
 
+        it('avarage', ()=>{
+            const numArr = [1,3,5];
+            assert.equal(n.avarage(numArr), 3);
+        })
+
 });

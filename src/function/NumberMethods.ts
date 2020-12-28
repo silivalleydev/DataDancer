@@ -95,4 +95,10 @@ export default class NumberMethods extends Base {
         })
         return rs;
     }
+
+    avarage(arr: number[]): number {
+        let rs = 0;
+        rs += this.sum(arr);
+        return rs / arr.length; 
+    }
 }
