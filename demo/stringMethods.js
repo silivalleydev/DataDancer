@@ -1,8 +1,8 @@
-import DataRandomDancer from '../build/dataRandomDancer.js';
+import DataDancer from '../build/dataDancer.js';
 
-console.log(DataRandomDancer);
+console.log(DataDancer);
 
-const drd = new DataRandomDancer.StringMethods();
+const drd = new DataDancer.StringMethods();
 
 const root = document.getElementById("root");
 

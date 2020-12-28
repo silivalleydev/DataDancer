@@ -4,7 +4,7 @@ import tslint from 'rollup-plugin-tslint';
 export default {
   input: 'src/main.ts',
   output: {
-    file: 'build/dataRandomDancer.js',
+    file: 'build/dataDancer.js',
     format: 'es'
   },
   plugins: [

@@ -1,5 +1,4 @@
 
-import DataRandomDancer from '../build/dataRandomDancer.js';
 
 const dataArr = [];
 const idxlist = [275, 405, 439, 877, 1085, 161]

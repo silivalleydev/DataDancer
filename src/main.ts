@@ -4,7 +4,7 @@ import VisualMethods from './function/VisualMethods';
 import DateMethods from './function/DateMethods';
 import ArrayMethods from './function/ArrayMethods';
 
-export default class DataRandomDancer {
+export default class DataDancer {
 
     /**
      * 버전 확인
