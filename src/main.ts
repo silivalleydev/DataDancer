@@ -12,12 +12,6 @@ export default class DataDancer {
     static getVersion (): string {
         return "";
     }
-    static getLicenseType(): string {
-        return "";
-    }
-    static getLicenseCode(): string {
-        return "";
-    }
 
     static NumberMethods = NumberMethods;
     static StringMethods = StringMethods;
