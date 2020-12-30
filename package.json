@@ -20,6 +20,7 @@
   },
   "scripts": {
     "bundle": "tsc && rollup -c rollup.config.js",
+    "publish": "npm publish",
     "t": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha --require ts-node/register 'test/**/**.test.ts'",
     "pr": "npx prettier --write src/**/**.ts"
   },
