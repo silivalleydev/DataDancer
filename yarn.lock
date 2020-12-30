@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@babel/code-frame@^7.0.0":
-  "integrity" "sha512-vG6SvB6oYEhvgisZNFRmRCUkLz11c7rp+tbNTynGqc6mS1d5ATd/sGyV6W0KZZnXRKMTzZDRgQT3Ou9jhpAfUg=="
-  "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.10.4.tgz"
-  "version" "7.10.4"
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4":
+  "integrity" "sha512-Zt1yodBx1UcyiePMSkWnU4hPqhwq7hGi2nFL1LeA3EUl+q2LQx16MISgJ0+z7dnmgvP9QtIleuETGOiOH1RcIw=="
+  "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.12.11.tgz"
+  "version" "7.12.11"
   dependencies:
     "@babel/highlight" "^7.10.4"
 
 "@babel/helper-validator-identifier@^7.10.4":
-  "integrity" "sha512-3U9y+43hz7ZM+rzG24Qe2mufW5KhvFg/NhnNph+i9mgCtdTCtMJuI1TMkrIUiK7Ix4PYlRF9I5dhqaLYA/ADXw=="
-  "resolved" "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.10.4.tgz"
-  "version" "7.10.4"
+  "integrity" "sha512-np/lG3uARFybkoHokJUmf1QfEvRVCPbmQeUQpKow5cQ3xWrV9i3rUHodKDJPQfTVX61qKi+UdYk8kik84n7XOw=="
+  "resolved" "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.12.11.tgz"
+  "version" "7.12.11"
 
 "@babel/highlight@^7.10.4":
   "integrity" "sha512-i6rgnR/YgPEQzZZnbTHHuZdlE8qyoBNalD6F+q4vAFlcMEcqmkoG+mPqJYJCo63qPf74+Y1UZsl3l6f7/RIkmA=="
@@ -562,6 +562,13 @@
   dependencies:
     "chalk" "^4.0.0"
 
+"magic-string@^0.25.7":
+  "integrity" "sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA=="
+  "resolved" "https://registry.npmjs.org/magic-string/-/magic-string-0.25.7.tgz"
+  "version" "0.25.7"
+  dependencies:
+    "sourcemap-codec" "^1.4.4"
+
 "make-dir@^3.0.2":
   "integrity" "sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw=="
   "resolved" "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz"
@@ -767,6 +774,16 @@
   dependencies:
     "path-parse" "^1.0.6"
 
+"rollup-plugin-dts@^2.0.1":
+  "integrity" "sha512-y38NSXIY37YExCumbGBTL5dXg7pL7XD+Kbe98iEHWFN9yiKJf7t4kKBOkml5ylUDjQIXBnNClGDeRktc1T5dmA=="
+  "resolved" "https://registry.npmjs.org/rollup-plugin-dts/-/rollup-plugin-dts-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "@babel/code-frame" "^7.10.4"
+    "magic-string" "^0.25.7"
+  optionalDependencies:
+    "@babel/code-frame" "^7.10.4"
+
 "rollup-plugin-tslint@^0.2.2":
   "integrity" "sha512-1yF7bnDALlqgReMIsNDCNXOYqzCw9A8Ur5AS4RzlY7IsRBKB0yb+wx8ZCh0zBcXCeJP5tx36oqec4aX2Pzzttw=="
   "resolved" "https://registry.npmjs.org/rollup-plugin-tslint/-/rollup-plugin-tslint-0.2.2.tgz"
@@ -794,10 +811,10 @@
   dependencies:
     "estree-walker" "^0.6.1"
 
-"rollup@^1.20.0||^2.0.0", "rollup@^2.33.3", "rollup@>=1.26.3":
-  "integrity" "sha512-RpayhPTe4Gu/uFGCmk7Gp5Z9Qic2VsqZ040G+KZZvsZYdcuWaJg678JeDJJvJeEQXminu24a2au+y92CUWVd+w=="
-  "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.33.3.tgz"
-  "version" "2.33.3"
+"rollup@^1.20.0||^2.0.0", "rollup@^2.33.3", "rollup@^2.34.2", "rollup@>=1.26.3":
+  "integrity" "sha512-q5KxEyWpprAIcainhVy6HfRttD9kutQpHbeqDTWnqAFNJotiojetK6uqmcydNMymBEtC4I8bCYR+J3mTMqeaUA=="
+  "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.35.1.tgz"
+  "version" "2.35.1"
   dependencies:
     "fsevents" "~2.1.2"
   optionalDependencies:
@@ -842,6 +859,11 @@
   "integrity" "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="
   "resolved" "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
   "version" "0.6.1"
+
+"sourcemap-codec@^1.4.4":
+  "integrity" "sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA=="
+  "resolved" "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
+  "version" "1.4.8"
 
 "sprintf-js@~1.0.2":
   "integrity" "sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw="

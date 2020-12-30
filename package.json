@@ -1,8 +1,9 @@
 {
   "name": "datadancer",
-  "version": "0.0.0-beta",
+  "version": "0.0.5-alpha",
   "description": "",
-  "main": "dist/main.js",
+  "main": "dist/output/dataDancer.js",
+  "types" : "dist/output/dataDancer.d.ts",
   "keywords": [
     "datadancer",
     "nameGenerator",
@@ -18,14 +19,13 @@
     "email": "wisemk79@gmail.com"
   },
   "scripts": {
-    "bundle": "tsc && yarn rollup -c",
+    "bundle": "tsc && rollup -c rollup.config.js",
     "t": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha --require ts-node/register 'test/**/**.test.ts'",
     "pr": "npx prettier --write src/**/**.ts"
   },
   "files": [
-      "build"
-  ]
-  ,
+    "dist/output"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -36,6 +36,7 @@
     "mocha": "^8.2.1",
     "prettier": "2.2.1",
     "rollup": "^2.33.3",
+    "rollup-plugin-dts": "^2.0.1",
     "rollup-plugin-tslint": "^0.2.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-node": "^9.1.1",
