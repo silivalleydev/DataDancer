@@ -2307,6 +2307,16 @@
     "chalk" "^2.4.2"
     "slash" "^2.0.0"
 
+"babel-loader@^8.2.2":
+  "integrity" "sha512-JvTd0/D889PQBtUXJ2PXaKU/pjZDMtHA9V2ecm+eNRmmBCMR09a+fmpGTNwnJtFmFl5Ei7Vy47LjBb+L0wQ99g=="
+  "resolved" "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.2.tgz"
+  "version" "8.2.2"
+  dependencies:
+    "find-cache-dir" "^3.3.1"
+    "loader-utils" "^1.4.0"
+    "make-dir" "^3.1.0"
+    "schema-utils" "^2.6.5"
+
 "babel-loader@8.1.0":
   "integrity" "sha512-7q7nC1tYOrqvUrN3LQK4GwSk/TQorZSOlO9C+RZDZpODgyN4ZlCqE5q9cDsyWOliN+aU9B4JX01xK9eJXowJLw=="
   "resolved" "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.1.0.tgz"
@@ -2549,6 +2559,13 @@
     "snapdragon-node" "^2.0.1"
     "split-string" "^3.0.2"
     "to-regex" "^3.0.1"
+
+"braces@^3.0.1":
+  "integrity" "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A=="
+  "resolved" "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz"
+  "version" "3.0.2"
+  dependencies:
+    "fill-range" "^7.0.1"
 
 "braces@~3.0.2":
   "integrity" "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A=="
@@ -2855,7 +2872,7 @@
     "strip-ansi" "^3.0.0"
     "supports-color" "^2.0.0"
 
-"chalk@^2.0.0", "chalk@^2.0.1", "chalk@^2.1.0", "chalk@^2.4.1", "chalk@^2.4.2", "chalk@2.4.2":
+"chalk@^2.0.0", "chalk@^2.0.1", "chalk@^2.1.0", "chalk@^2.3.0", "chalk@^2.4.1", "chalk@^2.4.2", "chalk@2.4.2":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
   "resolved" "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz"
   "version" "2.4.2"
@@ -3403,7 +3420,7 @@
     "postcss" "^7.0.6"
     "postcss-selector-parser" "^5.0.0-rc.4"
 
-"css-loader@3.4.2":
+"css-loader@^3.4.2", "css-loader@3.4.2":
   "integrity" "sha512-jYq4zdZT0oS0Iykt+fqnzVLRIeiPWhka+7BqPn+oSIpWJAHak5tmB/WZrJ2a21JhCeFyNnnlroSl8c+MtVndzA=="
   "resolved" "https://registry.yarnpkg.com/css-loader/-/css-loader-3.4.2.tgz"
   "version" "3.4.2"
@@ -4043,7 +4060,7 @@
   dependencies:
     "once" "^1.4.0"
 
-"enhanced-resolve@^4.1.0":
+"enhanced-resolve@^4.0.0", "enhanced-resolve@^4.1.0":
   "integrity" "sha512-3e87LvavsdxyoCfGusJnrZ5G8SLPOFeHSNpZI/ATL9a5leXo2k0w6MKnbqhdBad9qTobSfB20Ld7UmgoNbAZkQ=="
   "resolved" "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.3.0.tgz"
   "version" "4.3.0"
@@ -5349,7 +5366,7 @@
     "relateurl" "^0.2.7"
     "terser" "^4.6.3"
 
-"html-webpack-plugin@4.0.0-beta.11":
+"html-webpack-plugin@^4.0.0-beta.11", "html-webpack-plugin@4.0.0-beta.11":
   "integrity" "sha512-4Xzepf0qWxf8CGg7/WQM5qBB2Lc/NFI7MhU59eUDTkuQp3skZczH4UA1d6oQyDEIoMDgERVhRyTdtUPZ5s5HBg=="
   "resolved" "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-4.0.0-beta.11.tgz"
   "version" "4.0.0-beta.11"
@@ -6850,7 +6867,7 @@
   "resolved" "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz"
   "version" "2.4.0"
 
-"loader-utils@^1.1.0", "loader-utils@^1.2.3", "loader-utils@^1.4.0":
+"loader-utils@^1.0.2", "loader-utils@^1.1.0", "loader-utils@^1.2.3", "loader-utils@^1.4.0":
   "integrity" "sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA=="
   "resolved" "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz"
   "version" "1.4.0"
@@ -6981,7 +6998,7 @@
     "pify" "^4.0.1"
     "semver" "^5.6.0"
 
-"make-dir@^3.0.2":
+"make-dir@^3.0.2", "make-dir@^3.1.0":
   "integrity" "sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw=="
   "resolved" "https://registry.yarnpkg.com/make-dir/-/make-dir-3.1.0.tgz"
   "version" "3.1.0"
@@ -7104,6 +7121,14 @@
     "regex-not" "^1.0.0"
     "snapdragon" "^0.8.1"
     "to-regex" "^3.0.2"
+
+"micromatch@^4.0.0":
+  "integrity" "sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q=="
+  "resolved" "https://registry.npmjs.org/micromatch/-/micromatch-4.0.2.tgz"
+  "version" "4.0.2"
+  dependencies:
+    "braces" "^3.0.1"
+    "picomatch" "^2.0.5"
 
 "miller-rabin@^4.0.0":
   "integrity" "sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA=="
@@ -7936,7 +7961,7 @@
   "resolved" "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz"
   "version" "2.1.0"
 
-"picomatch@^2.0.4", "picomatch@^2.2.1":
+"picomatch@^2.0.4", "picomatch@^2.0.5", "picomatch@^2.2.1":
   "integrity" "sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg=="
   "resolved" "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz"
   "version" "2.2.2"
@@ -9642,7 +9667,7 @@
 
 "semver@^6.0.0":
   "integrity" "sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw=="
-  "resolved" "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz"
+  "resolved" "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"
   "version" "6.3.0"
 
 "semver@^6.1.2":
@@ -10280,7 +10305,7 @@
   "resolved" "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   "version" "3.1.1"
 
-"style-loader@0.23.1":
+"style-loader@^0.23.1", "style-loader@0.23.1":
   "integrity" "sha512-XK+uv9kWwhZMZ1y7mysB+zoihsEj4wneFWAS5qoiLwzW0WzSqMrrsIy+a3zkQJq0ipFtBpX5W3MqyRIBF/WFGg=="
   "resolved" "https://registry.yarnpkg.com/style-loader/-/style-loader-0.23.1.tgz"
   "version" "0.23.1"
@@ -10547,6 +10572,17 @@
   dependencies:
     "punycode" "^2.1.0"
 
+"ts-loader@^8.0.13":
+  "integrity" "sha512-1o1nO6aqouA23d2nlcMSEyPMAWRhnYUU0EQUJSc60E0TUyBNX792RHFYUN1ZM29vhMUNayrsbj2UVdZwKhXCDA=="
+  "resolved" "https://registry.npmjs.org/ts-loader/-/ts-loader-8.0.13.tgz"
+  "version" "8.0.13"
+  dependencies:
+    "chalk" "^2.3.0"
+    "enhanced-resolve" "^4.0.0"
+    "loader-utils" "^1.0.2"
+    "micromatch" "^4.0.0"
+    "semver" "^6.0.0"
+
 "ts-pnp@^1.1.6":
   "integrity" "sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw=="
   "resolved" "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz"
@@ -10636,7 +10672,7 @@
   "resolved" "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
-"typescript@^3.2.1", "typescript@^4.1.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+"typescript@*", "typescript@^3.2.1", "typescript@^4.1.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
   "integrity" "sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.1.3.tgz"
   "version" "4.1.3"
@@ -11014,7 +11050,7 @@
     "source-list-map" "^2.0.0"
     "source-map" "~0.6.1"
 
-"webpack@^2.0.0 || ^3.0.0 || ^4.0.0", "webpack@^4.0.0", "webpack@^4.0.0 || ^5.0.0", "webpack@^4.36.0 || ^5.0.0", "webpack@^4.4.0", "webpack@^4.42.0", "webpack@>=2", "webpack@2 || 3 || 4", "webpack@4.42.0", "webpack@4.x.x || 5.x.x":
+"webpack@*", "webpack@^2.0.0 || ^3.0.0 || ^4.0.0", "webpack@^4.0.0", "webpack@^4.0.0 || ^5.0.0", "webpack@^4.36.0 || ^5.0.0", "webpack@^4.4.0", "webpack@^4.42.0", "webpack@>=2", "webpack@2 || 3 || 4", "webpack@4.42.0", "webpack@4.x.x || 5.x.x":
   "integrity" "sha512-EzJRHvwQyBiYrYqhyjW9AqM90dE4+s1/XtCfn7uWg6cS72zH+2VPFAlsnW0+W0cDi0XRjNKUMoJtpSi50+Ph6w=="
   "resolved" "https://registry.yarnpkg.com/webpack/-/webpack-4.42.0.tgz"
   "version" "4.42.0"

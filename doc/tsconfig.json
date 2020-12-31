@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es6",
+    "module": "esnext",
     "allowJs": true,
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "noEmit": false,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist/js",
     "lib": [
@@ -19,11 +20,12 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "isolatedModules": true
   },
   "include": [
     "./src/**/*"
   ],
-  "exclude": ["./node_modules/**/*"]
+  "exclude": [
+    "node_modules"
+  ]
 }
