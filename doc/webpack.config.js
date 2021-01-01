@@ -14,12 +14,12 @@ module.exports = {
     module: {
       rules: [
         {
-            test: /\.(js|jsx)$/, // 컴포넌트 파일을 읽어오는 규칙입니다.
+            test: /\.(js|jsx)$/,
             exclude: "/node_modules/",
             loader: "babel-loader",
         },
         {
-        test: /\.css$/, // 스타일 속성 파일을 읽어오는 규칙입니다.
+        test: /\.css$/, 
         use: [{ loader: "style-loader" }, { loader: "css-loader" }],
         },
         {

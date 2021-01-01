@@ -5,3 +5,6 @@ build/
 
 # Mac file
 .DS_Store
+
+# env file
+.env
