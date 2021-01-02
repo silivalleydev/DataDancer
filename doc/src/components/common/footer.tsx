@@ -35,7 +35,6 @@ const useStyles = makeStyles({
     avatar: {
         top: 14,
         display: 'inline-block'
-
     },
     me: {
         display:'inline-block',

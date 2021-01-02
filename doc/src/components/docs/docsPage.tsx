@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import { Paper, Tab, Tabs } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import icon from '../../image/giphy.gif'
+import DocsSideMenu from './docsSideMenu';
+import DocsContent from './docsContent';
+
 
 interface DocsPageProps {
 }
 
-const useStyles = makeStyles({
-});
+const useStyles = makeStyles((theme) => ({
+}));
 
 const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
     /**
@@ -36,9 +38,10 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
      */
   
         return(
-            <div>
-                Docs
-            </div>
+            <Grid container>
+                <DocsSideMenu/>
+                <DocsContent/>
+            </Grid>
         )
 }
 

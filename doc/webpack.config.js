@@ -19,6 +19,10 @@ module.exports = {
             loader: "babel-loader",
         },
         {
+          test: /\.md$/i,
+          use: 'raw-loader'
+        },
+        {
         test: /\.css$/, 
         use: [{ loader: "style-loader" }, { loader: "css-loader" }],
         },
