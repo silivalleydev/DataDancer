@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core/styles";
 import './App.css';
 import Navi from './components/common/navi'
 import LandingPage from './components/landing/landingPage';
@@ -12,6 +13,12 @@ import QnAPage from './components/qna/qnaPage';
 
 interface AppProps {
 }
+
+const useStyles = makeStyles({
+    nav: {
+        marginBottom: 61
+    }
+});
 
 const App: React.FunctionComponent<AppProps> = () => {
 
@@ -28,25 +35,35 @@ const App: React.FunctionComponent<AppProps> = () => {
     })
 
     /**
+     * variables
+     */
+    const classes = useStyles();
+    
+    /**
      * methods
      */
 
         return (
             <Router>
+                <Switch>
                 <Grid container>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} className={classes.nav}>
                         <Navi/>
                     </Grid>
                     <Grid item xs={12}>
-                        <Route path="/" component={LandingPage} exact/>
-                        <Route path="/docs" component={DocsPage}/>
-                        <Route path="/getting-start" component={GettingStartPage}/>
-                        <Route path="/qna" component={QnAPage}/>
+                        <Switch>
+                            <Route path="/" component={LandingPage} exact/>
+                            <Route path="/docs" component={DocsPage}/>
+                            <Route path="/getting-start" component={GettingStartPage}/>
+                            <Route path="/qna" component={QnAPage}/>
+                            <Route component={LandingPage}/>
+                        </Switch>
                     </Grid>
                     <Grid item xs={12}>
                         <Footer/>
                     </Grid>
                 </Grid>
+                </Switch>
             </Router>
         )
 }

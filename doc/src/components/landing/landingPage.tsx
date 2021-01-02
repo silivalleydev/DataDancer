@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from '@material-ui/core';
 import LandingIntro from './landingIntro';
+import LandingDetail from './landingDetail';
 
 interface LandingPageProps {
 }
 
 
 const useStyles = makeStyles({
+    root: {
+    }
 });
 
 const LandingPage: React.FunctionComponent<LandingPageProps> = (props) => {
@@ -29,7 +32,7 @@ const LandingPage: React.FunctionComponent<LandingPageProps> = (props) => {
     })
 
     /**
- * variables
+     * variables
      */
     const classes = useStyles();
 
@@ -38,8 +41,9 @@ const LandingPage: React.FunctionComponent<LandingPageProps> = (props) => {
      */
 
     return(
-        <Grid container>
+        <Grid container className={classes.root}>
             <LandingIntro/>
+            <LandingDetail/>
         </Grid>
     )
 }

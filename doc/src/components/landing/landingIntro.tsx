@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import intro from '../../image/main.gif'
-import { Height } from '@material-ui/icons';
 
 interface LandingIntroProps {
 }
@@ -10,12 +9,10 @@ interface LandingIntroProps {
 
 const useStyles = makeStyles({
     backimage: {
-        zIndex: 0,
         backgroundImage: `url(${intro})`,
         backgroundPosition: 'center', 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
-        backgroundColor: 'black',
         width: '100%',
         height: '480px'
     },
@@ -23,7 +20,8 @@ const useStyles = makeStyles({
         backgroundColor: 'black',
         opacity: 0.3,
         width: '100%',
-        height: '480px'
+        height: '480px',
+        boxShadow: '5px 5px 10px 1px #000000;'
     }
 });
 

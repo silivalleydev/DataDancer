@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, Paper, Tab, Tabs } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import icon from '../../image/giphy.gif';
 import giticon from '../../image/github.png';
 
@@ -10,6 +10,10 @@ interface NaviProps {
 
 const useStyles = makeStyles({
     root: {
+        position: "fixed",
+        width: "100%",
+        top: 0,
+        zIndex:100
     },
     img: {
         width: '60px',
@@ -23,7 +27,7 @@ const useStyles = makeStyles({
         margin: '5px 50px 0px 20px'
     },
     tabs: {
-        backgroundColor: '#F4C7C9'
+        backgroundColor: '#fcc5c8'
     },
     link: {
         textDecoration: 'none'
@@ -51,18 +55,21 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
      */
     const classes = useStyles();
     const history = useHistory();
+    const location = useLocation();
+    const path = location.pathname;
 
     /**
      * useEffect
      */
     useEffect(() => {
-        
+        handleNav(path);
     })
 
     /**
      * methods
      */
     const handleChange = (event: any, newValue: number) => {
+        setValue(newValue);
         switch (newValue) {
             case 1:
                 history.push('/')
@@ -77,9 +84,15 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                 history.push('/qna')
                 break;
         }
-
-        setValue(newValue);
     };
+
+    const handleNav = (path: string) => {
+        if (path === '/') setValue(1);
+        if (path === '/docs') setValue(2);
+        if (path === '/getting-start') setValue(3);
+        if (path === '/qna') setValue(4);
+        
+    }
   
         return(
             <Paper square className={classes.root}>
