@@ -43,8 +43,7 @@ const App: React.FunctionComponent<AppProps> = () => {
      */
 
         return (
-            <Router>
-                <Switch>
+            <Switch>
                 <Grid container>
                     <Grid item xs={12} className={classes.nav}>
                         <Navi/>
@@ -61,8 +60,7 @@ const App: React.FunctionComponent<AppProps> = () => {
                         <Footer/>
                     </Grid>
                 </Grid>
-                </Switch>
-            </Router>
+            </Switch>
         )
 }
 
