@@ -75,7 +75,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                 history.push('/')
                 break;
             case 2:
-                history.push('/docs')
+                history.push('/docs/getting-start')
                 break;
             case 3:
                 history.push('/contact')

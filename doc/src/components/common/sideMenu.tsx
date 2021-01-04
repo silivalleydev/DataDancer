@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Drawer, Toolbar, List, Divider, ListItem, Typography } from '@material-ui/core';
 import { useHistory, useLocation } from 'react-router-dom';
 import AccordianItem from './accordianItem';  
+import { menuChange } from '../../action/index';
+import { connect } from 'react-redux'
 
 type Menu = {
   path: string,
@@ -12,7 +14,8 @@ type Menu = {
 }
 
 interface SideMenuProps {
-  menu: Menu[]
+  menu: Menu[],
+  menuChange: (data: boolean) => any
 }
 
 const drawerWidth = 250;
@@ -57,7 +60,7 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = (props) => {
     /**
      * props
      */
-    const { menu } = props;
+    const { menu, menuChange } = props;
 
     /**
      * states
@@ -84,6 +87,8 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = (props) => {
       const newPath = `docs/${path}`;
       history.push('/');
       history.push(newPath);
+      menuChange(true);
+      
     }
         return(
           <Drawer
@@ -112,5 +117,19 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = (props) => {
         )
 }
 
+/**
+ * redux
+ */
+const mapStateToProps = (state: any, ownProps: any) => {
+  return {
+      // docChange: state.reducer.docChange
+  }
+}
 
-export default SideMenu;
+const mapDispatchToProps = (dispatch: any, ownProps: any) => {
+  return {
+      menuChange: (data: boolean) =>  dispatch(menuChange(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideMenu);

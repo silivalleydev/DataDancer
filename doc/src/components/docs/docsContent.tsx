@@ -5,6 +5,10 @@ import Markdown from 'markdown-to-jsx';
 import { HighlightedMarkdown } from '../common/highlightMarkdown';
 import test from '../../markdown/test.md';
 import { useLocation } from 'react-router-dom';
+import { menuChange } from '../../action/index';
+import { connect } from 'react-redux'
+
+
 console.log(test)
 
 type Menu = {
@@ -15,7 +19,9 @@ type Menu = {
   }
 
 interface DocsContentProps {
-    menu: Menu[]
+    menu: Menu[],
+    isMenuChanged: boolean,
+    menuChange: (data: boolean) => any
 }
 
 
@@ -29,7 +35,7 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
     /**
      * props
      */
-    const { menu } = props;
+    const { menu, isMenuChanged, menuChange } = props;
 
     /**
      * states
@@ -46,13 +52,16 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
      * useEffect
      */
     useEffect(() => {
-    },[])
+        markdownSetter();
+        if (isMenuChanged) {
+            markdownSetter();
+            menuChange(false);
+        }
+    })
 
     /**
      * methods
      */
-
-    // TODO: Redux로 이 함수를 sideMenu로 넘겨줄 것
     const markdownSetter = () => {
         const split = location.pathname.split('/docs/')[1].split('/');
         const idx = menu.map(m=>m.path).indexOf(split[0]);
@@ -77,10 +86,24 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
                     <HighlightedMarkdown>
                         {markdown}
                     </HighlightedMarkdown>
-                    <Button onClick={markdownSetter}>ddd</Button>
             </Grid>
         )
 }
 
 
-export default DocsContent;
+/**
+ * redux
+ */
+const mapStateToProps = (state: any, ownProps: any) => {
+    return {
+        isMenuChanged: state.reducer.isMenuChanged
+    }
+}
+
+const mapDispatchToProps = (dispatch: any, ownProps: any) => {
+    return {
+        menuChange: (data: boolean) =>  dispatch(menuChange(data))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DocsContent);
