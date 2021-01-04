@@ -8,7 +8,17 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-interface DocsAccordianProps {
+type Menu = {
+  path: string,
+  name: string,
+  file: any,
+  child: Menu[]
+}
+
+interface AccordianItemProps {
+  name: string,
+  child: Menu[],
+  handleClick: (path: string) => void
 }
 
 
@@ -18,8 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
   item: {
     boxShadow: 'none',
-    position: 'relative',
-    right: 20
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -27,15 +35,22 @@ const useStyles = makeStyles((theme) => ({
     width: '190px',
   },
   list: {
+    padding: 0
+  },
+  listitem: {
     width: '230px',
+    fontSize: theme.typography.pxToRem(15)
+  },
+  detail: {
+    padding: 0
   }
 }));
 
-const DocsAccordian: React.FunctionComponent<DocsAccordianProps> = (props) => {
+const AccordianItem: React.FunctionComponent<AccordianItemProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    const { name, child, handleClick } = props;
 
     /**
      * states
@@ -64,23 +79,24 @@ const DocsAccordian: React.FunctionComponent<DocsAccordianProps> = (props) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading}>Accordion 1</Typography>
+            <Typography className={classes.heading}>{name}</Typography>
           </AccordionSummary>
-              <AccordionDetails>
-                  <List>
-                    <ListItem className={classes.list} button key={'text'}>
-                          <ListItemIcon>{2 % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                          <ListItemText primary={'text'} />
-                    </ListItem>
-                    <ListItem className={classes.list} button key={'text'}>
-                          <ListItemIcon>{2 % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                          <ListItemText primary={'text'} />
-                    </ListItem>
-                  </List>
+              <AccordionDetails className={classes.detail}>
+                <List className={classes.list}>
+                  {child.map((child, index)=>{
+                        return (
+                            <ListItem className={classes.listitem} button key={`accordianchilditem-${index}`} onClick={()=>handleClick(child.path)}>
+                                  <ListItemIcon>{2 % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                                  <Typography className={classes.heading}>{child.name}</Typography>
+                            </ListItem>
+                        ) 
+                      }
+                    )}
+                </List>
               </AccordionDetails>
         </Accordion>
         )
 }
 
 
-export default DocsAccordian;
+export default AccordianItem;

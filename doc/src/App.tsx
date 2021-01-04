@@ -7,8 +7,7 @@ import Navi from './components/common/navi'
 import LandingPage from './components/landing/landingPage';
 import Footer from './components/common/footer';
 import DocsPage from './components/docs/docsPage';
-import GettingStartPage from './components/gettingstart/gettingStartPage';
-import QnAPage from './components/qna/qnaPage';
+import ContactPage from './components/qna/contactPage';
 
 
 interface AppProps {
@@ -54,8 +53,7 @@ const App: React.FunctionComponent<AppProps> = () => {
                         <Switch>
                             <Route path="/" component={LandingPage} exact/>
                             <Route path="/docs" component={DocsPage}/>
-                            <Route path="/getting-start" component={GettingStartPage}/>
-                            <Route path="/qna" component={QnAPage}/>
+                            <Route path="/contact" component={ContactPage}/>
                             <Route component={LandingPage}/>
                         </Switch>
                     </Grid>

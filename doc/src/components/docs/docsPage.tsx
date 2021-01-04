@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import DocsSideMenu from './docsSideMenu';
 import DocsContent from './docsContent';
+import SideMenu from '../common/sideMenu';
+import { mdFiles } from '../../mappingMd';
 
 
 interface DocsPageProps {
@@ -25,7 +26,7 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
      * variables
      */
     const classes = useStyles();
-
+    const menu = mdFiles;
     /**
      * useEffect
      */
@@ -39,8 +40,8 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
   
         return(
             <Grid container>
-                <DocsSideMenu/>
-                <DocsContent/>
+                <SideMenu menu={menu}/>
+                <DocsContent menu={menu}/>
             </Grid>
         )
 }
