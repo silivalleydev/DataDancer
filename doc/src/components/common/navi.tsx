@@ -80,6 +80,9 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
             case 3:
                 history.push('/contact')
                 break;
+            case 4:
+                history.push('/community')
+                break;
         }
     };
 
@@ -87,7 +90,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
         if (path === '/') setValue(1);
         if (path === '/docs/getting-start') setValue(2);
         if (path === '/contact') setValue(3);
-        
+        if (path === '/community') setValue(4);
     }
   
         return(
@@ -107,6 +110,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                     />
                     <Tab label="Docs"/>
                     <Tab label="Contact"/>
+                    <Tab label="Community"/>
                     <Link href="https://github.com/wisemk79/DataDancer" target="_blank">
                         <img src={giticon} className={classes.giticon} alt="icon" />
                     </Link>

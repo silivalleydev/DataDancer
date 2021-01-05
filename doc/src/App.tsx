@@ -6,8 +6,9 @@ import './App.css';
 import Navi from './components/common/navi'
 import LandingPage from './components/landing/landingPage';
 import Footer from './components/common/footer';
+import CommunityPage from './components/community/communityPage';
 import DocsPage from './components/docs/docsPage';
-import ContactPage from './components/qna/contactPage';
+import ContactPage from './components/contact/contactPage';
 
 
 interface AppProps {
@@ -53,6 +54,7 @@ const App: React.FunctionComponent<AppProps> = () => {
                             <Route path="/" component={LandingPage} exact/>
                             <Route path="/docs" component={DocsPage}/>
                             <Route path="/contact" component={ContactPage}/>
+                            <Route path="/community" component={CommunityPage}/>
                             <Route component={LandingPage}/>
                         </Switch>
                     </Grid>

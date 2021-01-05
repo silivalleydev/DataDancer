@@ -10,6 +10,9 @@ interface DocsPageProps {
 }
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        minHeight: "100%"
+    }
 }));
 
 const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
@@ -39,7 +42,7 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
      */
   
         return(
-            <Grid container>
+            <Grid container className={classes.root}>
                 <SideMenu menu={menu}/>
                 <DocsContent menu={menu}/>
             </Grid>

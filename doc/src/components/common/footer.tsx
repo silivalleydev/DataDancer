@@ -8,10 +8,9 @@ interface FooterProps {
 
 const useStyles = makeStyles({
     root: {
+        position: 'relative',
         backgroundColor: "rgb(238, 238, 238)",
         width: '100%',
-        top: '20px',
-        marginTop: 50,
     },
     paper: {
         margin: "10px 0 30px 30px",

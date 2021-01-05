@@ -7,6 +7,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import { SubdirectoryArrowRight } from '@material-ui/icons'
 
 type Menu = {
   path: string,
@@ -86,7 +87,9 @@ const AccordianItem: React.FunctionComponent<AccordianItemProps> = (props) => {
                   {child.map((child, index)=>{
                         return (
                             <ListItem className={classes.listitem} button key={`accordianchilditem-${index}`} onClick={()=>handleClick(child.path)}>
-                                  <ListItemIcon>{2 % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                                  <ListItemIcon>
+                                    <SubdirectoryArrowRight/>
+                                  </ListItemIcon>
                                   <Typography className={classes.heading}>{child.name}</Typography>
                             </ListItem>
                         ) 

@@ -27,7 +27,9 @@ interface DocsContentProps {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: 80
+        padding: 80,
+        overflowY: "auto",
+        minHeight: 650
     }
 }));
 
