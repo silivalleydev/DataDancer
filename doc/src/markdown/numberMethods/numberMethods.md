@@ -1,3 +1,0 @@
-## numberMethods
-
-설명

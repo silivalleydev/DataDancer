@@ -1,3 +1,0 @@
-## ArrayMethods
-
-설명

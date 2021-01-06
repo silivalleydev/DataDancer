@@ -91,7 +91,7 @@ export default class DateMethods {
 	 *
 	 * (date: Date, locale: eng, kor, jp)
 	 */
-	getDayOfWeek(date: Date, lang: string): string {
+	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" = "eng"): string {
 		const dayIdx = date.getDay();
 		let rs: string;
 		switch (lang) {

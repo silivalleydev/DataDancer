@@ -1,9 +1,14 @@
 import gettingStart from './markdown/gettingStart.md';
-import arrayMethods from './markdown/arrayMethods/arrayMethods.md';
-import dateMethods from './markdown/dateMethods/dateMethods.md';
-import numberMethods from './markdown/numberMethods/numberMethods.md';
-import stringMethods from './markdown/stringMethods/stringMethods.md';
-import visualMethods from './markdown/visualMethods/visualMethods.md';
+import controlArray from './markdown/arrayMethods/controlArray.md';
+import search from './markdown/arrayMethods/search.md';
+import sort from './markdown/arrayMethods/sort.md';
+import addDate from './markdown/dateMethods/addDate.md';
+import controlDate from './markdown/dateMethods/controlDate.md';
+import randomNumber from './markdown/numberMethods/randomNumber.md';
+import calculation from './markdown/numberMethods/calculation.md';
+import nameGenarator from './markdown/stringMethods/nameGenarator.md';
+import passwordGenerator from './markdown/stringMethods/passwordGenerator.md';
+import colorGenerator from './markdown/visualMethods/colorGenerator.md';
 
 export const mdFiles = [
     {
@@ -18,11 +23,23 @@ export const mdFiles = [
         file: undefined,
         child: [
             {
-                path: 'arrayMethods/detail',
-                name: 'Detail',
-                file: arrayMethods,
+                path: 'arrayMethods/sort',
+                name: 'Sort',
+                file: sort,
                 child: []
-            }
+            },
+            {
+                path: 'arrayMethods/search',
+                name: 'Search',
+                file: search,
+                child: []
+            },
+            {
+                path: 'arrayMethods/controlArray',
+                name: 'Controll Array',
+                file: controlArray,
+                child: []
+            },
         ]
     },
     {
@@ -31,11 +48,17 @@ export const mdFiles = [
         file: undefined,
         child: [
             {
-                path: 'dateMethods/detail',
-                name: 'Detail',
-                file: dateMethods,
+                path: 'dateMethods/controlDate',
+                name: 'Control Date',
+                file: controlDate,
                 child: []
-            }
+            },
+            {
+                path: 'dateMethods/addDate',
+                name: 'Add Date',
+                file: addDate,
+                child: []
+            },
         ]
     },
     {
@@ -44,11 +67,17 @@ export const mdFiles = [
         file: undefined,
         child: [
             {
-                path: 'numberMethods/detail',
-                name: 'Detail',
-                file: numberMethods,
+                path: 'numberMethods/randomNumber',
+                name: 'Random Number',
+                file: randomNumber,
                 child: []
-            }
+            },
+            {
+                path: 'numberMethods/calculation',
+                name: 'Calculation',
+                file: calculation,
+                child: []
+            },
         ]
     },
     {
@@ -57,11 +86,17 @@ export const mdFiles = [
         file: undefined,
         child: [
             {
-                path: 'stringMethods/detail',
-                name: 'Detail',
-                file: stringMethods,
+                path: 'stringMethods/name-gen',
+                name: 'Name Generator',
+                file: nameGenarator,
                 child: []
-            }
+            },
+            {
+                path: 'stringMethods/pw-gen',
+                name: 'Password Generator',
+                file: passwordGenerator,
+                child: []
+            },
         ]
     },
     {
@@ -70,9 +105,9 @@ export const mdFiles = [
         file: undefined,
         child: [
             {
-                path: 'visualMethods/detail',
-                name: 'Detail',
-                file: visualMethods,
+                path: 'visualMethods/colorGenerator',
+                name: 'Color Generator',
+                file: colorGenerator,
                 child: []
             }
         ]

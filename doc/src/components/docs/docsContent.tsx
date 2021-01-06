@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import Markdown from 'markdown-to-jsx';
 import { HighlightedMarkdown } from '../common/highlightMarkdown';
-import test from '../../markdown/test.md';
 import { useLocation } from 'react-router-dom';
 import { menuChange } from '../../action/index';
 import { connect } from 'react-redux'
 
-
-console.log(test)
 
 type Menu = {
     path: string,

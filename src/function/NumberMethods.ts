@@ -100,10 +100,10 @@ export default class NumberMethods extends Base {
 	 *
 	 * 홀수, 짝수를 지정할 수 있다.
 	 *
-	 * (min:최소값, max:최대값, )
+	 * (start:시작값, end:마지막값, )
 	 */
-	getRanRangeNum(min: number, max: number): number {
-		return this.$_ranRangeNum(min, max);
+	getRanRangeNum(start: number, end: number): number {
+		return this.$_ranRangeNum(start, end);
 	}
 
 	/**

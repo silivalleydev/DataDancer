@@ -21,7 +21,7 @@ describe('DateMethods Test', () => {
         assert.isTrue(dashCount > 0);
         assert.isTrue(slashCount > 0);
 
-        const date3 = new Date(2021, 1 - 1, 31 + 1); // 2020-01-31
+        const date3 = new Date(2021, 1 - 1, 31 + 1); // 2021-01-31
         const addedOneDate = d.addDays(date3, 1);
         assert.isTrue(d.dateCompare(date3, addedOneDate));
 

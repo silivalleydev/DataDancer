@@ -114,6 +114,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                     <Link href="https://github.com/wisemk79/DataDancer" target="_blank">
                         <img src={giticon} className={classes.giticon} alt="icon" />
                     </Link>
+                    
                 </Tabs>
             </Paper>
         )

@@ -1,3 +1,0 @@
-## dateMethods
-
-설명
