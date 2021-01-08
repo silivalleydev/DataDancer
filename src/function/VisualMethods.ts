@@ -30,7 +30,7 @@ export default class VisualMethods extends Base {
 	/**
 	 * 랜덤 색상 생성 메서드
 	 */
-	colorGenerator(type?: string) {
+	colorGenerator(type: "rgb" | "code" = "code") {
 		let rs = '#' + Math.floor(Math.random() * 16777215).toString(16);
 		if (type === 'rgb') {
 			const color1 = Math.floor(Math.random() * 255) + 1;
@@ -43,7 +43,7 @@ export default class VisualMethods extends Base {
 	/**
 	 * (direction?: to right, to left, to top, to bottom)
 	 */
-	gradientGenerator(direction?: string): string {
+	gradientGenerator(direction?: "to right" | "to left" | "to top" | "to bottom"): string {
 		let direcArr = ['to right', 'to left', 'to top', 'to bottom'];
 		let rs: string;
 		let direc: string;

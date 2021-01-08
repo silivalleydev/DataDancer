@@ -32,7 +32,7 @@ const d = new DataDancer.DateMethods()
 const date1 = new Date(2020, 0, 30); // 2020-01-29
 const date2 = new Date(2020, 0, 32); // 2020-01-31
 
-// if you want add 1 year to Date Object
+// date2 is latest date, so you can have value of true
 const rs = d.dateCompare(date1, date2);
 
 console.log(rs) // true
@@ -63,7 +63,6 @@ const d = new DataDancer.DateMethods()
 
 const date = new Date(2020, 0, 32); // 2020-01-31
 
-// if you want add 1 Month to Date Object
 const rs = d.getFormDate(date, '/');
 
 console.log(rs) // 2020/01/31

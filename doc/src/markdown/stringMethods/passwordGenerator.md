@@ -1,4 +1,4 @@
-# NameGenerator
+# Password Generator
 
 If you want get password Randomly, use StringMethods
 

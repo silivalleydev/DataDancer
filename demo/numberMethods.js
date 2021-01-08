@@ -1,4 +1,4 @@
-import DataDancer from '../build/dataDancer.js';
+import DataDancer from '../dist/output/dataDancer.js';
 
 console.log(DataDancer);
 
