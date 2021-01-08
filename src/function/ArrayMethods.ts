@@ -21,25 +21,7 @@ export default class ArrayMethods extends Base {
 	 */
 
 	/**
-	 * 기수 정렬
-	 */
-	radixSort(nums) {
-		let maxDigits = this.$_mostDigits(nums);
-		for (let k = 0; k < maxDigits; k++) {
-			let buckets = Array.from({ length: 10 }, () => []);
-			for (let num of nums) {
-				let digit = this.$_getDigit(num, k);
-				buckets[digit].push(num);
-			}
-			nums = [].concat(...buckets);
-		}
-		return nums;
-	}
-
-	/**
 	 * quick sort
-	 *
-	 *
 	 */
 	quickSort(arr: any[], key?: string) {
 		if (arr.length <= 1) {
@@ -73,21 +55,6 @@ export default class ArrayMethods extends Base {
 		}
 	}
 
-	/**
-	 * mergeSort
-	 */
-	mergeSort(array: any[]) {
-		if (array.length === 1) {
-			return array;
-		}
-
-		const length = array.length;
-		const middle = Math.floor(length / 2);
-		const left = array.slice(0, middle);
-		const right = array.slice(middle);
-
-		return this.$_merge(this.mergeSort(left), this.mergeSort(right));
-	}
 
 	/**
 	 * 이진 탐색 알고리즘
@@ -95,8 +62,34 @@ export default class ArrayMethods extends Base {
 	 * (arr: 배열, search: 찾을요소)
 	 */
 	binarySearch(arr: any[], search: any, key?: string) {
-		const sortArr = this.quickSort(arr, key);
-		return this.$_binarySearchAl(sortArr, search, key);
+		return this.$_binarySearchAl(arr, search, key);
+	}
+
+	/**
+	 *  Linear Search
+	 */
+	linearSearch(arr: any[], search: any, key?: string) {
+		let idx: number;
+		let val: any;
+
+		if (key) {
+			this.$_forLoop(0, arr.length, (i: number) => {
+				if (arr[i][key] === search) {
+					idx = i;
+					val = arr[i];
+				}
+			})
+	
+			if (idx) return { idx, val };
+		} else {
+			this.$_forLoop(0, arr.length, (i: number) => {
+				if (arr[i] === search) idx = i;
+			})
+	
+			if (idx) return { idx, val: search };
+		}
+
+		return false;
 	}
 
 	/**
@@ -156,53 +149,39 @@ export default class ArrayMethods extends Base {
 	/**
 	 * internal member
 	 */
-	private $_merge(arr1, arr2) {
-		let sorted = [];
-
-		while (arr1.length && arr2.length) {
-			if (arr1[0] < arr2[0]) sorted.push(arr1.shift());
-			else sorted.push(arr2.shift());
-		}
-
-		return sorted.concat(arr1.slice().concat(arr2.slice()));
-	}
 
 	private $_binarySearchAl(arr: any[], search: any, key?: string) {
 		let firstIdx = 0;
 		let lastIdx = arr.length - 1;
 
-		while (firstIdx < lastIdx) {
-			let midIdx = Math.floor((firstIdx + lastIdx) / 2);
-			let midVal = arr[midIdx];
-
-			if (search === midVal) {
-				return midIdx;
-			} else if (search < midVal) {
-				lastIdx = midIdx - 1;
-			} else {
-				firstIdx = midIdx + 1;
+		if (key) {
+			while (firstIdx <= lastIdx) {
+				let midIdx = Math.floor((firstIdx + lastIdx) / 2);
+				let midVal = arr[midIdx][key];
+	
+				if (search === midVal) {
+					return { idx: midIdx, val: midVal };
+				} else if (search < midVal) {
+					lastIdx = midIdx - 1;
+				} else {
+					firstIdx = midIdx + 1;
+				}
+			}
+		} else {
+			while (firstIdx <= lastIdx) {
+				let midIdx = Math.floor((firstIdx + lastIdx) / 2);
+				let midVal = arr[midIdx];
+	
+				if (search === midVal) {
+					return { idx: midIdx, val: midVal };
+				} else if (search < midVal) {
+					lastIdx = midIdx - 1;
+				} else {
+					firstIdx = midIdx + 1;
+				}
 			}
 		}
 
 		return false;
-	}
-
-	private $_getDigit(num, place) {
-		return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
-	}
-
-	private $_digitCount(num) {
-		if (num === 0) {
-			return 1;
-		}
-		return Math.floor(Math.log10(Math.abs(num))) + 1;
-	}
-
-	private $_mostDigits(nums) {
-		let max = 0;
-		for (let num of nums) {
-			max = Math.max(max, this.$_digitCount(num));
-		}
-		return max;
 	}
 }

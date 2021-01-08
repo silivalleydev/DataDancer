@@ -25,7 +25,7 @@ return Number or String
 ```js
 import DataDancer from 'dataDancer';
 
-const d = new DataDancer.NumberMethods()
+const d = new DataDancer.NumberMethods();
 
 // if you want to get 3 digit number,
 const rs1 = d.getRanDigitNum(3);
@@ -36,8 +36,8 @@ console.log(rs1) // 233
 // if you want to get 3 digit number to String,
 const rs2 = d.getRanDigitNum(3, true);
 
-console.log(rs2, typeof) // 021 string
-console.log(rs2, typeof rs) // 121 string
+console.log(rs2, typeof rs2) // 021 string
+console.log(rs2, typeof rs2) // 121 string
 
 // if you want to 2 digit fix zero 
 const rs3 = d.getRanDigitNum(3, false, 2);

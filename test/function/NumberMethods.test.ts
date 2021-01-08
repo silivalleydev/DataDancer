@@ -54,10 +54,10 @@ describe('NumberMethods Test', () => {
         })
 
         it('standardDeviation', ()=>{
-            const numArr = [];
-            for (let i = 0; i < 100; i++) {
-                numArr.push(n.getRanRangeNum(0, 10000));
-            }
+            const numArr = [3,4,2,1,6,5,-1];
+            // for (let i = 0; i < 100; i++) {
+            //     numArr.push(n.getRanRangeNum(0, 10000));
+            // }
             console.log(numArr, n.getMinMax(numArr));
         })
 

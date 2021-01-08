@@ -42,8 +42,8 @@ export default class StringMethods extends Base {
 	 *
 	 * (locale: "us" or "kor" or "jp", gender: "male" or "female")
 	 */
-	nameGenerator(locale: string, gender: string = 'male') {
-		if (locale === 'kor') {
+	nameGenerator(lang: "kor" | "eng" | "jp" = 'eng', gender: "male" | "female" = 'male') {
+		if (lang === 'kor') {
 			const idx1 = this.$_ranRangeNum(0, k_last_name.length - 1);
 			const idx2 = this.$_ranRangeNum(0, k_first_name.length - 1);
 			let idx3 = this.$_ranRangeNum(0, k_first_name.length - 1);
@@ -53,7 +53,7 @@ export default class StringMethods extends Base {
 				else break;
 			}
 			return k_last_name[idx1] + k_first_name[idx2] + k_first_name[idx3];
-		} else if (locale === 'us') {
+		} else if (lang === 'eng') {
 			if (gender === 'male') {
 				const idx = this.$_ranRangeNum(0, e_male_name.length - 1);
 				return e_male_name[idx];
@@ -61,7 +61,7 @@ export default class StringMethods extends Base {
 				const idx = this.$_ranRangeNum(0, e_female_name.length - 1);
 				return e_female_name[idx];
 			}
-		} else if (locale === 'jp') {
+		} else if (lang === 'jp') {
 			const laIdx = this.$_ranRangeNum(0, jp_last_name.length - 1);
 			const lastName = jp_last_name[laIdx].split(', ');
 			if (gender === 'male') {
@@ -91,7 +91,7 @@ export default class StringMethods extends Base {
 	 *
 	 * (digit:자리수 <- integer, include: all, number, symbol <-string)
 	 */
-	passwordGenerator(digit: number, include: string = null) {
+	passwordGenerator(digit: number, include: "string" | "all" | "number" | "symbol" = "string") {
 		if (digit < 4) return false;
 
 		let result: string = '';
@@ -103,7 +103,7 @@ export default class StringMethods extends Base {
 		this.$_forLoop(0, digit, (i: number) => typeArr.push({ type: null }));
 
 		while (true) {
-			if (!include) break;
+			if (include === "string") break;
 
 			let index = this.$_ranRangeNum(0, digit - 1);
 

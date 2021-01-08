@@ -1,7 +1,6 @@
 import gettingStart from './markdown/gettingStart.md';
 import controlArray from './markdown/arrayMethods/controlArray.md';
-import search from './markdown/arrayMethods/search.md';
-import sort from './markdown/arrayMethods/sort.md';
+import sortNsearch from './markdown/arrayMethods/sortNsearch.md';
 import addDate from './markdown/dateMethods/addDate.md';
 import controlDate from './markdown/dateMethods/controlDate.md';
 import randomNumber from './markdown/numberMethods/randomNumber.md';
@@ -24,14 +23,8 @@ export const mdFiles = [
         child: [
             {
                 path: 'arrayMethods/sort',
-                name: 'Sort',
-                file: sort,
-                child: []
-            },
-            {
-                path: 'arrayMethods/search',
-                name: 'Search',
-                file: search,
+                name: 'Sort & Search',
+                file: sortNsearch,
                 child: []
             },
             {
