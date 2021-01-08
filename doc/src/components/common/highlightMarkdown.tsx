@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Markdown from 'markdown-to-jsx';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
+import './highlightMarkdown.css';
 
 interface HighlightedMarkdownProps { 
   children: string;

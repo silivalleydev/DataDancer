@@ -1,10 +1,4 @@
-# NameGenerator
-
-If you want get name Randomly, use StringMethods
-
-## Methods
-
-### - nameGenerator()
+## nameGenerator()
 
 #### Explanation
 

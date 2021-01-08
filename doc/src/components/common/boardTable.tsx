@@ -28,6 +28,7 @@ function createData(idx: any, title: string, count: number, userName: string, da
   return { idx, title, count, userName, date };
 }
 const d = DataDancer.DateMethods.prototype;
+
 const rows = [
   createData(1, 'title', 10, 'aa', d.getFormDate(new Date(), '/')),
   createData(1, 'title', 10, 'bb', d.getFormDate(new Date(), '/')),

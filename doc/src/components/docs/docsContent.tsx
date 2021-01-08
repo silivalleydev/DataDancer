@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         padding: 80,
         overflowY: "auto",
-        minHeight: 650
+        minHeight: '100vh'
     }
 }));
 
