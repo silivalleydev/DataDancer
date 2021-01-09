@@ -1,0 +1,10 @@
+# generate files
+node_modules/
+dist/
+build/
+
+# Mac file
+.DS_Store
+
+# env file
+.env
