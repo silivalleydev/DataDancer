@@ -84,7 +84,7 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = (props) => {
      * methods
      */
     const handleClick = (path: string) => {
-      const newPath = `docs/${path}`;
+      const newPath = `doc/${path}`;
       history.push('/');
       history.push(newPath);
       menuChange(true);

@@ -52,7 +52,7 @@ const App: React.FunctionComponent<AppProps> = () => {
                     <Grid item xs={12}>
                         <Switch>
                             <Route path="/" component={LandingPage} exact/>
-                            <Route path="/docs" component={DocsPage}/>
+                            <Route path="/doc" component={DocsPage}/>
                             <Route path="/contact" component={ContactPage}/>
                             <Route path="/community" component={CommunityPage}/>
                             <Route component={LandingPage}/>

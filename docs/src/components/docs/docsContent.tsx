@@ -62,21 +62,25 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
      * methods
      */
     const markdownSetter = () => {
-        const split = location.pathname.split('/docs/')[1].split('/');
+        const split = location.pathname.split('/doc/')[1].split('/');
         console.log(menu)
         const idx = menu.map(m=>m.path).indexOf(split[0]);
-        if (menu[idx].file) {
+        if (menu[idx]?.file) {
             const file = menu[idx].file;
-            console.log(process.env.NODE_ENV)
-            if (process.env.NODE_ENV === "production") setMarkdown(file);
-            else fetchFile(file);
+            console.log(process.env.NODE_ENV, file)
+            if (process.env.NODE_ENV === "production") {
+                setMarkdown(file);
+            }
+            // else fetchFile(file);
         } else {
-            const child = location.pathname.split('/docs/')[1];
-            const childIdx = menu[idx].child.map(c=>c.path).indexOf(child);
-            const file = menu[idx].child[childIdx].file;
-            console.log(process.env.NODE_ENV)
-            if (process.env.NODE_ENV === "production") setMarkdown(file);
-            else fetchFile(file);
+            const child = location.pathname.split('/doc/')[1];
+            const childIdx = menu[idx]?.child.map(c=>c.path).indexOf(child);
+            const file = menu[idx]
+            if (file) {
+                console.log(process.env.NODE_ENV)
+                if (process.env.NODE_ENV === "production") setMarkdown(file.child[childIdx].file);
+                else fetchFile(file.child[childIdx].file);
+            }
         }
     }
 

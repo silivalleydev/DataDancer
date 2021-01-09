@@ -75,7 +75,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                 history.push('/')
                 break;
             case 2:
-                history.push('/docs/getting-start')
+                history.push('/doc/getting-start')
                 break;
             case 3:
                 history.push('/contact')
@@ -88,7 +88,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
 
     const handleNav = (path: string) => {
         if (path === '/') setValue(1);
-        if (path === '/docs/getting-start') setValue(2);
+        if (path === '/doc/getting-start') setValue(2);
         if (path === '/contact') setValue(3);
         if (path === '/community') setValue(4);
     }
