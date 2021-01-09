@@ -5,7 +5,6 @@ import { HighlightedMarkdown } from '../common/highlightMarkdown';
 import { useLocation } from 'react-router-dom';
 import { menuChange } from '../../action/index';
 import { connect } from 'react-redux'
-import { env } from 'process';
 
 
 type Menu = {
@@ -63,11 +62,9 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
      */
     const markdownSetter = () => {
         const split = location.pathname.split('/doc/')[1].split('/');
-        console.log(menu)
         const idx = menu.map(m=>m.path).indexOf(split[0]);
         if (menu[idx]?.file) {
             const file = menu[idx].file;
-            console.log(process.env.NODE_ENV, file)
             if (process.env.NODE_ENV === "production") {
                 setMarkdown(file);
             }
@@ -77,7 +74,6 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
             const childIdx = menu[idx]?.child.map(c=>c.path).indexOf(child);
             const file = menu[idx]
             if (file) {
-                console.log(process.env.NODE_ENV)
                 if (process.env.NODE_ENV === "production") setMarkdown(file.child[childIdx].file);
                 else fetchFile(file.child[childIdx].file);
             }

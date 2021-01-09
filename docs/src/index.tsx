@@ -5,15 +5,17 @@ import reducer from './reducer/index';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter } from 'react-router-dom';
 
 const store = createStore(reducer, applyMiddleware(ReduxThunk))
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
-            <App />
-        </Router>
+            <Router>
+                <HashRouter basename={process.env.PUBLIC_URL}>
+                        <App />
+                </HashRouter>
+            </Router>
     </Provider>,
     document.getElementById('root')
 )

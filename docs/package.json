@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "start": "NODE_ENV=SKIP_PREFLIGHT_CHECK react-scripts start",
-    "build": "cross-env NODE_ENV=production && webpack",
-    "deploy": "gh-pages -d build"
+    "build": "cross-env && webpack",
+    "deploy": "yarn build && gh-pages -d dist -p gh-pages"
   },
   "licenses": [],
   "dependencies": {
