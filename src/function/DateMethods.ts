@@ -1,4 +1,4 @@
-import { engDayOfWeek, korDayOfWeek } from '../data/dateData';
+import { engDayOfWeek, jpDayOfWeek, korDayOfWeek } from '../data/dateData';
 
 export default class DateMethods {
 	/**
@@ -100,6 +100,9 @@ export default class DateMethods {
 				break;
 			case 'kor':
 				rs = korDayOfWeek[dayIdx];
+				break;
+			case 'jp':
+				rs = jpDayOfWeek[dayIdx];
 				break;
 		}
 		return rs;

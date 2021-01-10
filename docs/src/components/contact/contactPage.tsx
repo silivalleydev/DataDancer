@@ -70,6 +70,7 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
      * methods
      */
     const sendEmail = (e: any) => {
+        console.log('??')
         e.preventDefault();
     
         emailjs.sendForm('service_k4tkc5b', 'template_uc2vr8n', e.target,'user_wiHXYPsnvpM66xPANNYn8')
@@ -83,7 +84,7 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
     return(
         <Grid container justify="center" alignItems="center" style={{backgroundColor: 'rgb(197, 195, 195)'}}>
             <Grid item >
-                <FormGroup className={classes.container} onSubmit={sendEmail}>
+                <form className={classes.container} onSubmit={sendEmail}>
                     <TableContainer>
                         <Table>
                             <TableHead>
@@ -99,7 +100,7 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
                                         Name:
                                     </TableCell>
                                     <TableCell className={classes.row} align="center">
-                                        <Input className={classes.input} type="text" name="user_name" />
+                                        <input type="text" className={classes.input} name="user_name" />
                                     </TableCell>
                                 </TableRow>
                                 <TableRow className={classes.row}>
@@ -107,7 +108,7 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
                                         Email:
                                     </TableCell>
                                     <TableCell className={classes.row} align="center">
-                                        <Input className={classes.input} type="email" name="user_email" />
+                                        <input type="email" className={classes.input} name="user_email" />
                                     </TableCell>
                                 </TableRow>
                                 <TableRow className={classes.row}>
@@ -115,18 +116,18 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
                                         Message:
                                     </TableCell>
                                     <TableCell className={classes.row} align="center">
-                                        <TextareaAutosize rowsMin={8} className={classes.input} name="message" />
+                                        <textarea name="message" className={classes.input} rows={8}/>
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell className={classes.row} colSpan={2} align="center">
-                                        <Button color="primary" className={classes.button} type="submit">Send</Button>
+                                        <input type="submit" className={classes.button} value="Send" />
                                     </TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
                     </TableContainer>
-                </FormGroup>
+                </form>
             </Grid>
         </Grid>
     )
