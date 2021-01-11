@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
@@ -23,6 +23,7 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import DataDancer from 'datadancer';
+import axios from 'axios';
 
 function createData(idx: any, title: string, count: number, userName: string, date: string) {
   return { idx, title, count, userName, date };
@@ -225,7 +226,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EnhancedTable() {
+const EnhancedTable: React.FunctionComponent = () => {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('title');
@@ -233,6 +234,11 @@ export default function EnhancedTable() {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/hello3").then(r=>console.log(r.data));
+  })
 
   const handleRequestSort = (event: any, property: any) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -382,3 +388,5 @@ export default function EnhancedTable() {
     </div>
   );
 }
+
+export default EnhancedTable;
