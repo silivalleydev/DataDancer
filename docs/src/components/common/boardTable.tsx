@@ -237,7 +237,7 @@ const EnhancedTable: React.FunctionComponent = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:8080/hello3").then(r=>console.log(r.data));
+    axios.get("http://localhost:8080/update").then(r=>console.log(r.data));
   })
 
   const handleRequestSort = (event: any, property: any) => {
@@ -287,6 +287,10 @@ const EnhancedTable: React.FunctionComponent = () => {
   const handleChangeDense = (event: any) => {
     setDense(event.target.checked);
   };
+
+  const handleAdd = () => {
+    console.log('add')
+  }
 
   const isSelected = (name: any) => selected.indexOf(name) !== -1;
 
@@ -379,7 +383,7 @@ const EnhancedTable: React.FunctionComponent = () => {
         label="Dense padding"
       />
       <div>
-        <Tooltip title="Add" aria-label="add">
+        <Tooltip title="Add" aria-label="add" onClick={handleAdd}>
             <Fab color="primary" className={classes.fab}>
                 <AddIcon />
             </Fab>
