@@ -125,7 +125,7 @@ d.getRanElement(arr);
         title: "Easy to Object Array Sort & Search",
         code: `\`\`\`
 const sample = [
-    {id: 3, name: "Rick"}, 
+    {id:3, name: "Rick"}, 
     {id:1, name:"Jack"}, 
     {id:2, name:"Lee"}
 ];
