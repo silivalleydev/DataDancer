@@ -9,7 +9,7 @@ interface FooterProps {
 const useStyles = makeStyles({
     root: {
         position: 'relative',
-        backgroundColor: "rgb(238, 238, 238)",
+        borderTop: "1px solid rgb(238, 238, 238)",
         width: '100%',
     },
     paper: {

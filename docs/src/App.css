@@ -3,3 +3,7 @@ body {
     padding: 0;
 }
 
+.MuiAppBar-colorPrimary {
+    background-color: #E4AFB8 !important;
+}
+

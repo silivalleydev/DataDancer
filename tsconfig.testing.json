@@ -14,5 +14,5 @@
     "esModuleInterop": true,
   },
   "include": ["./src/**/*"],
-  "exclude": ["./api.spec.ts"]
+  "exclude": []
 }
