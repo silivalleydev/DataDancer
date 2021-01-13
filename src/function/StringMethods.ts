@@ -1,4 +1,4 @@
-import Base from '../common/Base';
+import { Base } from '../common/Base';
 import { engData, symbolData, numData } from '../data/passwordData';
 import {
 	k_first_name,
@@ -10,7 +10,7 @@ import {
 	jp_last_name,
 } from '../data/nameData';
 
-export default class StringMethods extends Base {
+export class StringMethods extends Base {
 	/**
 	 * fields
 	 */

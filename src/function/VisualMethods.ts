@@ -1,6 +1,6 @@
-import Base from '../common/Base';
+import { Base } from '../common/Base';
 
-export default class VisualMethods extends Base {
+export class VisualMethods extends Base {
 	/**
 	 * fields
 	 */

@@ -1,9 +1,9 @@
 {
   "name": "datadancer",
-  "version": "0.0.5-alpha",
+  "version": "0.0.8-alpha",
   "description": "",
   "main": "dist/output/dataDancer.js",
-  "types" : "dist/output/dataDancer.d.ts",
+  "types": "dist/output/dataDancer.d.ts",
   "keywords": [
     "datadancer",
     "nameGenerator",
@@ -41,6 +41,7 @@
     "rollup-plugin-tslint": "^0.2.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-node": "^9.1.1",
+    "tslib": "^1.10.0",
     "typescript": "^4.1.2"
   }
 }

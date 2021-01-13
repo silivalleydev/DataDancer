@@ -1,5 +1,5 @@
-import Base from '../common/Base';
-import ArrayMethods from '../../src/function/ArrayMethods';
+import { Base } from '../common/Base';
+import { ArrayMethods } from '../../src/function/ArrayMethods';
 
 type Deviation = {
 	origin: number[];
@@ -16,7 +16,7 @@ type MinMax = {
 	min: number;
 	max: number;
 };
-export default class NumberMethods extends Base {
+export class NumberMethods extends Base {
 	/**
 	 * fields
 	 */

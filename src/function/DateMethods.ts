@@ -1,6 +1,6 @@
 import { engDayOfWeek, jpDayOfWeek, korDayOfWeek } from '../data/dateData';
 
-export default class DateMethods {
+export class DateMethods {
 	/**
 	 * fields
 	 */

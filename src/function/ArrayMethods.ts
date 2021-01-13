@@ -1,6 +1,6 @@
-import Base from '../common/Base';
+import { Base } from '../common/Base';
 
-export default class ArrayMethods extends Base {
+export class ArrayMethods extends Base {
 	/**
 	 * fields
 	 */

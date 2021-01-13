@@ -1,4 +1,4 @@
-export default abstract class Base {
+export abstract class Base {
 	/**
 	 * fields
 	 */
