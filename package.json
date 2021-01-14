@@ -1,6 +1,6 @@
 {
   "name": "datadancer",
-  "version": "0.0.8-alpha",
+  "version": "0.0.9-alpha",
   "description": "",
   "main": "dist/output/dataDancer.js",
   "types": "dist/output/dataDancer.d.ts",
@@ -20,7 +20,6 @@
   },
   "scripts": {
     "bundle": "tsc && rollup -c rollup.config.js",
-    "publish": "npm publish",
     "t": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha --require ts-node/register 'test/**/**.test.ts'",
     "pr": "npx prettier --write src/**/**.ts"
   },
