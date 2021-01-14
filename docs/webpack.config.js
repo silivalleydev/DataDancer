@@ -33,7 +33,7 @@ module.exports = {
             loader: 'ignore-loader'
         },
         {
-          test: /\.(png|jpe?g|gif)$/i,
+          test: /\.(png|jpe?g|gif|mp3|wav|wma|ogg)$/i,
           use: [
             {
               loader: 'file-loader',

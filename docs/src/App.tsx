@@ -26,7 +26,7 @@ const App: React.FunctionComponent<AppProps> = () => {
      * states
      */
     const [x, setX] = useState(100);
-    const [y, setY] = useState(700);
+    const [y, setY] = useState(500);
     const [dragOn, setDragOn] = useState(false);
 
     /**
