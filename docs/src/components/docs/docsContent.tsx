@@ -81,10 +81,6 @@ const DocsContent: React.FunctionComponent<DocsContentProps> = (props) => {
         }
     }
 
-    const prodMarkDownSet = (file: string) => {
-
-    }
-
     const fetchFile = (file: any) => {
         const promise = fetch(file);
         promise.then(res=> res.text().then(r=> setMarkdown(r)))

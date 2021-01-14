@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper } from '@material-ui/core';
 import { HighlightedMarkdown } from '../common/highlightMarkdown';
-import DataDancer, { ArrayMethods, DateMethods, NumberMethods, StringMethods, VisualMethods} from 'datadancer';
+import DataDancer from 'datadancer';
 
 interface LandingDetailProps {
 }
@@ -70,7 +70,7 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
             v: new DataDancer.VisualMethods,
         })
 
-        const interval = setInterval(() => getDate(), 5000)
+        const interval = setInterval(() => getDate(), 3000);
         return () => clearInterval(interval);
     })
 
@@ -90,7 +90,6 @@ d.nameGenerator("jp");
             `,
         exec: function() {
             const arr = [];
-            console.log('s=>', d)
             if(d){
                 arr.push({title: 'd.nameGenerator("kor")', rs: d.s.nameGenerator("kor")});
                 arr.push({title: 'd.nameGenerator("eng")', rs: d.s.nameGenerator("eng")});

@@ -3935,10 +3935,10 @@
     "whatwg-mimetype" "^2.2.0"
     "whatwg-url" "^7.0.0"
 
-"datadancer@^0.0.9-alpha":
-  "integrity" "sha512-F9j0W/1LoyvAL44vFY4Yr/wRL92XxlUAQK8QAiW/eSSmiWE7ggU6ru1MbPrhHUC87DHGm4loMcpViEtimOlEfA=="
-  "resolved" "https://registry.npmjs.org/datadancer/-/datadancer-0.0.9-alpha.tgz"
-  "version" "0.0.9-alpha"
+"datadancer@^0.0.10-alpha":
+  "integrity" "sha512-dHo7jiF2jKp2T69zkMqAUu+NT88K3THK0ppms+O5gTs81KC4PZKJ035zUHyeD8akAb7J8WaQB88i8FOPgQ6lJw=="
+  "resolved" "https://registry.npmjs.org/datadancer/-/datadancer-0.0.10-alpha.tgz"
+  "version" "0.0.10-alpha"
 
 "debug@^2.2.0", "debug@^2.3.3", "debug@^2.6.0", "debug@^2.6.9", "debug@2.6.9":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
