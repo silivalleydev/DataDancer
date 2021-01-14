@@ -1,4 +1,4 @@
-import Base from '../../src/common/Base';
+import {Base} from '../../src/common/Base';
 import { assert } from 'chai';
 
 class Test extends Base {

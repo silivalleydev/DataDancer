@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     paper: {
         margin: '30px 0 0 40px',
         padding: 30,
-        height: 350,
+        height: 360,
         width: 410,
     },
     title: {
@@ -69,7 +69,7 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
             v: new DataDancer.VisualMethods,
         })
 
-        const interval = setInterval(() => getDate(), 7000)
+        const interval = setInterval(() => getDate(), 5000)
         return () => clearInterval(interval);
     })
 

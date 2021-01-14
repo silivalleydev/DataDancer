@@ -1,6 +1,6 @@
-import ArrayMethods from '../../src/function/ArrayMethods';
-import NumberMethods from '../../src/function/NumberMethods';
-import StringMethods from '../../src/function/StringMethods';
+import {ArrayMethods} from '../../src/function/ArrayMethods';
+import {NumberMethods} from '../../src/function/NumberMethods';
+import {StringMethods} from '../../src/function/StringMethods';
 import { assert } from 'chai';
 
 describe('ArrayMethods Test', () => {
@@ -8,6 +8,10 @@ describe('ArrayMethods Test', () => {
         const a = new ArrayMethods();
         const n = new NumberMethods();
         const s = new StringMethods();
+
+        const sample = [{id: 3, name: "Rick"}, {id:1, name:"Jack"}, {id:2, name:"Lee"}];
+        let sorteds = a.quickSort(sample, "id");
+        console.log('sorted=>', sorteds, 'rs=>',a.linearSearch(sorteds, "Jack", "name"))
 
         const ssarr = [ 3, 7,2,1,4, 10, 5];
 
@@ -96,8 +100,8 @@ describe('ArrayMethods Test', () => {
             }
         }
 
-        const linear = a.linearSearch(arrObj, originalobjval.name, "name")
-        console.log('linear rs',linear)
+        // const linear = a.linearSearch(arrObj, originalobjval.name, "name")
+        // console.log('linear rs',linear)
 
         console.time("origin objsearch");
         const rs = objsearch();

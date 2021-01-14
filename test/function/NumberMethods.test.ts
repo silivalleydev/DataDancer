@@ -1,4 +1,4 @@
-import NumberMethods from '../../src/function/NumberMethods';
+import {NumberMethods} from '../../src/function/NumberMethods';
 import { assert } from 'chai';
 
 describe('NumberMethods Test', () => {

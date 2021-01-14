@@ -71,25 +71,25 @@ export class ArrayMethods extends Base {
 	linearSearch(arr: any[], search: any, key?: string) {
 		let idx: number;
 		let val: any;
-
+		console.log("arr?",arr)
 		if (key) {
 			this.$_forLoop(0, arr.length, (i: number) => {
+				console.log(arr, arr[i][key] === search)
 				if (arr[i][key] === search) {
 					idx = i;
 					val = arr[i];
 				}
 			})
 	
-			if (idx) return { idx, val };
 		} else {
 			this.$_forLoop(0, arr.length, (i: number) => {
 				if (arr[i] === search) idx = i;
+					val = search;
 			})
-	
-			if (idx) return { idx, val: search };
 		}
 
-		return false;
+		if (val) return { idx, val };
+		else return false;
 	}
 
 	/**

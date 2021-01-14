@@ -1,4 +1,4 @@
-import StringMethods from '../../src/function/StringMethods';
+import {StringMethods} from '../../src/function/StringMethods';
 import { assert } from 'chai';
 
 describe('StringMethods Test', () => {
