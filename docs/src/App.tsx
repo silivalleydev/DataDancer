@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,6 +8,7 @@ import LandingPage from './components/landing/landingPage';
 import Footer from './components/common/footer';
 import DocsPage from './components/docs/docsPage';
 import ContactPage from './components/contact/contactPage';
+import SoundPlayer from './components/common/soundPlayer';
 
 
 interface AppProps {
@@ -24,7 +25,9 @@ const App: React.FunctionComponent<AppProps> = () => {
     /**
      * states
      */
-
+    const [x, setX] = useState(100);
+    const [y, setY] = useState(700);
+    const [dragOn, setDragOn] = useState(false);
 
     /**
      * useEffect
@@ -41,10 +44,24 @@ const App: React.FunctionComponent<AppProps> = () => {
     /**
      * methods
      */
+    const handleClick = () => {
+        setDragOn(true);
+    }
+    const handleMouseUp = () => {
+        setDragOn(false);
+    }
+
+    const handleMouseOver = (e: any) => {
+        if (dragOn) {
+            setY(e.clientY);
+            setX(e.clientX);
+        }
+    }
 
         return (
             <Switch>
-                <Grid container>
+                <Grid container onMouseOver={handleMouseOver}>
+                    <SoundPlayer onClick={handleClick} corX={x} corY={y} onMouseup={handleMouseUp}/>
                     <Grid item xs={12} className={classes.nav}>
                         <Navi/>
                     </Grid>

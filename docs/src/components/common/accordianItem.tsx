@@ -25,6 +25,7 @@ interface AccordianItemProps {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    userSelect:"none",
     width: '100%',
   },
   item: {

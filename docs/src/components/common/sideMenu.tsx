@@ -22,6 +22,7 @@ const drawerWidth = 250;
 
 const useStyles = makeStyles((theme) => ({
     root: {
+      userSelect:"none",
       display: 'flex',
     },
     appBar: {

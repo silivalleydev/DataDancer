@@ -12,10 +12,11 @@ interface NaviProps {
 const useStyles = makeStyles((theme)=>
     createStyles({
     root: {
+        userSelect:"none",
         position: "fixed",
         width: "100%",
         top: 0,
-        zIndex:100
+        zIndex: 10
     },
     img: {
         width: '60px',

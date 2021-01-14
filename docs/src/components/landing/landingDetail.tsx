@@ -10,6 +10,7 @@ interface LandingDetailProps {
 
 const useStyles = makeStyles({
     root: {
+        userSelect:"none"
     },
     paper: {
         margin: '30px 0 0 40px',
@@ -225,4 +226,4 @@ d.gradientGenerator();
     )
 }
 
-export default LandingDetail;
+export default React.memo(LandingDetail);

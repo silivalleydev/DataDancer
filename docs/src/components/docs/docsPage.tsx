@@ -11,6 +11,7 @@ interface DocsPageProps {
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        userSelect:"none",
         minHeight: "100%"
     }
 }));

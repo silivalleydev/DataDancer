@@ -8,6 +8,7 @@ interface FooterProps {
 
 const useStyles = makeStyles({
     root: {
+        userSelect:"none",
         position: 'relative',
         borderTop: "1px solid rgb(238, 238, 238)",
         width: '100%',

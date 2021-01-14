@@ -23,6 +23,7 @@ interface DocsContentProps {
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        userSelect:"none",
         padding: 80,
         overflowY: "auto",
         minHeight: '100vh'
