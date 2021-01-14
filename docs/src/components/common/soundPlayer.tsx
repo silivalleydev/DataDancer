@@ -5,7 +5,6 @@ import { Grid, Paper, Link, Avatar } from "@material-ui/core";
 
 interface SoundPlayerProps {
     onClick: () => void,
-    onMouseup: () => void,
     corX: number,
     corY: number
 }
@@ -16,7 +15,8 @@ const useStyles = makeStyles({
         position: "fixed",
         width: 50,
         height: 50,
-        backgroundColor: "blue"
+        backgroundColor: "blue",
+        transition: "top .5s ease-in-out, left .5s ease-in-out",
     }
 });
 
@@ -24,7 +24,7 @@ const SoundPlayer: React.FunctionComponent<SoundPlayerProps> = (props) => {
     /**
      * props
      */
-    const { onClick, onMouseup, corX, corY } = props;
+    const { onClick, corX, corY } = props;
 
     /**
      * states
@@ -49,8 +49,6 @@ const SoundPlayer: React.FunctionComponent<SoundPlayerProps> = (props) => {
         return(
             <div 
                 onMouseDown={onClick} 
-                onMouseUp={onMouseup} 
-                // onMouseOut={onMouseup}
                 style={{top: corY - 20, left: corX - 20}} 
                 className={classes.root}>
             </div>

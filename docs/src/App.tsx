@@ -60,8 +60,8 @@ const App: React.FunctionComponent<AppProps> = () => {
 
         return (
             <Switch>
-                <Grid container onMouseOver={handleMouseOver}>
-                    <SoundPlayer onClick={handleClick} corX={x} corY={y} onMouseup={handleMouseUp}/>
+                <Grid container onMouseOver={handleMouseOver}  onMouseUp={handleMouseUp}>
+                    <SoundPlayer onClick={handleClick} corX={x} corY={y}/>
                     <Grid item xs={12} className={classes.nav}>
                         <Navi/>
                     </Grid>
