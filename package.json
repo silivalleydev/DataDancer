@@ -1,6 +1,6 @@
 {
   "name": "datadancer",
-  "version": "0.0.9-alpha",
+  "version": "0.0.10-alpha",
   "description": "",
   "main": "dist/output/dataDancer.js",
   "types": "dist/output/dataDancer.d.ts",
