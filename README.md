@@ -18,6 +18,8 @@ for Date type object you can add month, day to Date object and you can get the d
 
 ## Docs Site
 
+![site](docs/src/image/site.png)
+
 If you want to know how to use, parametric, return type, etc.,  
 
 Please refer to the documentation site.  
