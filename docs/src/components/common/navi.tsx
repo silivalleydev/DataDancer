@@ -173,19 +173,6 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                     />
                     <Tab className={classes.tab} label="Docs"/>
                     <Tab className={classes.tab} label="Contact"/>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                        <SearchIcon />
-                        </div>
-                        <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </div>
                         <Link href="https://github.com/wisemk79/DataDancer" target="_blank">
                             <img src={giticon} className={classes.giticon} alt="icon" />
                         </Link>
