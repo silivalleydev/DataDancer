@@ -63,7 +63,7 @@ const dm = new DataDancer.DateMethods();
 ### ArrayMethods
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
-|---|---|---|---|
+|---|----|---|---|
 |quickSort|1. arr / Array / false, <br/>2. key / string / true |Array|This is quick sort.<br/>You can also sorting object array by key.|
 |binarySearch|1. arr / Array / false, <br/> 2. search / any / false<br/> key / string / true |Object<br/>{ idx: number(array index), val: Any }|It is a search function that allows you to quickly search in an array sorted in ascending order.<br/>You can also search object array by key.|
 |linearSearch|1. arr / Array / false, <br/> 2. search / any / false<br/> key / string / true |Object<br/>{ idx: number(array index), val: Any }|It is a search function that allows you to quickly search in an array sorted in ascending order.<br/>You can also search object array by key.|
@@ -74,7 +74,7 @@ const dm = new DataDancer.DateMethods();
 ### DateMethods
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
-|:---:|:---|:---:|:---:|:---|
+|---|----|---|---|
 |addDays|1. date / Date / false, <br/>2. dates / number / false |Date|add Day to Date type Object.|
 |addMonth|1. date / Date / false, <br/>2. months / number / false |Date|add months to Date type Object.|
 |addYear|1. date / Date / false, <br/>2. years / number / false |Date|add years to Date type Object.|
@@ -86,7 +86,7 @@ const dm = new DataDancer.DateMethods();
 ### NumberMethods
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
-|:---:|:---|:---:|:---:|:---|
+|---|----|---|---|
 |sum|1. arr / Number Array / false|Number|If you want to get sum value of number array, use sum function|
 |avarage|1. arr / Number Array / false|Number|If you want to get avarage value of number array, use avarage function|
 |deviation|1. arr / Number Array / false|Object<br/>{ origin: array(entered Array), avarage: number(avarage value), deviation: number(deviation value) }|If you want to get deviation value of number array, use deviation function|
@@ -100,13 +100,13 @@ const dm = new DataDancer.DateMethods();
 ### StringMethods
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
-|:---:|:---|:---:|:---:|:---|
+|---|----|---|---|
 |nameGenerator|1. lang / "kor" or "eng" or "jp" / true<br/>2. gender / "male" or "female" / true|String|If you want get name Randomly, use sum nameGenerator function.<br/>Default language value is English, Default gender value is male<br/>You can also set the language and gender.<br/>**Supported Language: English, Korean, Japan**<br/>**Supported Gender: English, Japan**|
 
 
 ### VisualMethods
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
-|:---:|:---|:---:|:---:|:---|
+|---|----|---|---|
 |colorGenerator|1. type / "rgb" or "code" / true |String|If you want to get Color randomly, use colorGenerator|
 |gradientGenerator|1. direction / "to right" or "to left" or "to top" or "to bottom"/ true |String|If you want to get gradient randomly, use gradientGenerator|
