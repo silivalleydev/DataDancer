@@ -8,6 +8,8 @@ import {
 	jp_female_name,
 	jp_male_name,
 	jp_last_name,
+	c_male_name,
+	c_female_name
 } from '../data/nameData';
 
 export class StringMethods extends Base {
@@ -33,13 +35,13 @@ export class StringMethods extends Base {
 	/**
 	 * nameGenerator
 	 *
-	 * support eng, japan, korea name
+	 * support eng, japan, korea, chinese name
 	 *
-	 * if you generate eng or japanese Name, you can choose gender
+	 * if you generate eng, japanese, chinese Name, you can choose gender
 	 *
-	 * (lang?: "kor" | "eng" | "jp", gender?: "male" | "female")
+	 * (lang?: "kor" | "eng" | "jp" | "chi", gender?: "male" | "female")
 	 */
-	nameGenerator(lang: "kor" | "eng" | "jp" = 'eng', gender: "male" | "female" = 'male') {
+	nameGenerator(lang: "kor" | "eng" | "jp" | "chi" = 'eng', gender: "male" | "female" = 'male') {
 		if (lang === 'kor') {
 			const idx1 = this.$_ranRangeNum(0, k_last_name.length - 1);
 			const idx2 = this.$_ranRangeNum(0, k_first_name.length - 1);
@@ -70,7 +72,15 @@ export class StringMethods extends Base {
 				const name = jp_female_name[idx].split(', ');
 				return `${name[0]} ${lastName[0]}(${name[1]} ${lastName[1]})`;
 			}
-		}
+		} else if (lang === 'chi') {
+			if (gender === 'male') {
+				const idx = this.$_ranRangeNum(0, c_male_name.length - 1);
+				return c_male_name[idx];
+			} else {
+				const idx = this.$_ranRangeNum(0, c_female_name.length - 1);
+				return c_female_name[idx];
+			}
+		} 
 	}
 
 	/**

@@ -87,10 +87,12 @@ export class DateMethods {
 
 	/**
 	 * you can get day of the week to String type, use getDayOfWeek
+	 * 
+	 * It support language English, Korean, Japanese, Chinese
 	 *
-	 * (date: Date, lang?: "eng" | "kor" | "jp")
+	 * (date: Date, lang?: "eng" | "kor" | "jp" | "chi")
 	 */
-	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" = "eng"): string {
+	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" | "chi" = "eng"): string {
 		const dayIdx = date.getDay();
 		let rs: string;
 		switch (lang) {
@@ -100,7 +102,7 @@ export class DateMethods {
 			case 'kor':
 				rs = korDayOfWeek[dayIdx];
 				break;
-			case 'jp':
+			case 'jp' || 'chi':
 				rs = jpDayOfWeek[dayIdx];
 				break;
 		}

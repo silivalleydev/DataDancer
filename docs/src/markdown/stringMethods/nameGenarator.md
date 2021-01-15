@@ -8,13 +8,13 @@ Default language value is English, Default gender value is male
 
 You can also set the language and gender.
 
-**Supported Language: English, Korean, Japan**
+**Supported Language: English, Korean, Japan, Chinese**
 
-**Supported Gender: English, Japan**
+**Supported Gender: English, Japan, Chinese**
 
 #### Parameter
 
-1. paramName: lang,  type: "kor" | "eng" | "jp", Optional: true, Default Value: "eng"
+1. paramName: lang,  type: "kor" | "eng" | "jp" | "chi", Optional: true, Default Value: "eng"
 2. paramName: gender, type: "male" | "female", Optional: true, Default Value: "male"
 
 #### Return

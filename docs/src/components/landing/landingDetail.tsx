@@ -85,6 +85,7 @@ const d = new DataDancer.StringMethods();
 d.nameGenerator("kor");
 d.nameGenerator("eng");
 d.nameGenerator("jp");
+d.nameGenerator("chi");
 \`\`\`
             `,
         exec: function() {
@@ -93,6 +94,7 @@ d.nameGenerator("jp");
                 arr.push({title: 'd.nameGenerator("kor")', rs: d.s.nameGenerator("kor")});
                 arr.push({title: 'd.nameGenerator("eng")', rs: d.s.nameGenerator("eng")});
                 arr.push({title: 'd.nameGenerator("jp")', rs: d.s.nameGenerator("jp")});
+                arr.push({title: 'd.nameGenerator("chi")', rs: d.s.nameGenerator("chi")});
             }
                 return arr;
         }

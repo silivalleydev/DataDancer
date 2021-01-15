@@ -55,5 +55,11 @@ describe('StringMethods Test', () => {
         const jpf = s.nameGenerator("jp", "female");
         console.log(jpf);
 
+        const cm = s.nameGenerator("chi", "male");
+        console.log(cm);
+
+        const cf = s.nameGenerator("chi", "female");
+        console.log(cf);
+
     });
 });

@@ -3,12 +3,13 @@
 #### Explanation
 
 If you want to get day of the week to String type, use getDayOfWeek.
-Can be obtained by language
+
+It support English, Korean, Japanese, Chinese
 
 #### Parameter
 
 1. paramName: date, type: Date, Optional: false
-2. paramName: lang, type: "eng" || "kor" || "jp", Optional: true, default Value: "eng"
+2. paramName: lang, type: "eng" || "kor" || "jp" || "chi", Optional: true, default Value: "eng"
 
 #### Return
 
