@@ -102,6 +102,7 @@ const dm = new DataDancer.DateMethods();
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
 |---|----|---|---|
 |nameGenerator|1. lang / "kor" or "eng" or "jp" / true<br/>2. gender / "male" or "female" / true|String|If you want get name Randomly, use sum nameGenerator function.<br/>Default language value is English, Default gender value is male<br/>You can also set the language and gender.<br/>**Supported Language: English, Korean, Japan**<br/>**Supported Gender: English, Japan**|
+|passwordGenerator|1. digit / Number / false<br/>2. include / "all" or "string" or "number" or "symbol" / true|String|If you want get password Randomly, use sum passwordGenerator function.<br/>Password must be set at least 4 digits.<br/>Default return password value is only inludes String.<br/>If you want to inlude number or symbol or both in password,<br/>you can also set it<br/>**Can Include: Number, Symbol**|
 
 
 ### VisualMethods
