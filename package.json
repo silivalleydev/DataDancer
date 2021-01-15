@@ -1,17 +1,23 @@
 {
   "name": "datadancer",
-  "version": "0.0.10-alpha",
+  "version": "0.0.11-alpha",
   "description": "",
   "main": "dist/output/dataDancer.js",
   "types": "dist/output/dataDancer.d.ts",
   "keywords": [
     "datadancer",
     "nameGenerator",
+    "colorGenerator",
     "date",
     "array",
     "passwordGenerator",
     "name",
-    "password"
+    "password",
+    "calculation",
+    "avarage",
+    "sum",
+    "standard diviation",
+    "control"
   ],
   "homepage": "https://github.com/wisemk79/datadancer",
   "bugs": {
