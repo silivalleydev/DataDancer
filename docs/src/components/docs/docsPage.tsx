@@ -19,7 +19,7 @@ const DocsPage: React.FunctionComponent<DocsPageProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
 
     /**
      * states

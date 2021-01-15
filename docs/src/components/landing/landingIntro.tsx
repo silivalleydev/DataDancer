@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Fade } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import intro from '../../image/main.gif'
 
 interface LandingIntroProps {
@@ -47,7 +47,7 @@ const LandingIntro: React.FunctionComponent<LandingIntroProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
     
     /**
      * states
@@ -64,7 +64,7 @@ const LandingIntro: React.FunctionComponent<LandingIntroProps> = (props) => {
      */
     useEffect(() => {
         !checked && setChecked(true);
-    })
+    },[checked])
 
     /**
      * methods

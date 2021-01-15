@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { HighlightedMarkdown } from '../common/highlightMarkdown';
 import { useLocation } from 'react-router-dom';

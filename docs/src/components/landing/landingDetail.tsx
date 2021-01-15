@@ -55,18 +55,18 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
      * states
      */
     const [d, setD]:any = useState();
-    const [date, setDate] = useState(new Date);
+    const [, setDate] = useState(new Date());
     
     /**
      * useEffect
      */
     useEffect(() => {
         if (!d) setD({
-            a: new DataDancer.ArrayMethods,
-            n: new DataDancer.NumberMethods,
-            s: new DataDancer.StringMethods,
-            d: new DataDancer.DateMethods,
-            v: new DataDancer.VisualMethods,
+            a: new DataDancer.ArrayMethods(),
+            n: new DataDancer.NumberMethods(),
+            s: new DataDancer.StringMethods(),
+            d: new DataDancer.DateMethods(),
+            v: new DataDancer.VisualMethods(),
         })
 
         const interval = setInterval(() => getDate(), 3000);
