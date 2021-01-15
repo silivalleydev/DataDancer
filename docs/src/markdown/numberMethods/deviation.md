@@ -15,7 +15,7 @@ return Object
 - Properties
 1. origin: array(entered Array)
 2. avarage: number(avarage value)
-3. deviation: number(deviation value)}
+3. deviation: number(deviation value)
 
 #### usage
 

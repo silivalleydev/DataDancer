@@ -10,7 +10,6 @@ interface LandingPageProps {
 
 const useStyles = makeStyles({
     root: {
-        userSelect:"none",
         marginBottom: 30
     }
 });

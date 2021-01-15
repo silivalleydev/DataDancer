@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, TextField, Input, TextareaAutosize, TableContainer, Table, TableBody, TableRow, TableCell, Grid, ButtonBase, TableHead, Typography } from '@material-ui/core';
+import { Button, TextField, Input, TableContainer, Table, TableBody, TableRow, TableCell, Grid, ButtonBase, TableHead, Typography, InputBase } from '@material-ui/core';
 import emailjs from 'emailjs-com';
+import { TextFields } from '@material-ui/icons';
 
 interface QnAPageProps {
 }
@@ -103,7 +104,14 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
                                 </TableRow>
                                 <TableRow className={classes.row}>
                                     <TableCell className={classes.row} align="center">
-                                        <TextareaAutosize name="message" className={classes.input} rows={8}/>
+                                        <TextField 
+                                            id="outlined-basic" 
+                                            label="Message" 
+                                            variant="outlined" 
+                                            multiline={true}  
+                                            name="message" 
+                                            className={classes.input} 
+                                            rows={8}/>
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>

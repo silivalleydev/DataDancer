@@ -14,7 +14,7 @@ return Object
 
 - Properties
 1. min: number(minimum value)
-2. max: number(maximum value)}
+2. max: number(maximum value)
 
 #### usage
 

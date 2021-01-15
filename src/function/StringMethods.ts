@@ -33,14 +33,11 @@ export class StringMethods extends Base {
 	/**
 	 * nameGenerator
 	 *
-	 * support us, japan, korea name
+	 * support eng, japan, korea name
 	 *
-	 * if you generate us or japanese Name, you can choose gender
+	 * if you generate eng or japanese Name, you can choose gender
 	 *
-	 * 외국(영어권, 일어권) 이름과 한국 이름을 생성할 수 있다.
-	 * 외국 이름의 경우 성별을 지정할 수 있다.
-	 *
-	 * (locale: "us" or "kor" or "jp", gender: "male" or "female")
+	 * (lang?: "kor" | "eng" | "jp", gender?: "male" | "female")
 	 */
 	nameGenerator(lang: "kor" | "eng" | "jp" = 'eng', gender: "male" | "female" = 'male') {
 		if (lang === 'kor') {
@@ -85,11 +82,17 @@ export class StringMethods extends Base {
 	 */
 
 	/**
-	 * 임시 비밀번호 생성 메서드 (4자리 이상만 생성가능)
+	 * you can get password Randomly, use sum nameGenerator function.
+	 * 
+	 * Password must be set at least 4 digits.
+	 * 
+	 * Default return password value is only inludes String.
+	 * 
+	 * If you want to inlude number or symbol or both in password,
+	 * 
+	 * you can also set it
 	 *
-	 * 기본은 영문 대소문자는 포함이며, 상황에 따라 숫자 또는 특수문자를 포함할 수 있다
-	 *
-	 * (digit:자리수 <- integer, include: all, number, symbol <-string)
+	 * (digit: number, include?: "string" | "all" | "number" | "symbol")
 	 */
 	passwordGenerator(digit: number, include: "string" | "all" | "number" | "symbol" = "string") {
 		if (digit < 4) return false;

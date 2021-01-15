@@ -14,7 +14,7 @@ return Object
 
 - Properties
 1. variance: number(variance value)
-2. standardDeviation: number(standardDeviation value)}
+2. standardDeviation: number(standardDeviation value)
 
 #### usage
 

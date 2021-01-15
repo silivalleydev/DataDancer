@@ -18,11 +18,9 @@ export class DateMethods {
 	 * methods
 	 */
 	/**
-	 * 날짜를 비교하는 메서드
+	 * If you have 2 Date Type Object, dateCompare function gives you which date is latest.
 	 *
-	 * (fastDate: 제일 빠른날짜인 Date 객체, latestDate: 제일 늦은 날짜인 Date 객체)
-	 *
-	 * latestDate가 fastDate보다 더 늦은 날짜라면 true를 반환한다.
+	 * (fastDate: Date, latestDate: Date)
 	 */
 	dateCompare(fastDate: Date, latestDate: Date): boolean {
 		const compare: boolean = latestDate.getTime() > fastDate.getTime();
@@ -30,14 +28,9 @@ export class DateMethods {
 	}
 
 	/**
-	 * Form을 가진 String 날짜를 반환하는 메서드
+	 * you can get Date Type Object to String with your own Custom Form 
 	 *
-	 * (date: 날짜객체, form: 연, 월, 일 사이에 넣을 텍스트)
-	 *
-	 *
-	 * 예를 들어 2020년 10월 11일인 Date객체를 넣고 form을 "-"로 넣어주면
-	 *
-	 * 2020-10-11 이 String으로 반환된다.
+	 * (date: Date, form: string)
 	 */
 	getFormDate(date: Date, form: string): string {
 		if (date) {
@@ -59,14 +52,18 @@ export class DateMethods {
 	}
 
 	/**
-	 * 년을 더하는 메서드
+	 * add Year to Date type Object
+	 * 
+	 * (date: Date, years: number)
 	 */
 	addYear(date: Date, years: number): Date {
 		return new Date(date.setFullYear(date.getFullYear() + years));
 	}
 
 	/**
-	 * 월을 더하는 메서드
+	 * add Month to Date type Object
+	 * 
+	 * (date: Date, months: number)
 	 */
 	addMonths(date: Date, months: number) {
 		const d = date.getDate();
@@ -78,7 +75,9 @@ export class DateMethods {
 	}
 
 	/**
-	 * 일을 더하는 메서드
+	 * add Day to Date type Object
+	 * 
+	 * (date: Date, dates: number)
 	 */
 	addDays(date: Date, dates: number): Date {
 		const add = 86400000 * dates;
@@ -87,9 +86,9 @@ export class DateMethods {
 	}
 
 	/**
-	 * 해당 날짜의 요일을 구하는 메서드 locale로 언어별로 요일을 얻을 수 있다
+	 * you can get day of the week to String type, use getDayOfWeek
 	 *
-	 * (date: Date, locale: eng, kor, jp)
+	 * (date: Date, lang?: "eng" | "kor" | "jp")
 	 */
 	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" = "eng"): string {
 		const dayIdx = date.getDay();

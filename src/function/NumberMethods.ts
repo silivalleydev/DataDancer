@@ -39,17 +39,9 @@ export class NumberMethods extends Base {
 	 */
 
 	/**
-	 * 자리수를 지정하여 랜덤한 정수형 난수를 얻는 메서드
-	 *
-	 * 기본 반환타입은 Integer이며
-	 *
-	 * isString을 true로 지정하면 String 형태의 숫자를 얻을 수 있다.
-	 *
-	 * zeroFixBackDigit을 설정하면 뒷자리수를 기준으로 몇자리를 0으로 지정할 것인지 설정할 수 있다.
-	 *
-	 * zeroFixBackDigit은 digit보다 작아야한다.
-	 *
-	 * (digit: 자릿수, isString: default는 false, zeroFixBackDigit: 0으로 고정할 뒷 자리수)
+	 * you can get number of fixed digit randomly
+	 * 
+	 * (digit: number, isString?: boolean, zeroFixBackDigit?: number)
 	 */
 	getRanDigitNum(digit: number, isString: boolean = false, zeroFixBackDigit?: number) {
 		let rs: any;
@@ -96,18 +88,18 @@ export class NumberMethods extends Base {
 	}
 
 	/**
-	 * 숫자의 범위를 지정하여 정수형 난수를 얻는 메서드.
+	 * you can get number from a to b randomly
 	 *
-	 * 홀수, 짝수를 지정할 수 있다.
-	 *
-	 * (start:시작값, end:마지막값, )
+	 * (start: number, end: number)
 	 */
 	getRanRangeNum(start: number, end: number): number {
 		return this.$_ranRangeNum(start, end);
 	}
 
 	/**
-	 * 입력된 숫자 배열의 합을 구하는 메서드
+	 * you can get sum value of number array
+	 * 
+	 * (arr: number[])
 	 */
 	sum(arr: number[]): number {
 		let rs = 0;
@@ -118,7 +110,9 @@ export class NumberMethods extends Base {
 	}
 
 	/**
-	 * 입력된 숫자 배열의 평균을 구하는 메서드
+	 * you can get avarage value of number array
+	 * 
+	 * (arr: number[])
 	 */
 	avarage(arr: number[]): number {
 		let rs = 0;
@@ -127,7 +121,9 @@ export class NumberMethods extends Base {
 	}
 
 	/**
-	 * 입력된 숫자배열의 편차 값을 구하는 메서드
+	 * you can get deviation value of number array
+	 * 
+	 * (arr: number[])
 	 */
 	deviation(arr: number[]): Deviation {
 		const avarage = this.avarage(arr);
@@ -145,7 +141,9 @@ export class NumberMethods extends Base {
 	}
 
 	/**
-	 * 입력된 숫자배열의 분산 값을 구하는 메서드
+	 * you can get variance value of number array
+	 * 
+	 * (arr: number[])
 	 */
 	variance(arr: number[]): number {
 		const deviation = this.deviation(arr).deviation;
@@ -158,7 +156,9 @@ export class NumberMethods extends Base {
 	}
 
 	/**
-	 * 입력된 숫자배열의 표준 편차 값을 구하는 메서드
+	 * you can get standardDeviation value of number array
+	 * 
+	 * (arr: number[])
 	 */
 	standardDeviation(arr: number[]): StandardDeviation {
 		const variance = this.variance(arr);
@@ -169,6 +169,11 @@ export class NumberMethods extends Base {
 		};
 	}
 
+	/**
+	 *  you can get minimum and maximum value of number array
+	 * 
+	 *  (arr: number[])
+	 */
 	getMinMax(arr: number[]): MinMax {
 		const sorted = this.a.quickSort(arr);
 		return {

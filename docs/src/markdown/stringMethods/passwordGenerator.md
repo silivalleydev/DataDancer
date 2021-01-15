@@ -2,7 +2,7 @@
 
 #### Explanation
 
-If you want get password Randomly, use sum nameGenerator function.
+If you want get password Randomly, use sum passwordGenerator function.
 
 Password must be set at least 4 digits.
 

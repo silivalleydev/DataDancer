@@ -14,7 +14,7 @@ You can search object array by key.
 
 #### Return
 
-return Array
+return Object
 
 - Properties
 1. idx: number(array index)

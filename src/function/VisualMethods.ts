@@ -28,7 +28,9 @@ export class VisualMethods extends Base {
 	 */
 
 	/**
-	 * 랜덤 색상 생성 메서드
+	 * you can get color randomly.
+	 * 
+	 * (type: "rgb" | "code")
 	 */
 	colorGenerator(type: "rgb" | "code" = "code") {
 		let rs = '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -41,7 +43,8 @@ export class VisualMethods extends Base {
 		return rs;
 	}
 	/**
-	 * (direction?: to right, to left, to top, to bottom)
+	 * you can get gradient randomly
+	 * (direction?: "to right" | "to left" | "to top" | "to bottom")
 	 */
 	gradientGenerator(direction?: "to right" | "to left" | "to top" | "to bottom"): string {
 		let direcArr = ['to right', 'to left', 'to top', 'to bottom'];
@@ -56,15 +59,4 @@ export class VisualMethods extends Base {
 		return rs;
 	}
 
-	/**
-	 * 지정한 아이디 태그에 스크롤 태그를 걸어주는 메서드
-	 *
-	 * (id: idName)
-	 */
-	setScrollConatiner(id: string): void {
-		let et: HTMLElement;
-		et = document.getElementById(id);
-		const st = et.style;
-		st.overflow = 'auto';
-	}
 }

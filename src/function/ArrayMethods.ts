@@ -21,7 +21,11 @@ export class ArrayMethods extends Base {
 	 */
 
 	/**
-	 * quick sort
+	 * This is quick sort.
+	 * 
+	 * You can also sorting object array by key.
+	 * 
+	 * (arr: any[], key?: string)
 	 */
 	quickSort(arr: any[], key?: string) {
 		if (arr.length <= 1) {
@@ -57,16 +61,22 @@ export class ArrayMethods extends Base {
 
 
 	/**
-	 * 이진 탐색 알고리즘
-	 *
-	 * (arr: 배열, search: 찾을요소)
+	 * It is a search function that allows you to quickly search in an array sorted in ascending order.
+	 * 
+	 * You can also search object array by key.
+	 * 
+	 * (arr: any[], search: any, key?: string)
 	 */
 	binarySearch(arr: any[], search: any, key?: string) {
 		return this.$_binarySearchAl(arr, search, key);
 	}
 
 	/**
-	 *  Linear Search
+	 *  you can search value of index in array or object array, use linearSearch
+	 * 
+	 *  You can also search object array by key.
+	 * 
+	 * (arr: any[], search: any, key?: string)
 	 */
 	linearSearch(arr: any[], search: any, key?: string) {
 		let idx: number;
@@ -91,9 +101,11 @@ export class ArrayMethods extends Base {
 	}
 
 	/**
-	 * 배열 인덱스로 중간 요소 제거 메서드
-	 *
-	 * target에 배열로 여러개의 인덱스를 넣어주면 해당 인덱스가 삭제된다.
+	 * remove the middle element of an array
+	 * 
+	 * It is also possible to remove multiple middle elements of an array.
+	 * 
+	 * (arr: any[], target: number | number[])
 	 */
 	rmMiddleArrIdx(arr: any[], target: number | number[]) {
 		const arr1 = arr;
@@ -114,13 +126,11 @@ export class ArrayMethods extends Base {
 	}
 
 	/**
-	 * 배열 랜덤 요소 추출
+	 * you can get the elements of an array randomly, use getRanElement.
+	 * 
+	 * It is also possible to get multiple random elements of an array.
 	 *
-	 * 배열을 넣으면 요소중 하나를 랜덤하게 반환한다.
-	 *
-	 * howMany에 숫자를 넣으면 숫자를 넣은 만큼 랜덤 요소를 배열로 반환한다.
-	 *
-	 * (arr: 배열, howMany?: number)
+	 * (arr: any[], howMany?: number)
 	 */
 	getRanElement(arr: any[], howMany?: number) {
     		const length = arr.length - 1;

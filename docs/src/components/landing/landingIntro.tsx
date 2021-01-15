@@ -17,6 +17,7 @@ const useStyles = makeStyles({
         height: '480px'
     },
     cover: {
+        userSelect: "none",
         backgroundColor: 'black',
         opacity: 0.8,
         width: '100%',

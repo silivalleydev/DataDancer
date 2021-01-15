@@ -1,5 +1,6 @@
 # DataDancer
 
+
 ## What is DataDancer?
 
 
@@ -16,9 +17,10 @@ you can sort the array or remove the middle element of the array and get the arr
 for Date type object you can add month, day to Date object and you can get the day of the week.
 
 
+
 ## Docs Site
 
-![site](docs/src/image/site.png)
+![site](https://github.com/wisemk79/DataDancer/blob/main/docs/src/image/site.png)
 
 If you want to know how to use, parametric, return type, etc.,  
 
@@ -30,15 +32,18 @@ Enjoy!
 
 [DataDancer Docs](https://wisemk79.github.io/DataDancer/#/)
 
+
 ## npm
 
 [DataDancer npm](https://www.npmjs.com/package/datadancer)
+
 
 ## Install
 
 ```
 $ npm i datadancer
 ```
+
 
 ## How to use?
 
@@ -53,5 +58,55 @@ const vm = new DataDancer.VisualMethods();
 const dm = new DataDancer.DateMethods();
 ```
 
+## API
+
+### ArrayMethods
+
+|Method|Parameter / Type / isOptional|ReturnType|Detail|
+|:---:|:---|:---:|:---:|:---|
+|quickSort|1. arr / Array / false, <br/>2. key / string / true |Array|This is quick sort.<br/>You can also sorting object array by key.|
+|binarySearch|1. arr / Array / false, <br/> 2. search / any / false<br/> key / string / true |Object<br/>{ idx: number(array index), val: Any }|It is a search function that allows you to quickly search in an array sorted in ascending order.<br/>You can also search object array by key.|
+|linearSearch|1. arr / Array / false, <br/> 2. search / any / false<br/> key / string / true |Object<br/>{ idx: number(array index), val: Any }|It is a search function that allows you to quickly search in an array sorted in ascending order.<br/>You can also search object array by key.|
+|getRanElement|1. arr / Array / false, <br/> 2. howMany / number / true|Any \| Any Array|If you want to get the elements of an array randomly, use getRanElement. <br/>It is also possible to get **multiple random elements of an array.**|
+|rmMiddleArrIdx|1. arr / Array / false, <br/> 2. target / number | number[] / false | Array |If you want to remove the middle element of an array, use rmMiddleArrIdx.<br/>It is also possible to remove **multiple middle elements of an array.**|
 
 
+### DateMethods
+
+|Method|Parameter / Type / isOptional|ReturnType|Detail|
+|:---:|:---|:---:|:---:|:---|
+|addDays|1. date / Date / false, <br/>2. dates / number / false |Date|add Day to Date type Object.|
+|addMonth|1. date / Date / false, <br/>2. months / number / false |Date|add months to Date type Object.|
+|addYear|1. date / Date / false, <br/>2. years / number / false |Date|add years to Date type Object.|
+|dateCompare|1. fastDate / Date / false, <br/>2. latestDate / Date / false |Boolean|If you have 2 Date Type Object, dateCompare function gives you which date is latest.|
+|getDayOfWeek|1. date / Date / false, <br/>2. lang / "eng" or "kor" or "jp" / true |String|If you want to get day of the week to String type, use getDayOfWeek. Can be obtained by language|
+|getFormDate|1. date / Date / false, <br/>2. form / string / false |String|If you want to get Date Type Object to String with your own Custom Form use getFormDate Function.|
+
+
+### NumberMethods
+
+|Method|Parameter / Type / isOptional|ReturnType|Detail|
+|:---:|:---|:---:|:---:|:---|
+|sum|1. arr / Number Array / false|Number|If you want to get sum value of number array, use sum function|
+|avarage|1. arr / Number Array / false|Number|If you want to get avarage value of number array, use avarage function|
+|deviation|1. arr / Number Array / false|Object<br/>{ origin: array(entered Array), avarage: number(avarage value), deviation: number(deviation value) }|If you want to get deviation value of number array, use deviation function|
+|variance|1. arr / Number Array / false|Number|If you want to get variance value of number array, use variance function|
+|standardDeviation|1. arr / Number Array / false | Object<br/>{ variance: number(variance value), standardDeviation: number(standardDeviation value) } |If you want to get standardDeviation value of number array, use standardDeviation function|
+|getMinMax|1. arr / Number Array / false|Object<br/>{ min: number(minimum value), max: number(maximum value) }|If you want to get minimum and maximum value of number array, use getMinMax function|
+|getRanDigitNum|1. digit / Number / false<br/>2. isString / Boolean / true<br/>3. zeroFixBackDigit / Number / true|Number \| String|If you want to get number of fixed digit randomly, use getRanDigitNum function|
+|getRanRangeNum|1. start / Number / false<br/>2. end / Number / false|Number|If you want to get number from a to b randomly, use getRanRangeNum function|
+
+
+### StringMethods
+
+|Method|Parameter / Type / isOptional|ReturnType|Detail|
+|:---:|:---|:---:|:---:|:---|
+|nameGenerator|1. lang / "kor" or "eng" or "jp" / true<br/>2. gender / "male" or "female" / true|String|If you want get name Randomly, use sum nameGenerator function.<br/>Default language value is English, Default gender value is male<br/>You can also set the language and gender.<br/>**Supported Language: English, Korean, Japan**<br/>**Supported Gender: English, Japan**|
+
+
+### VisualMethods
+
+|Method|Parameter / Type / isOptional|ReturnType|Detail|
+|:---:|:---|:---:|:---:|:---|
+|colorGenerator|1. type / "rgb" or "code" / true |String|If you want to get Color randomly, use colorGenerator|
+|gradientGenerator|1. direction / "to right" or "to left" or "to top" or "to bottom"/ true |String|If you want to get gradient randomly, use gradientGenerator|
