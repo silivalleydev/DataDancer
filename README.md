@@ -63,7 +63,7 @@ const dm = new DataDancer.DateMethods();
 ### ArrayMethods
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
-|---|---|---|---|---|
+|---|---|---|---|
 |quickSort|1. arr / Array / false, <br/>2. key / string / true |Array|This is quick sort.<br/>You can also sorting object array by key.|
 |binarySearch|1. arr / Array / false, <br/> 2. search / any / false<br/> key / string / true |Object<br/>{ idx: number(array index), val: Any }|It is a search function that allows you to quickly search in an array sorted in ascending order.<br/>You can also search object array by key.|
 |linearSearch|1. arr / Array / false, <br/> 2. search / any / false<br/> key / string / true |Object<br/>{ idx: number(array index), val: Any }|It is a search function that allows you to quickly search in an array sorted in ascending order.<br/>You can also search object array by key.|
