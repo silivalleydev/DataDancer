@@ -18,7 +18,7 @@ const LandingPage: React.FunctionComponent<LandingPageProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
     
     /**
      * states

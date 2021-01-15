@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Drawer, Toolbar, List, Divider, ListItem, Typography } from '@material-ui/core';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import AccordianItem from './accordianItem';  
 import { menuChange } from '../../action/index';
 import { connect } from 'react-redux'
@@ -72,7 +72,6 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = (props) => {
      */
     const classes = useStyles();
     const history = useHistory();
-    const location = useLocation();
 
     /**
      * useEffect

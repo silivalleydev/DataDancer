@@ -40,8 +40,8 @@ const SoundPlayer: React.FunctionComponent<SoundPlayerProps> = (props) => {
     /**
      * states
      */
-    const [sound, setSound]: any = useState("");
-    const [img, setImg]: any = useState("");
+    const [sound, setSound]: any = useState(sound1);
+    const [img, setImg]: any = useState(blind);
     /**
      * variables
      */
@@ -51,25 +51,12 @@ const SoundPlayer: React.FunctionComponent<SoundPlayerProps> = (props) => {
      * useEffect
      */
     useEffect(() => {
-        if (!sound) {
-            setSound(sound1);
-            setImg(blind);
-        }
+
     })
 
     /**
      * methods
      */
-    const soundSwitch = () => {
-        console.log('??',sound === sound1);
-        // if (img === blind) {
-        //     setImg(breaking);
-        //     setSound(sound2);
-        // } else {
-        //     setImg(blind);
-        //     setSound(sound1);
-        // }
-    }
 
         return(
             <Card 
@@ -89,7 +76,6 @@ const SoundPlayer: React.FunctionComponent<SoundPlayerProps> = (props) => {
                     className={classes.audio}
                     autoPlay
                     src={sound}
-                    onPlay={soundSwitch}
                     onEnded={()=> {
                         if (img === blind) {
                             setImg(breaking);

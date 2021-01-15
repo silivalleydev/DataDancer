@@ -50,7 +50,7 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
 
     /**
      * states
@@ -60,19 +60,6 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
      * variables
      */
     const classes = useStyles();
-    const contents = [{
-        id: 0,
-        title: "Docs",
-        content: ""
-    }, {
-        id: 1,
-        title: "Getting Start",
-        content: ""
-    }, {
-        id: 2,
-        title: "Contact",
-        content: ""
-    }]
 
     /**
      * useEffect
@@ -86,40 +73,29 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
      */
 
         return(
-            <Grid container xs={12} className={classes.root}>
+            <Grid container className={classes.root}>
                 <Grid container justify="center" spacing={0}>
-                <Grid item>
-                    <Paper className={classes.created}>
-                        <Grid item className={classes.title}>
-                            <Grid>
-                                <Avatar 
-                                    className={classes.avatar}
-                                    alt="wisemk79" 
-                                    src="https://avatars2.githubusercontent.com/u/59218281?s=400&u=3b8db4af24e8cd7073ded4895507c6ac7c4777bc&v=4" />
-                                <Grid className={classes.me}>Created By wisemk79</Grid>
+                    <Grid item>
+                        <Paper className={classes.created}>
+                            <Grid item className={classes.title}>
+                                <Grid>
+                                    <Avatar 
+                                        className={classes.avatar}
+                                        alt="wisemk79" 
+                                        src="https://avatars2.githubusercontent.com/u/59218281?s=400&u=3b8db4af24e8cd7073ded4895507c6ac7c4777bc&v=4" />
+                                    <Grid className={classes.me}>Created By wisemk79</Grid>
+                                </Grid>
+                                <br/>
+                                <Grid className={classes.git}>
+                                    Git: <Link href="https://github.com/wisemk79">wisemk79</Link>
+                                </Grid>
+                                <br/>
+                                <Grid className={classes.git}>
+                                    Email: wisemk79@gmail.com
+                                </Grid>
                             </Grid>
-                            <br/>
-                            <Grid className={classes.git}>
-                                Git: <Link href="https://github.com/wisemk79">wisemk79</Link>
-                            </Grid>
-                            <br/>
-                            <Grid className={classes.git}>
-                                Email: wisemk79@gmail.com
-                            </Grid>
-                        </Grid>
-                    </Paper>
-                </Grid>
-                    {contents.map((content) => (
-                        <>
-                            <Grid key={content.id} item>
-                                <Paper className={classes.paper}>
-                                    <Grid item className={classes.title}>
-                                        {content.title}
-                                    </Grid>
-                                </Paper>
-                            </Grid>
-                        </>
-                    ))}
+                        </Paper>
+                    </Grid>
                 </Grid>
             </Grid>
         )

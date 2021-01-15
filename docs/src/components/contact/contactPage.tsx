@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, TextField, Input, TableContainer, Table, TableBody, TableRow, TableCell, Grid, ButtonBase, TableHead, Typography, InputBase } from '@material-ui/core';
+import { Button, TextField, TableContainer, Table, TableBody, TableRow, TableCell, Grid, TableHead, Typography } from '@material-ui/core';
 import emailjs from 'emailjs-com';
-import { TextFields } from '@material-ui/icons';
 
 interface QnAPageProps {
 }
@@ -40,7 +39,7 @@ const QnAPage: React.FunctionComponent<QnAPageProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
     
     /**
      * states

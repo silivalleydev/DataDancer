@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { InputBase, Button, Link, Paper, Tab, Tabs } from '@material-ui/core';
+import { InputBase, Link, Paper, Tab, Tabs } from '@material-ui/core';
 import { createStyles, fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from '@material-ui/icons/Search';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -110,7 +110,7 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
 
     /**
      * states
@@ -163,7 +163,6 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                     className={classes.tabs}
                     value={value}
                     indicatorColor="primary"
-                    textColor="primary"
                     onChange={handleChange}
                     aria-label="disabled tabs example"
                 >
@@ -171,10 +170,9 @@ const Navi: React.FunctionComponent<NaviProps> = (props) => {
                     <Tab 
                         label="DataDancer" 
                         className={classes.title} 
-                        fullWidth={true}
                     />
-                    <Tab className={classes.tab} fullWidth={true} label="Docs"/>
-                    <Tab className={classes.tab} fullWidth={true} label="Contact"/>
+                    <Tab className={classes.tab} label="Docs"/>
+                    <Tab className={classes.tab} label="Contact"/>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                         <SearchIcon />
