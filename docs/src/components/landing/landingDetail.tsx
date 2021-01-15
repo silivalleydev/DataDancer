@@ -49,7 +49,7 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
     /**
      * props
      */
-    const { } = props;
+    // const { } = props;
 
     /**
      * states
@@ -71,7 +71,7 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
 
         const interval = setInterval(() => getDate(), 3000);
         return () => clearInterval(interval);
-    })
+    },[d])
 
     /**
      * variables
@@ -124,7 +124,7 @@ d.getRanElement(arr);
         title: "Easy to Object Array Sort & Search",
         code: `\`\`\`
 const sample = [
-    {id:3, name: "Rick"}, 
+    {id:3, name:"Rick"}, 
     {id:1, name:"Jack"}, 
     {id:2, name:"Lee"}
 ];
@@ -196,7 +196,7 @@ d.gradientGenerator();
         <Grid item xs={12} className={classes.root}>
             <Grid container justify="center" spacing={0}>
                 {contents.map((content, idx) => (
-                    <Grid key={content.id} item>
+                    <Grid key={"detail-content"+ content.id} item>
                         <Paper className={classes.paper}>
                             <div className={classes.title}>
                                 {content.title}
@@ -204,9 +204,9 @@ d.gradientGenerator();
                                 <HighlightedMarkdown>
                                     {content.code}
                                 </HighlightedMarkdown>
-                                {d && content.exec().map((rs) => {
+                                {d && content.exec().map((rs, idx) => {
                                     return (
-                                        <div>
+                                        <div key={"exec-rs" + idx}>
                                             <span className={classes.rsTitle}>{rs.title + ' => '}</span>
                                             <span className={classes.rs}>{JSON.stringify(rs.rs)}</span>
                                             {idx === contents.length -1 && 
