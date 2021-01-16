@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     paper: {
         margin: '30px 0 0 40px',
         padding: 30,
-        height: 360,
         width: 410,
     },
     title: {
@@ -56,6 +55,7 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
      */
     const [d, setD]:any = useState();
     const [, setDate] = useState(new Date());
+    const num = DataDancer.NumberMethods.prototype.getRanRangeNum(24, 32);
     
     /**
      * useEffect
@@ -86,6 +86,9 @@ d.nameGenerator("kor");
 d.nameGenerator("eng");
 d.nameGenerator("jp");
 d.nameGenerator("chi");
+d.nameGenerator("india");
+d.nameGenerator("hindi");
+d.nameGenerator("german");
 \`\`\`
             `,
         exec: function() {
@@ -95,11 +98,49 @@ d.nameGenerator("chi");
                 arr.push({title: 'd.nameGenerator("eng")', rs: d.s.nameGenerator("eng")});
                 arr.push({title: 'd.nameGenerator("jp")', rs: d.s.nameGenerator("jp")});
                 arr.push({title: 'd.nameGenerator("chi")', rs: d.s.nameGenerator("chi")});
+                arr.push({title: 'd.nameGenerator("india")', rs: d.s.nameGenerator("india")});
+                arr.push({title: 'd.nameGenerator("hindi")', rs: d.s.nameGenerator("hindi")});
+                arr.push({title: 'd.nameGenerator("german")', rs: d.s.nameGenerator("german")});
             }
                 return arr;
         }
-    }, {
+    },  {
         id: 1,
+        title: "Easy to Control Date",
+        code: `\`\`\`
+const d = new DataDancer.DateMethods();
+const date = new Date(2020, 0, ${num}); // 2020-01-${num - 1}
+
+d.addMonths(date, 1);
+d.getFormDate(date, "-");
+d.getDayOfWeek(date);
+d.getDayOfWeek(date, "kor");
+d.getDayOfWeek(date, "jp");
+d.getDayOfWeek(date, "chi");
+d.getDayOfWeek(date, "india");
+d.getDayOfWeek(date, "hindi");
+d.getDayOfWeek(date, "german");
+\`\`\``,
+        exec: function() {
+            const arr = [];
+            const date = new Date(2020, 0, num);
+            if (d) {
+                arr.push({title: 'd.addMonths(date, 1)', rs: d.d.addMonths(date, 1)});
+                arr.push({title: 'd.getFormDate(date, "-")', rs: d.d.getFormDate(date, "-")});
+                arr.push({title: 'd.getDayOfWeek(date)', rs: d.d.getDayOfWeek(date)});
+                arr.push({title: 'd.getDayOfWeek(date, "kor")', rs: d.d.getDayOfWeek(date, "kor") });
+                arr.push({title: 'd.getDayOfWeek(date, "jp")', rs: d.d.getDayOfWeek(date, "jp") });
+                arr.push({title: 'd.getDayOfWeek(date, "chi")', rs: d.d.getDayOfWeek(date, "chi") });
+                arr.push({title: 'd.getDayOfWeek(date, "india")', rs: d.d.getDayOfWeek(date, "india") });
+                arr.push({title: 'd.getDayOfWeek(date, "hindi")', rs: d.d.getDayOfWeek(date, "hindi") });
+                arr.push({title: 'd.getDayOfWeek(date, "german")', rs: d.d.getDayOfWeek(date, "german") });
+            }
+
+            return arr;
+        }
+    }, 
+    {
+        id: 2,
         title: "Get Random Data!",
         code: `\`\`\`
 const d = new DataDancer.NumberMethods();
@@ -121,8 +162,9 @@ d.getRanElement(arr);
 
             return arr;
         }
-    }, {
-        id: 2,
+    }, 
+    {
+        id: 3,
         title: "Easy to Object Array Sort & Search",
         code: `\`\`\`
 const sample = [
@@ -145,29 +187,7 @@ d.linearSearch(sorted, "Jack", "name");
 
             return arr;
         }
-    }, {
-        id: 3,
-        title: "Easy to Control Date",
-        code: `\`\`\`
-const d = new DataDancer.DateMethods();
-const date = new Date(2020, 0, 32); // 2020-01-31
-
-d.addMonths(date, 1);
-d.getFormDate(date, "-");
-d.getDayOfWeek(date);
-\`\`\``,
-        exec: function() {
-            const arr = [];
-            const date = new Date(2020, 0, 32);
-            if (d) {
-                arr.push({title: 'd.addMonths(date, 1)', rs: d.d.addMonths(date, 1)});
-                arr.push({title: 'd.getFormDate(date, "-")', rs: d.d.getFormDate(date, "-")});
-                arr.push({title: 'd.getDayOfWeek(date)', rs: d.d.getDayOfWeek(date)});
-            }
-
-            return arr;
-        }
-    }, {
+    },{
         id: 4,
         title: "Easy to get Colors",
         code: `\`\`\`

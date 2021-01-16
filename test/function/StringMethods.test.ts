@@ -61,5 +61,25 @@ describe('StringMethods Test', () => {
         const cf = s.nameGenerator("chi", "female");
         console.log(cf);
 
+        const inm = s.nameGenerator("india", "male");
+        console.log(inm);
+
+        const inf = s.nameGenerator("india", "female");
+        console.log(inf);
+
+        const hinm = s.nameGenerator("hindi", "male");
+        console.log(hinm);
+
+        const hinf = s.nameGenerator("hindi", "female");
+        console.log(hinf);
+
+        const gerf = s.nameGenerator("german", "female");
+        console.log(gerf);
+
+        const germ = s.nameGenerator("german", "male");
+        console.log(germ);
+
+
+
     });
 });

@@ -1,4 +1,4 @@
-import { engDayOfWeek, jpDayOfWeek, korDayOfWeek } from '../data/dateData';
+import { engDayOfWeek, jpDayOfWeek, korDayOfWeek, indiaDayOfWeek, hindiDayOfWeek, cDayOfWeek, germanDayOfWeek } from '../data/dateData';
 
 export class DateMethods {
 	/**
@@ -88,11 +88,11 @@ export class DateMethods {
 	/**
 	 * you can get day of the week to String type, use getDayOfWeek
 	 * 
-	 * It support language English, Korean, Japanese, Chinese
+	 * It support language English, Korean, Japanese, Chinese, India, Hindi, German
 	 *
-	 * (date: Date, lang?: "eng" | "kor" | "jp" | "chi")
+	 * (date: Date, lang?: "eng" | "kor" | "jp" | "chi" | "india" | "hindi" | "german")
 	 */
-	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" | "chi" = "eng"): string {
+	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" | "chi" | "india" | "hindi" | "german" = "eng"): string {
 		const dayIdx = date.getDay();
 		let rs: string;
 		switch (lang) {
@@ -102,8 +102,20 @@ export class DateMethods {
 			case 'kor':
 				rs = korDayOfWeek[dayIdx];
 				break;
-			case 'jp' || 'chi':
+			case 'jp':
 				rs = jpDayOfWeek[dayIdx];
+				break;
+			case 'chi':
+				rs = cDayOfWeek[dayIdx];
+				break;
+			case 'india':
+				rs = indiaDayOfWeek[dayIdx];
+				break;
+			case 'hindi':
+				rs = hindiDayOfWeek[dayIdx];
+				break;
+			case 'german':
+				rs = germanDayOfWeek[dayIdx];
 				break;
 		}
 		return rs;

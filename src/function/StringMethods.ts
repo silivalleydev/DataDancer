@@ -1,15 +1,23 @@
 import { Base } from '../common/Base';
 import { engData, symbolData, numData } from '../data/passwordData';
 import {
-	k_first_name,
-	k_last_name,
-	e_female_name,
-	e_male_name,
+	kor_first_name,
+	kor_last_name,
+	eng_female_name,
+	eng_male_name,
 	jp_female_name,
 	jp_male_name,
 	jp_last_name,
-	c_male_name,
-	c_female_name
+	chi_male_name,
+	chi_female_name,
+	india_male_name,
+	india_female_name,
+	hindi_female_name,
+	hindi_male_name,
+	hindi_last_name,
+	german_female_name,
+	german_last_name,
+	german_male_name
 } from '../data/nameData';
 
 export class StringMethods extends Base {
@@ -35,30 +43,30 @@ export class StringMethods extends Base {
 	/**
 	 * nameGenerator
 	 *
-	 * support eng, japan, korea, chinese name
+	 * support eng, japan, korea, chinese, India name
 	 *
-	 * if you generate eng, japanese, chinese Name, you can choose gender
+	 * if you generate eng, japanese, chinese, India, Hindi, German Name, you can choose gender
 	 *
-	 * (lang?: "kor" | "eng" | "jp" | "chi", gender?: "male" | "female")
+	 * (lang?: "kor" | "eng" | "jp" | "chi" | "india" | "hindi" | "german", gender?: "male" | "female")
 	 */
-	nameGenerator(lang: "kor" | "eng" | "jp" | "chi" = 'eng', gender: "male" | "female" = 'male') {
+	nameGenerator(lang: "kor" | "eng" | "jp" | "chi" | "india" | "hindi" | "german" = 'eng', gender: "male" | "female" = 'male') {
 		if (lang === 'kor') {
-			const idx1 = this.$_ranRangeNum(0, k_last_name.length - 1);
-			const idx2 = this.$_ranRangeNum(0, k_first_name.length - 1);
-			let idx3 = this.$_ranRangeNum(0, k_first_name.length - 1);
+			const idx1 = this.$_ranRangeNum(0, kor_last_name.length - 1);
+			const idx2 = this.$_ranRangeNum(0, kor_first_name.length - 1);
+			let idx3 = this.$_ranRangeNum(0, kor_first_name.length - 1);
 
 			while (true) {
-				if (idx2 === idx3) idx3 = this.$_ranRangeNum(0, k_first_name.length - 1);
+				if (idx2 === idx3) idx3 = this.$_ranRangeNum(0, kor_first_name.length - 1);
 				else break;
 			}
-			return k_last_name[idx1] + k_first_name[idx2] + k_first_name[idx3];
+			return kor_last_name[idx1] + kor_first_name[idx2] + kor_first_name[idx3];
 		} else if (lang === 'eng') {
 			if (gender === 'male') {
-				const idx = this.$_ranRangeNum(0, e_male_name.length - 1);
-				return e_male_name[idx];
+				const idx = this.$_ranRangeNum(0, eng_male_name.length - 1);
+				return eng_male_name[idx];
 			} else {
-				const idx = this.$_ranRangeNum(0, e_female_name.length - 1);
-				return e_female_name[idx];
+				const idx = this.$_ranRangeNum(0, eng_female_name.length - 1);
+				return eng_female_name[idx];
 			}
 		} else if (lang === 'jp') {
 			const laIdx = this.$_ranRangeNum(0, jp_last_name.length - 1);
@@ -74,13 +82,45 @@ export class StringMethods extends Base {
 			}
 		} else if (lang === 'chi') {
 			if (gender === 'male') {
-				const idx = this.$_ranRangeNum(0, c_male_name.length - 1);
-				return c_male_name[idx];
+				const idx = this.$_ranRangeNum(0, chi_male_name.length - 1);
+				return chi_male_name[idx];
 			} else {
-				const idx = this.$_ranRangeNum(0, c_female_name.length - 1);
-				return c_female_name[idx];
+				const idx = this.$_ranRangeNum(0, chi_female_name.length - 1);
+				return chi_female_name[idx];
 			}
-		} 
+		} else if (lang === 'india') {
+			if (gender === 'male') {
+				const idx = this.$_ranRangeNum(0, india_male_name.length - 1);
+				return india_male_name[idx];
+			} else {
+				const idx = this.$_ranRangeNum(0, india_female_name.length - 1);
+				return india_female_name[idx];
+			}
+		} else if (lang === 'hindi') {
+			if (gender === 'male') {
+				const idxF = this.$_ranRangeNum(0, hindi_male_name.length - 1);
+				const idxL = this.$_ranRangeNum(0, hindi_last_name.length - 1);
+
+				return `${hindi_male_name[idxF]} ${hindi_last_name[idxL]}`;
+			} else {
+				const idxF = this.$_ranRangeNum(0, hindi_female_name.length - 1);
+				const idxL = this.$_ranRangeNum(0, hindi_last_name.length - 1);
+
+				return `${hindi_female_name[idxF]} ${hindi_last_name[idxL]}`;
+			}
+		} else if (lang === 'german') {
+			if (gender === 'male') {
+				const idxF = this.$_ranRangeNum(0, german_male_name.length - 1);
+				const idxL = this.$_ranRangeNum(0, german_last_name.length - 1);
+
+				return `${german_male_name[idxF]} ${german_last_name[idxL]}`;
+			} else {
+				const idxF = this.$_ranRangeNum(0, german_female_name.length - 1);
+				const idxL = this.$_ranRangeNum(0, german_last_name.length - 1);
+
+				return `${german_female_name[idxF]} ${german_last_name[idxL]}`;
+			}
+		}
 	}
 
 	/**

@@ -79,7 +79,7 @@ const dm = new DataDancer.DateMethods();
 |addMonth|1. date / Date / false, <br/>2. months / number / false |Date|add months to Date type Object.|
 |addYear|1. date / Date / false, <br/>2. years / number / false |Date|add years to Date type Object.|
 |dateCompare|1. fastDate / Date / false, <br/>2. latestDate / Date / false |Boolean|If you have 2 Date Type Object, dateCompare function gives you which date is latest.|
-|getDayOfWeek|1. date / Date / false, <br/>2. lang / "eng" or "kor" or "jp" or "chi" / true |String|If you want to get day of the week to String type, use getDayOfWeek. Can be obtained by language|
+|getDayOfWeek|1. date / Date / false, <br/>2. lang / "eng" or "kor" or "jp" or "chi" or "india" or "hindi" or "german" / true |String|If you want to get day of the week to String type, use getDayOfWeek. Can be obtained by language|
 |getFormDate|1. date / Date / false, <br/>2. form / string / false |String|If you want to get Date Type Object to String with your own Custom Form use getFormDate Function.|
 
 
@@ -101,7 +101,7 @@ const dm = new DataDancer.DateMethods();
 
 |Method|Parameter / Type / isOptional|ReturnType|Detail|
 |---|----|---|---|
-|nameGenerator|1. lang / "kor" or "eng" or "jp" or "chi" / true<br/>2. gender / "male" or "female" / true|String|If you want get name Randomly, use sum nameGenerator function.<br/>Default language value is English, Default gender value is male<br/>You can also set the language and gender.<br/>**Supported Language: English, Korean, Japan, Chinese**<br/>**Supported Gender: English, Japan, Chinese**|
+|nameGenerator|1. lang / "kor" or "eng" or "jp" or "chi" / true<br/>2. gender / "male" or "female" / true|String|If you want get name Randomly, use sum nameGenerator function.<br/>Default language value is English, Default gender value is male<br/>You can also set the language and gender.<br/>**Supported Language: English, Korean, Japan, Chinese, India, Hindi, German**<br/>**Supported Gender: English, Japan, Chinese, India, Hindi, German**|
 |passwordGenerator|1. digit / Number / false<br/>2. include / "all" or "string" or "number" or "symbol" / true|String|If you want get password Randomly, use sum passwordGenerator function.<br/>Password must be set at least 4 digits.<br/>Default return password value is only inludes String.<br/>If you want to inlude number or symbol or both in password,<br/>you can also set it<br/>**Can Include: Number, Symbol**|
 
 
