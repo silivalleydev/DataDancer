@@ -15,7 +15,7 @@ const rollup_main_config = {
 }
 
 const rollup_dts_config = {
-  input: 'src/declare.ts',
+  input: 'src/main.ts',
   output: {
     file: 'dist/output/dataDancer.d.ts',
     format: 'es'

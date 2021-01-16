@@ -70,6 +70,6 @@
       "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
     }
   },    
-  "include": ["./src/**/*"],
+  "include": ["./src/**/**.ts",],
   "exclude": ["node_modules"]
 }

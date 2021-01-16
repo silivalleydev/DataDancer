@@ -29,10 +29,10 @@ export class VisualMethods extends Base {
 
 	/**
 	 * you can get color randomly.
-	 * 
+	 *
 	 * (type: "rgb" | "code")
 	 */
-	colorGenerator(type: "rgb" | "code" = "code") {
+	colorGenerator(type: 'rgb' | 'code' = 'code') {
 		let rs = '#' + Math.floor(Math.random() * 16777215).toString(16);
 		if (type === 'rgb') {
 			const color1 = Math.floor(Math.random() * 255) + 1;
@@ -46,7 +46,7 @@ export class VisualMethods extends Base {
 	 * you can get gradient randomly
 	 * (direction?: "to right" | "to left" | "to top" | "to bottom")
 	 */
-	gradientGenerator(direction?: "to right" | "to left" | "to top" | "to bottom"): string {
+	gradientGenerator(direction?: 'to right' | 'to left' | 'to top' | 'to bottom'): string {
 		let direcArr = ['to right', 'to left', 'to top', 'to bottom'];
 		let rs: string;
 		let direc: string;
@@ -58,5 +58,4 @@ export class VisualMethods extends Base {
 
 		return rs;
 	}
-
 }

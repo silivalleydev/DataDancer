@@ -1,5 +1,5 @@
-import { engDayOfWeek, jpDayOfWeek, korDayOfWeek, indiaDayOfWeek, hindiDayOfWeek, cDayOfWeek, germanDayOfWeek } from '../data/dateData';
-
+import { dayOfWeekMapper } from '../mapper/dayOfWeekMapper';
+import { Language, LanguageCode } from '../common/type';
 export class DateMethods {
 	/**
 	 * fields
@@ -28,7 +28,7 @@ export class DateMethods {
 	}
 
 	/**
-	 * you can get Date Type Object to String with your own Custom Form 
+	 * you can get Date Type Object to String with your own Custom Form
 	 *
 	 * (date: Date, form: string)
 	 */
@@ -53,7 +53,7 @@ export class DateMethods {
 
 	/**
 	 * add Year to Date type Object
-	 * 
+	 *
 	 * (date: Date, years: number)
 	 */
 	addYear(date: Date, years: number): Date {
@@ -62,7 +62,7 @@ export class DateMethods {
 
 	/**
 	 * add Month to Date type Object
-	 * 
+	 *
 	 * (date: Date, months: number)
 	 */
 	addMonths(date: Date, months: number) {
@@ -76,7 +76,7 @@ export class DateMethods {
 
 	/**
 	 * add Day to Date type Object
-	 * 
+	 *
 	 * (date: Date, dates: number)
 	 */
 	addDays(date: Date, dates: number): Date {
@@ -87,37 +87,13 @@ export class DateMethods {
 
 	/**
 	 * you can get day of the week to String type, use getDayOfWeek
-	 * 
+	 *
 	 * It support language English, Korean, Japanese, Chinese, India, Hindi, German
 	 *
 	 * (date: Date, lang?: "eng" | "kor" | "jp" | "chi" | "india" | "hindi" | "german")
 	 */
-	getDayOfWeek(date: Date, lang: "eng" | "kor" | "jp" | "chi" | "india" | "hindi" | "german" = "eng"): string {
+	getDayOfWeek(date: Date, lang: Language = LanguageCode.english): string {
 		const dayIdx = date.getDay();
-		let rs: string;
-		switch (lang) {
-			case 'eng':
-				rs = engDayOfWeek[dayIdx];
-				break;
-			case 'kor':
-				rs = korDayOfWeek[dayIdx];
-				break;
-			case 'jp':
-				rs = jpDayOfWeek[dayIdx];
-				break;
-			case 'chi':
-				rs = cDayOfWeek[dayIdx];
-				break;
-			case 'india':
-				rs = indiaDayOfWeek[dayIdx];
-				break;
-			case 'hindi':
-				rs = hindiDayOfWeek[dayIdx];
-				break;
-			case 'german':
-				rs = germanDayOfWeek[dayIdx];
-				break;
-		}
-		return rs;
+		return dayOfWeekMapper[lang][dayIdx];
 	}
 }

@@ -40,7 +40,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 * you can get number of fixed digit randomly
-	 * 
+	 *
 	 * (digit: number, isString?: boolean, zeroFixBackDigit?: number)
 	 */
 	getRanDigitNum(digit: number, isString: boolean = false, zeroFixBackDigit?: number) {
@@ -98,7 +98,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 * you can get sum value of number array
-	 * 
+	 *
 	 * (arr: number[])
 	 */
 	sum(arr: number[]): number {
@@ -111,7 +111,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 * you can get avarage value of number array
-	 * 
+	 *
 	 * (arr: number[])
 	 */
 	avarage(arr: number[]): number {
@@ -122,7 +122,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 * you can get deviation value of number array
-	 * 
+	 *
 	 * (arr: number[])
 	 */
 	deviation(arr: number[]): Deviation {
@@ -142,7 +142,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 * you can get variance value of number array
-	 * 
+	 *
 	 * (arr: number[])
 	 */
 	variance(arr: number[]): number {
@@ -157,7 +157,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 * you can get standardDeviation value of number array
-	 * 
+	 *
 	 * (arr: number[])
 	 */
 	standardDeviation(arr: number[]): StandardDeviation {
@@ -171,7 +171,7 @@ export class NumberMethods extends Base {
 
 	/**
 	 *  you can get minimum and maximum value of number array
-	 * 
+	 *
 	 *  (arr: number[])
 	 */
 	getMinMax(arr: number[]): MinMax {

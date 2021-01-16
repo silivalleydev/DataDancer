@@ -22,9 +22,9 @@ export class ArrayMethods extends Base {
 
 	/**
 	 * This is quick sort.
-	 * 
+	 *
 	 * You can also sorting object array by key.
-	 * 
+	 *
 	 * (arr: any[], key?: string)
 	 */
 	quickSort(arr: any[], key?: string) {
@@ -59,12 +59,11 @@ export class ArrayMethods extends Base {
 		}
 	}
 
-
 	/**
 	 * It is a search function that allows you to quickly search in an array sorted in ascending order.
-	 * 
+	 *
 	 * You can also search object array by key.
-	 * 
+	 *
 	 * (arr: any[], search: any, key?: string)
 	 */
 	binarySearch(arr: any[], search: any, key?: string) {
@@ -73,9 +72,9 @@ export class ArrayMethods extends Base {
 
 	/**
 	 *  you can search value of index in array or object array, use linearSearch
-	 * 
+	 *
 	 *  You can also search object array by key.
-	 * 
+	 *
 	 * (arr: any[], search: any, key?: string)
 	 */
 	linearSearch(arr: any[], search: any, key?: string) {
@@ -87,13 +86,12 @@ export class ArrayMethods extends Base {
 					idx = i;
 					val = arr[i];
 				}
-			})
-	
+			});
 		} else {
 			this.$_forLoop(0, arr.length, (i: number) => {
 				if (arr[i] === search) idx = i;
-					val = search;
-			})
+				val = search;
+			});
 		}
 
 		if (val) return { idx, val };
@@ -102,9 +100,9 @@ export class ArrayMethods extends Base {
 
 	/**
 	 * remove the middle element of an array
-	 * 
+	 *
 	 * It is also possible to remove multiple middle elements of an array.
-	 * 
+	 *
 	 * (arr: any[], target: number | number[])
 	 */
 	rmMiddleArrIdx(arr: any[], target: number | number[]) {
@@ -127,13 +125,13 @@ export class ArrayMethods extends Base {
 
 	/**
 	 * you can get the elements of an array randomly, use getRanElement.
-	 * 
+	 *
 	 * It is also possible to get multiple random elements of an array.
 	 *
 	 * (arr: any[], howMany?: number)
 	 */
 	getRanElement(arr: any[], howMany?: number) {
-    		const length = arr.length - 1;
+		const length = arr.length - 1;
 		if (howMany) {
 			const idx = [];
 			const rs = [];
@@ -166,7 +164,7 @@ export class ArrayMethods extends Base {
 			while (firstIdx <= lastIdx) {
 				let midIdx = Math.floor((firstIdx + lastIdx) / 2);
 				let midVal = arr[midIdx][key];
-	
+
 				if (search === midVal) {
 					return { idx: midIdx, val: midVal };
 				} else if (search < midVal) {
@@ -179,7 +177,7 @@ export class ArrayMethods extends Base {
 			while (firstIdx <= lastIdx) {
 				let midIdx = Math.floor((firstIdx + lastIdx) / 2);
 				let midVal = arr[midIdx];
-	
+
 				if (search === midVal) {
 					return { idx: midIdx, val: midVal };
 				} else if (search < midVal) {

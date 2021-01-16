@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper } from '@material-ui/core';
 import { HighlightedMarkdown } from '../common/highlightMarkdown';
+import { LanguageCode } from '../type/defineType';
 import DataDancer from 'datadancer';
 
 interface LandingDetailProps {
 }
+
 
 
 const useStyles = makeStyles({
@@ -15,6 +17,7 @@ const useStyles = makeStyles({
         margin: '30px 0 0 40px',
         padding: 30,
         width: 410,
+        height: 380
     },
     title: {
         fontSize:20,
@@ -49,14 +52,28 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
      * props
      */
     const { } = props;
-
+    /**
+     * const
+     */
+    const classes = useStyles();
+    const langType = [
+        LanguageCode.chinese, 
+        LanguageCode.english,
+        LanguageCode.german,
+        LanguageCode.hindi,
+        LanguageCode.india,
+        LanguageCode.japanese,
+        LanguageCode.korean
+    ];
     /**
      * states
      */
     const [d, setD]:any = useState();
     const [, setDate] = useState(new Date());
     const num = DataDancer.NumberMethods.prototype.getRanRangeNum(24, 32);
-    
+    const ranType1 = langType[DataDancer.NumberMethods.prototype.getRanRangeNum(0, langType.length - 1)];
+    const ranType2 = langType[DataDancer.NumberMethods.prototype.getRanRangeNum(0, langType.length - 1)];
+    const ranType3 = langType[DataDancer.NumberMethods.prototype.getRanRangeNum(0, langType.length - 1)];
     /**
      * useEffect
      */
@@ -69,38 +86,28 @@ const LandingDetail: React.FunctionComponent<LandingDetailProps> = (props) => {
             v: new DataDancer.VisualMethods(),
         })
 
-        const interval = setInterval(() => getDate(), 3000);
+        const interval = setInterval(() => getDate(), 2000);
         return () => clearInterval(interval);
     })
 
-    /**
-     * variables
-     */
-    const classes = useStyles();
+
+
     const contents = [{
         id: 0,
         title: "Get Random Name By country!",
         code:`\`\`\`
 const d = new DataDancer.StringMethods();
-d.nameGenerator("kor");
-d.nameGenerator("eng");
-d.nameGenerator("jp");
-d.nameGenerator("chi");
-d.nameGenerator("india");
-d.nameGenerator("hindi");
-d.nameGenerator("german");
+d.nameGenerator("${ranType1}");
+d.nameGenerator("${ranType2}");
+d.nameGenerator("${ranType3}");
 \`\`\`
             `,
         exec: function() {
             const arr = [];
             if(d){
-                arr.push({title: 'd.nameGenerator("kor")', rs: d.s.nameGenerator("kor")});
-                arr.push({title: 'd.nameGenerator("eng")', rs: d.s.nameGenerator("eng")});
-                arr.push({title: 'd.nameGenerator("jp")', rs: d.s.nameGenerator("jp")});
-                arr.push({title: 'd.nameGenerator("chi")', rs: d.s.nameGenerator("chi")});
-                arr.push({title: 'd.nameGenerator("india")', rs: d.s.nameGenerator("india")});
-                arr.push({title: 'd.nameGenerator("hindi")', rs: d.s.nameGenerator("hindi")});
-                arr.push({title: 'd.nameGenerator("german")', rs: d.s.nameGenerator("german")});
+                arr.push({title: `d.nameGenerator("${ranType1}")`, rs: d.s.nameGenerator(ranType1)});
+                arr.push({title: `d.nameGenerator("${ranType2}")`, rs: d.s.nameGenerator(ranType2)});
+                arr.push({title: `d.nameGenerator("${ranType3}")`, rs: d.s.nameGenerator(ranType3)});
             }
                 return arr;
         }
@@ -114,12 +121,7 @@ const date = new Date(2020, 0, ${num}); // 2020-01-${num - 1}
 d.addMonths(date, 1);
 d.getFormDate(date, "-");
 d.getDayOfWeek(date);
-d.getDayOfWeek(date, "kor");
-d.getDayOfWeek(date, "jp");
-d.getDayOfWeek(date, "chi");
-d.getDayOfWeek(date, "india");
-d.getDayOfWeek(date, "hindi");
-d.getDayOfWeek(date, "german");
+d.getDayOfWeek(date, "${ranType1}");
 \`\`\``,
         exec: function() {
             const arr = [];
@@ -127,13 +129,7 @@ d.getDayOfWeek(date, "german");
             if (d) {
                 arr.push({title: 'd.addMonths(date, 1)', rs: d.d.addMonths(date, 1)});
                 arr.push({title: 'd.getFormDate(date, "-")', rs: d.d.getFormDate(date, "-")});
-                arr.push({title: 'd.getDayOfWeek(date)', rs: d.d.getDayOfWeek(date)});
-                arr.push({title: 'd.getDayOfWeek(date, "kor")', rs: d.d.getDayOfWeek(date, "kor") });
-                arr.push({title: 'd.getDayOfWeek(date, "jp")', rs: d.d.getDayOfWeek(date, "jp") });
-                arr.push({title: 'd.getDayOfWeek(date, "chi")', rs: d.d.getDayOfWeek(date, "chi") });
-                arr.push({title: 'd.getDayOfWeek(date, "india")', rs: d.d.getDayOfWeek(date, "india") });
-                arr.push({title: 'd.getDayOfWeek(date, "hindi")', rs: d.d.getDayOfWeek(date, "hindi") });
-                arr.push({title: 'd.getDayOfWeek(date, "german")', rs: d.d.getDayOfWeek(date, "german") });
+                arr.push({title: `d.getDayOfWeek(date, "${ranType1}")`, rs: d.d.getDayOfWeek(date, ranType1) });
             }
 
             return arr;

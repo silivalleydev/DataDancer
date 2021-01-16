@@ -35,14 +35,14 @@ function playDRD(method) {
         case "nameGenerator-us-male":
             detail.innerHTML = "영문 남성 이름 생성 =>"
             btn.onclick = function(){ 
-                const output = drd.nameGenerator("us", "male");
+                const output = drd.nameGenerator("eng", "male");
                 result.innerHTML = "male Name: " + output; 
             }
             break;
         case "nameGenerator-us-female":
             detail.innerHTML = "영문 여성 이름 생성 =>"
             btn.onclick = function(){ 
-                const output = drd.nameGenerator("us", "female");
+                const output = drd.nameGenerator("eng", "female");
                 result.innerHTML = "female Name: " + output; 
             }
             break;
